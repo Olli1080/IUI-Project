@@ -1,6 +1,7 @@
 import './App.css';
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
-import LandingPage from './Pages/LandingPage';
+import LandingPage from './pages/LandingPage';
+import Recommendations from './pages/Recommendations';
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
       </header>
       <Routes>
         <Route path='' element={<LandingPage/>}/>
+        <Route path='/recommendations' element={<Recommendations/>}/>
       </Routes>
     </Router>
   )
