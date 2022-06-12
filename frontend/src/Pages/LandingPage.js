@@ -5,6 +5,8 @@ import {useNavigate} from 'react-router-dom'
 
 function LandingPage(){
     const navigate = useNavigate();
+    //todo: send user data to backend
+    //eslint-disable-next-line
     let userData
     const hiddenFileInput = React.useRef(null)
     const handleClick = () => {
@@ -27,7 +29,7 @@ function LandingPage(){
                     <Container fluid className='container'>
                         <Row>
                             <Col className='card-col col-6'>
-                                <a href='/Moritz-Seine-Seite'>
+                                <a href='/form'>
                                     <Button className='button'>No, I'm new</Button>
                                 </a>
                             </Col>
