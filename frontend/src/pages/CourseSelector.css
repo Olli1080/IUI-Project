@@ -1,0 +1,27 @@
+h2{
+    margin-left: 10vw;
+    margin-right: 10vw;
+    font-weight: lighter;
+}
+
+.react-toggle--checked .react-toggle-track {
+    background-color: blueviolet !important;
+}
+
+.react-toggle--checked .react-toggle-thumb {
+    border-color: blueviolet !important;
+}
+
+.fa-check{
+    background-color: blueviolet;
+}
+
+.ticks-container{
+    margin-left: 11vw;
+    margin-right: 10vw;
+}
+
+.done-button{
+    margin-left: 11vw;
+    margin-top: 20px;
+}

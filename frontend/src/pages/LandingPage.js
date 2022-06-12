@@ -29,7 +29,7 @@ function LandingPage(){
                     <Container fluid className='container'>
                         <Row>
                             <Col className='card-col col-6'>
-                                <a href='/form'>
+                                <a href='/course-selector'>
                                     <Button className='button'>No, I'm new</Button>
                                 </a>
                             </Col>

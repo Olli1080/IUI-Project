@@ -1,8 +1,8 @@
-import './App.css';
-import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
-import LandingPage from './pages/LandingPage';
-import Recommendations from './pages/Recommendations';
-import Form from './pages/Form'
+import './App.css'
+import {BrowserRouter as Router, Routes, Route} from 'react-router-dom'
+import LandingPage from './pages/LandingPage'
+import Recommendations from './pages/Recommendations'
+import CourseSelector from './pages/CourseSelector'
 
 function App() {
   return (
@@ -13,7 +13,7 @@ function App() {
       <Routes>
         <Route path='' element={<LandingPage/>}/>
         <Route path='/recommendations' element={<Recommendations/>}/>
-        <Route path='/form' element={<Form/>}/>
+        <Route path='/course-selector' element={<CourseSelector/>}/>
       </Routes>
     </Router>
   )
