@@ -4,10 +4,54 @@ h1{
     margin-right: 10vw;
 }
 
-.card{
-    margin-top: 50px;
-    padding-top: 30px;
+.course-card{
+    margin-top: 25px;
+    padding-top: 10px;
+    padding-bottom: 30px;
+    padding-left: 10px;
+    padding-right: 10px;
+    height: 17vh;
+    margin-bottom: 5px;
     background-color: white;
     text-align: center;
     box-shadow: 4px 4px 2px 1px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+}
+
+.module-name{
+    background: transparent;
+    font-size: 1.5vw;
+}
+
+.lp{
+    text-align: end;
+    margin-right: 0.5vw;
+    background: transparent;
+    font-size: 1vw;
+    font-weight: bolder;
+}
+
+.home-button{
+    background-color: #5e2b97;
+    padding: 8px;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    border-radius: 7px;
+    margin-top: 50px;
+    margin-left: 10vw;
+    margin-right: 10vw;
+}
+
+.home-button:hover{
+    background-color: blueviolet;
+}
+
+.home-button:active{
+    box-shadow: 0px 0px 1px 3px rgb(165, 115, 211);
+}
+
+.fa-house{
+    color:whitesmoke;
+    background: transparent;
 }

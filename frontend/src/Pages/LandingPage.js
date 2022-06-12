@@ -22,7 +22,7 @@ function LandingPage(){
     };
     return(
         <div className='overall-container'>
-            <Card className='card'>
+            <Card className='landing-card'>
                     <h1>Have you been here before?</h1>
                     <Container fluid className='container'>
                         <Row>

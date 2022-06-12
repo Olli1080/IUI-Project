@@ -1,6 +1,6 @@
-.card{
+.landing-card{
     margin-top: 50px;
-    padding-top: 30px;
+    padding-top: 0px !important;
     width: 60vw;
     background-color: white;
     text-align: center;
@@ -14,14 +14,11 @@
 
 h1{
     background: transparent;
+    margin-bottom: 40px;
 }
 
 .card-col{
     background-color: white;
-}
-
-.row{
-    margin-bottom: 10;
 }
 
 .container{
