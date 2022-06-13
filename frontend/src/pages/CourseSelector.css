@@ -4,18 +4,6 @@ h2{
     font-weight: lighter;
 }
 
-.react-toggle--checked .react-toggle-track {
-    background-color: blueviolet !important;
-}
-
-.react-toggle--checked .react-toggle-thumb {
-    border-color: blueviolet !important;
-}
-
-.fa-check{
-    background-color: blueviolet;
-}
-
 .ticks-container{
     margin-left: 11vw;
     margin-right: 10vw;
@@ -24,4 +12,67 @@ h2{
 .done-button{
     margin-left: 11vw;
     margin-top: 20px;
+}
+
+.form-check-input:checked{
+    background-color: blueviolet !important;
+    border-color: blueviolet !important;
+}
+
+.form-check-input:focus{
+    box-shadow: none !important;
+    color: blueviolet;
+}
+
+.form-check-input{
+    margin-top: 3px !important;
+}
+
+.form-container{
+    width: auto !important;
+    border-bottom: 2px solid #5e2b97;
+    padding-bottom: 10px;
+    margin-left: 10vw !important;
+    margin-right: 10vw !important;
+}
+
+.btn-primary{
+    background-color: #5e2b97 !important;
+    border: none !important;
+}
+
+.btn-primary:focus{
+    box-shadow: none !important;
+}
+
+.btn-primary:hover{
+    background-color: blueviolet !important;
+}
+
+.btn-primary:active, .btn-primary:focus{
+    box-shadow: 0px 0px 1px 3px rgb(165, 115, 211) !important;
+}
+
+.dropdown-item:active{
+    background-color: #5e2b97 !important;
+    color: white !important;
+}
+
+.material-symbols-outlined{
+    background: transparent;
+    padding-top: 3px;
+}
+
+.like-button{
+    background-color: whitesmoke !important;
+    border: 1px solid #5e2b97 !important;
+    color: #5e2b97 !important;
+}
+
+.like-button:hover{
+    color: white !important;
+}
+
+.like-button:active{
+    box-shadow: 0px 0px 1px 3px rgb(165, 115, 211) !important;
 }

@@ -3,6 +3,7 @@ import {BrowserRouter as Router, Routes, Route} from 'react-router-dom'
 import LandingPage from './pages/LandingPage'
 import Recommendations from './pages/Recommendations'
 import CourseSelector from './pages/CourseSelector'
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   return (

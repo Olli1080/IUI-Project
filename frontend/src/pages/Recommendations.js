@@ -7,7 +7,7 @@ function Recommendations(){
     return(
         <>
             <a href='/'>
-                <Button className='home-button'>
+                <Button className='home-button button'>
                     <i className="fa-solid fa-house"></i>
                 </Button>
             </a>
