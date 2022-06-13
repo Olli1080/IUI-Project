@@ -6,19 +6,35 @@ import {useNavigate} from 'react-router-dom'
 function CourseSelector(){
     const navigate = useNavigate();
     const [currentCourse, setCurrentCourse]=useState(-1)
+    const [semesterOfCurrentCourse, setSemesterOfCurrentCourse]=useState(-1) //-1: not set, 0: >6th
+    const [likeCurrentCourse, setLikeCurrentCourse]=useState(-1) //-1: not set, 0: like, 1: neutral, 2: dislike
     const ticked=useState([])[0]
     const allCourses=require('../data/allCourses.json')
     const grades=['1.0', '1.3', '1.7', '2.0', '2.3', '2.7', '3.0', '3.3', '3.7', '4.0', '5.0']
     const showNextCourse=()=>{
         if(currentCourse===ticked.length-1)
-        navigate('/recommendations')
+            navigate('/recommendations')
         for(let i=currentCourse+1; i<ticked.length; i++){
             if(ticked[i]){
                 setCurrentCourse(i)
+                setSemesterOfCurrentCourse(-1)
                 break
             }
             if(i>=ticked.length-1)
                 navigate('/recommendations')
+        }
+    }
+    const goBack=()=>{
+        for(let i=currentCourse-1; i>=0; i--){
+            if(ticked[i]){
+                setCurrentCourse(i)
+                setSemesterOfCurrentCourse(-1)
+                break
+            }
+            if(i===0){
+                setCurrentCourse(-1)
+                setSemesterOfCurrentCourse(-1)
+            }
         }
     }
     if(currentCourse===-1){
@@ -36,10 +52,10 @@ function CourseSelector(){
                 <>
                     <h1>First let's get to know you...</h1>
                     <h2>Which courses have you visited?</h2>
+                    <Container  className='ticks-container'>
                     {allCourses.map((item, index) => {
                         return(
-                            <Container key={index} className='ticks-container'>
-                                <Row>
+                                <Row style={{marginBottom: '10px'}} key={index}>
                                     <Col className='col-10'>
                                         {item.name}
                                     </Col>
@@ -49,12 +65,17 @@ function CourseSelector(){
                                         </Form>
                                     </Col>
                                 </Row>
-                            </Container>
                         )
                     })}
-                    <Button className='button done-button' onClick={showNextCourse}>
-                        Done
-                    </Button>
+                    <Row>
+                        <Col md={{span:2, offset: 10}} sm={{span:2, offset: 10}}>
+                            <Button className='button done-button' onClick={showNextCourse}>
+                                Next
+                            </Button>
+                        </Col>
+                    </Row>
+                    
+                    </Container>
                 </>
             }
             {currentCourse!==-1 &&
@@ -72,36 +93,36 @@ function CourseSelector(){
                     </Container>
                     <h2 style={{marginTop: '20px'}}>In which semester did you work on this module?</h2>
                     <Container className='form-container'>
-                        <DropdownButton id="dropdown-basic-button" title="Dropdown button">
-                            <Dropdown.Item>1st</Dropdown.Item>
-                            <Dropdown.Item>2nd</Dropdown.Item>
-                            <Dropdown.Item>3rd</Dropdown.Item>
-                            <Dropdown.Item>4th</Dropdown.Item>
-                            <Dropdown.Item>5th</Dropdown.Item>
-                            <Dropdown.Item>6th</Dropdown.Item>
-                            <Dropdown.Item>more than 6th</Dropdown.Item>
+                        <DropdownButton id="dropdown-basic-button" title={semesterOfCurrentCourse===-1?'Semester':makeOrdinal(semesterOfCurrentCourse)}>
+                            <Dropdown.Item onClick={()=>setSemesterOfCurrentCourse(1)}>1st</Dropdown.Item>
+                            <Dropdown.Item onClick={()=>setSemesterOfCurrentCourse(2)}>2nd</Dropdown.Item>
+                            <Dropdown.Item onClick={()=>setSemesterOfCurrentCourse(3)}>3rd</Dropdown.Item>
+                            <Dropdown.Item onClick={()=>setSemesterOfCurrentCourse(4)}>4th</Dropdown.Item>
+                            <Dropdown.Item onClick={()=>setSemesterOfCurrentCourse(5)}>5th</Dropdown.Item>
+                            <Dropdown.Item onClick={()=>setSemesterOfCurrentCourse(6)}>6th</Dropdown.Item>
+                            <Dropdown.Item onClick={()=>setSemesterOfCurrentCourse(0)}>{'>'} 6th</Dropdown.Item>
                         </DropdownButton>
                     </Container>
                     <h2 style={{marginTop: '20px'}}>Did you like it?</h2>
                     <Container className='form-container'>
                         <Row>
                             <Col className='col-auto'>
-                                <Button className='like-button'>
-                                    <span class="material-symbols-outlined">
+                                <Button className={likeCurrentCourse===0?'':'like-button-inactive'} onClick={()=>setLikeCurrentCourse(0)}>
+                                    <span className="material-symbols-outlined">
                                         thumb_up
                                     </span>
                                 </Button>
                             </Col>
                             <Col className='col-auto'>
-                                <Button className='like-button'>
-                                    <span class="material-symbols-outlined">
+                                <Button className={likeCurrentCourse===1?'':'like-button-inactive'} onClick={()=>setLikeCurrentCourse(1)}>
+                                    <span className="material-symbols-outlined">
                                         horizontal_rule
                                     </span>
                                 </Button>
                             </Col>
                             <Col className='col-auto'>
-                                <Button className='like-button'>
-                                    <span class="material-symbols-outlined">
+                                <Button className={likeCurrentCourse===2?'':'like-button-inactive'} onClick={()=>setLikeCurrentCourse(2)}>
+                                    <span className="material-symbols-outlined">
                                         thumb_down
                                     </span>
                                 </Button>
@@ -109,9 +130,23 @@ function CourseSelector(){
                         </Row>
                     </Container>
                     
-                    <Button className='done-button button' onClick={showNextCourse}>
-                        Done
-                    </Button>
+                    <Container className='ticks-container'>
+                        <Row>
+                            <Col>
+                                <Button className='button left-button' onClick={goBack}>
+                                    <span className="material-symbols-outlined arrow">
+                                        arrow_left
+                                    </span>
+                                </Button>
+                                <Button className='button right-button' onClick={showNextCourse}>
+                                    <span className="material-symbols-outlined arrow">
+                                        arrow_right
+                                    </span>
+                                </Button>
+                            </Col>
+                        </Row>
+                    </Container>
+                    
                 </>
             }
         </>
@@ -119,3 +154,13 @@ function CourseSelector(){
 }
 
 export default CourseSelector
+
+function makeOrdinal(number){
+    switch(number){
+        case 0: return '> 6th'
+        case 1: return '1st'
+        case 2: return '2nd'
+        case 3: return '3rd'
+        default: return number.toString()+'th'
+    }
+}
