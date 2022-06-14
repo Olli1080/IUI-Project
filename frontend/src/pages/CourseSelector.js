@@ -2,44 +2,101 @@ import React, {useState} from 'react'
 import './CourseSelector.css'
 import {Container, Row, Col, Button, Form, Dropdown, DropdownButton} from 'react-bootstrap'
 import {useNavigate} from 'react-router-dom'
+import {sendDataToBackend} from '../Utils'
+
+const userData=[]
 
 function CourseSelector(){
     const navigate = useNavigate();
+    const allCourses=require('../data/allCourses.json')
     const [currentCourse, setCurrentCourse]=useState(-1)
     const [semesterOfCurrentCourse, setSemesterOfCurrentCourse]=useState(-1) //-1: not set, 0: >6th
     const [likeCurrentCourse, setLikeCurrentCourse]=useState(-1) //-1: not set, 0: like, 1: neutral, 2: dislike
-    const ticked=useState([])[0]
-    const allCourses=require('../data/allCourses.json')
+    const [gradeOfCurrentCourse, setGradeOfCurrentCourse]=useState(-1)
+    const [errorMessage, setErrorMessage]=useState('')
+    const selectedCourses=useState(new Array(allCourses.length).fill(false))[0]
     const grades=['1.0', '1.3', '1.7', '2.0', '2.3', '2.7', '3.0', '3.3', '3.7', '4.0', '5.0']
     const showNextCourse=()=>{
-        if(currentCourse===ticked.length-1)
+        if(currentCourse!==-1 && (semesterOfCurrentCourse===-1 || likeCurrentCourse===-1 || gradeOfCurrentCourse===-1)){
+            setErrorMessage('Please fill in all the fields.')
+            return
+        }
+        if(currentCourse===-1){
+            let userDataToDelete=[]
+            userData.forEach((item, index)=>{
+                if(!selectedCourses[item.course])
+                    userDataToDelete.push(index)
+            })
+            userDataToDelete.forEach(index=>{
+                userData.splice(index, 1)
+            })
+        }
+        else
+            storeAndResetData()
+        if(currentCourse===selectedCourses.length-1){
             navigate('/recommendations')
-        for(let i=currentCourse+1; i<ticked.length; i++){
-            if(ticked[i]){
+            sendDataToBackend(userData)
+        }
+        for(let i=currentCourse+1; i<selectedCourses.length; i++){
+            if(selectedCourses[i]){
                 setCurrentCourse(i)
-                setSemesterOfCurrentCourse(-1)
+                restoreCourseData(i)
                 break
             }
-            if(i>=ticked.length-1)
+            if(i===selectedCourses.length-1){
                 navigate('/recommendations')
+                sendDataToBackend(userData)
+            }
         }
     }
     const goBack=()=>{
+        storeAndResetData()
+        if(currentCourse===0)
+            setCurrentCourse(-1)
         for(let i=currentCourse-1; i>=0; i--){
-            if(ticked[i]){
+            if(selectedCourses[i]){
                 setCurrentCourse(i)
-                setSemesterOfCurrentCourse(-1)
+                restoreCourseData(i)
                 break
             }
             if(i===0){
                 setCurrentCourse(-1)
-                setSemesterOfCurrentCourse(-1)
             }
         }
     }
-    if(currentCourse===-1){
-        for(let i=0; i<allCourses.length; i++)
-            ticked[i]=false
+    const storeAndResetData=()=>{
+        let found=false
+        userData.forEach((item, index)=>{
+            if(currentCourse===item.course){
+                userData[index]={
+                    "course":currentCourse,
+                    "semester":semesterOfCurrentCourse,
+                    "like":likeCurrentCourse,
+                    "grade":gradeOfCurrentCourse
+                }
+                found=true
+            }
+        })
+        if(!found)
+            userData.push({
+                "course":currentCourse,
+                "semester":semesterOfCurrentCourse,
+                "like":likeCurrentCourse,
+                "grade":gradeOfCurrentCourse
+            })
+        setSemesterOfCurrentCourse(-1)
+        setLikeCurrentCourse(-1)
+        setGradeOfCurrentCourse(-1)
+        setErrorMessage('')
+    }
+    const restoreCourseData=(course)=>{
+        userData.forEach(item=>{
+            if(course===item.course){
+                setSemesterOfCurrentCourse(item.semester)
+                setLikeCurrentCourse(item.like)
+                setGradeOfCurrentCourse(item.grade)
+            }
+        })
     }
     return(
         <>
@@ -61,7 +118,7 @@ function CourseSelector(){
                                     </Col>
                                     <Col className='col-2'>
                                         <Form>
-                                            <Form.Check className='toggle' type='switch' id='custom-switch' onChange={() => ticked[index]=!ticked[index]}/>
+                                            <Form.Check defaultChecked={selectedCourses[index]} className='toggle' type='switch' id='custom-switch' onChange={() => selectedCourses[index]=!selectedCourses[index]}/>
                                         </Form>
                                     </Col>
                                 </Row>
@@ -86,7 +143,7 @@ function CourseSelector(){
                         <Form>
                             {grades.map((grade, index) => {
                                 return(
-                                    <Form.Check key={index} inline name='group-1' type='radio' id='default-radio' label={grade}/>
+                                    <Form.Check checked={grade===gradeOfCurrentCourse} key={index} inline name='group-1' type='radio' id='default-radio' label={grade} onChange={()=>setGradeOfCurrentCourse(grade)}/>
                                 )
                             })}
                         </Form>
@@ -129,7 +186,6 @@ function CourseSelector(){
                             </Col>
                         </Row>
                     </Container>
-                    
                     <Container className='ticks-container'>
                         <Row>
                             <Col>
@@ -146,7 +202,9 @@ function CourseSelector(){
                             </Col>
                         </Row>
                     </Container>
-                    
+                    {errorMessage!=='' &&
+                        <p className='error'><span className="material-symbols-outlined error-icon">error</span>{errorMessage}</p>
+                    }
                 </>
             }
         </>

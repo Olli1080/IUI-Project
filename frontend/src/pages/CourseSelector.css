@@ -90,3 +90,16 @@ h2{
 .arrow{
     padding: 0px;
 }
+
+.error{
+    margin-left: 10vw;
+    font-size: 25px;
+    color: red;
+    font-weight: bold;
+}
+
+.error-icon{
+    position: relative;
+    top: 3px;
+    margin-right: 6px;
+}

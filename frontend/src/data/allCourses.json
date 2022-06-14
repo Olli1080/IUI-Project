@@ -1,6 +1,70 @@
 [
     {
-        "name":"Grundlagen der Modellierung",
+        "name":"Konzepte der Programmierung",
+        "lp":"8"
+    },
+    {
+        "name":"Rechnerarchitektur und Rechnernetze",
+        "lp":"8"
+    },
+    {
+        "name":"Algorithmen und Datenstrukturen I",
+        "lp":"8"
+    },
+    {
+        "name":"Betriebssysteme",
+        "lp":"5"
+    },
+    {
+        "name":"Theoretische Informatik I",
+        "lp":"8"
+    },
+    {
+        "name":"Parallele und Verteilte Systeme I",
+        "lp":"5"
+    },
+    {
+        "name":"Multimediale Systeme",
+        "lp":"5"
+    },
+    {
+        "name":"Datenbanken und Informationssysteme I",
+        "lp":"8"
+    },
+    {
+        "name":"Software Engineering",
+        "lp":"8"
+    },
+    {
+        "name":"Künstliche Intelligenz I",
+        "lp":"5"
+    },
+    {
+        "name":"Compilerbau",
+        "lp":"5"
+    },
+    {
+        "name":"Mensch-Computer-Interaktion I",
+        "lp":"5"
+    },
+    {
+        "name":"IT-Sicherheit",
+        "lp":"5"
+    },
+    {
+        "name":"Parallele und Verteilte Systeme II",
+        "lp":"5"
+    },
+    {
+        "name":"Computergraphik I",
+        "lp":"5"
+    },
+    {
+        "name":"Eingebettete Systeme",
+        "lp":"5"
+    },
+    {
+        "name":"Datenbanken und Informationssysteme II",
         "lp":"5"
     },
     {
@@ -8,19 +72,47 @@
         "lp":"8"
     },
     {
-        "name":"Compilerbau",
+        "name":"Robotik I",
         "lp":"5"
     },
     {
-        "name":"Mensch-Computer Interaktion I",
+        "name":"Computersehen",
+        "lp":"5"
+    },
+    {
+        "name":"Animation und Simulation",
+        "lp":"5"
+    },
+    {
+        "name":"Künstliche Intelligenz II",
+        "lp":"5"
+    },
+    {
+        "name":"Funktionale Programmierung",
+        "lp":"5"
+    },
+    {
+        "name":"Theoretische Informatik II",
+        "lp":"5"
+    },
+    {
+        "name":"Grundlagen der Modellierung",
+        "lp":"5"
+    },
+    {
+        "name":"Sicherheit in verteilten Systemen",
+        "lp":"5"
+    },
+    {
+        "name":"Fortgeschrittene Programmierkonzepte in C++",
+        "lp":"5"
+    },
+    {
+        "name":"Mensch-Computer-Interaktion II",
         "lp":"5"
     },
     {
         "name":"Programming, Data Analysis and Deep Learning in Python",
-        "lp":"5"
-    },
-    {
-        "name":"IT Sicherheit",
         "lp":"5"
     },
     {

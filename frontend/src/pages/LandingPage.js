@@ -2,11 +2,10 @@ import React from "react";
 import {Card, Container, Row, Button, Col} from 'react-bootstrap'
 import './LandingPage.css'
 import {useNavigate} from 'react-router-dom'
+import {sendDataToBackend} from '../Utils'
 
 function LandingPage(){
     const navigate = useNavigate();
-    //todo: send user data to backend
-    //eslint-disable-next-line
     let userData
     const hiddenFileInput = React.useRef(null)
     const handleClick = () => {
@@ -18,6 +17,7 @@ function LandingPage(){
         reader.onload = (e) => {
             const text = e.target.result
             userData=JSON.parse(text)
+            sendDataToBackend(userData)
         };
         reader.readAsText(e.target.files[0])
         navigate('/recommendations')
