@@ -4,7 +4,7 @@ import {Container, Row, Col, Button, Form, Dropdown, DropdownButton} from 'react
 import {useNavigate} from 'react-router-dom'
 import {sendDataToBackend} from '../Utils'
 
-const userData=[]
+export const userData=[]
 
 function CourseSelector(){
     const navigate = useNavigate();

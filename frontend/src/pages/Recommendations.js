@@ -1,7 +1,10 @@
 import './Recommendations.css'
+import {userData} from './CourseSelector'
 import {Container, Row, Col, Card, Button} from 'react-bootstrap'
 
 function Recommendations(){
+    console.log('hallo')
+    console.log(userData)
     let recommendations=require('../data/recommendations.json')
     let allCourses=require('../data/allCourses.json')
     return(
