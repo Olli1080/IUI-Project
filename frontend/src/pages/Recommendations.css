@@ -10,7 +10,7 @@ h1{
     padding-bottom: 30px;
     padding-left: 10px;
     padding-right: 10px;
-    height: 17vh;
+    height: 150px;
     margin-bottom: 5px;
     background-color: white;
     text-align: center;
@@ -20,15 +20,22 @@ h1{
 
 .module-name{
     background: transparent;
-    font-size: 1.5vw;
+    font-size: 23px;
+    position: relative;
+    bottom: 10px;
 }
 
 .lp{
     text-align: end;
     margin-right: 0.5vw;
     background: transparent;
-    font-size: 1vw;
+    font-size: 16px;
     font-weight: bolder;
+}
+
+.recommendations-container{
+    margin-left: 10vw !important;
+    width: 80% !important;
 }
 
 .home-button{

@@ -1,3 +1,4 @@
+import React, { useEffect, useState } from 'react'
 import './Recommendations.css'
 import { Container, Row, Col, Card, Button } from 'react-bootstrap'
 import { useLocation } from 'react-router-dom'
@@ -8,6 +9,24 @@ function Recommendations() {
     const {state} = useLocation();
     const {user_data, recommendations} = state;
 
+    const[col, setCol]=useState(3)
+
+    useEffect(() => {
+        updateDimensions()
+        window.addEventListener('resize', updateDimensions);
+    })
+
+    const updateDimensions=() => {
+        if(window.innerWidth>=1320)
+            setCol(3)
+        else if(window.innerWidth>=946)
+            setCol(4)
+        else if(window.innerWidth>=637)
+            setCol(6)
+        else
+            setCol(12)
+    }
+
     const exportData = () => {
         const jsonString = `data:text/json;chatset=utf-8,${encodeURIComponent(
           JSON.stringify(user_data)
@@ -16,8 +35,8 @@ function Recommendations() {
         link.href = jsonString;
         link.download = "user_data.json";
         link.click();
-    };
-
+    }
+    console.log(window.innerWidth)
     return (
         <>
             <Container fluid className='top-button-row'>
@@ -37,11 +56,12 @@ function Recommendations() {
                 </Row>
             </Container>
             <h1>Recommendations for you</h1>
-            <Container fluid className='container'>
+            <Container fluid className='recommendations-container'>
                 <Row>
                     {recommendations.map((item, index) => {
                         return (
-                            <Col key={index} className='col-3'>
+                            <Col key={index} className={'col-'+col.toString()}>
+                                {console.log(col.toString())}
                                 <Card className='course-card'>
                                     <p className="lp">{item.lp} LP</p>
                                     <p className='module-name'>{item.name}</p>
@@ -52,11 +72,11 @@ function Recommendations() {
                 </Row>
             </Container>
             <h1>All Courses</h1>
-            <Container fluid className='container'>
+            <Container fluid className='recommendations-container'>
                 <Row>
                     {allCourses.map((item, index) => {
                         return (
-                            <Col key={index} className='col-3'>
+                            <Col key={index} className={'col-'+col.toString()}>
                                 <Card className='course-card'>
                                     <p className="lp">{item.lp} LP</p>
                                     <p className='module-name'>{item.name}</p>
