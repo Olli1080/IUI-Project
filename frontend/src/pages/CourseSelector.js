@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom'
 import { sendDataToBackend } from '../Utils'
 import Loading from './Loading'
 
-export const userData=[]
+const userData=[]
 
 function CourseSelector() {
     const navigate = useNavigate();

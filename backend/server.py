@@ -18,7 +18,7 @@ class Recommendations(Resource):
     def put(self):
         # Do something with user data
         print(request.json)
-        with open('../frontend/src/data/recommendations.json') as test_data:
+        with open('./recommendations/recommendations.json') as test_data:
             test_recommendations = json.load(test_data)
         time.sleep(5)
         return test_recommendations

@@ -3,12 +3,10 @@ import { Container, Row, Col, Card, Button } from 'react-bootstrap'
 import { useLocation } from 'react-router-dom'
 
 function Recommendations() {
-    //let recommendations = require('../data/recommendations.json')
     let allCourses = require('../data/allCourses.json')
     // Gets user data from previous page
     const {state} = useLocation();
     const {user_data, recommendations} = state;
-
 
     const exportData = () => {
         const jsonString = `data:text/json;chatset=utf-8,${encodeURIComponent(
