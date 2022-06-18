@@ -4,7 +4,7 @@ import { Container, Row, Col, Card, Button } from 'react-bootstrap'
 import { useLocation } from 'react-router-dom'
 
 function Recommendations() {
-    let allCourses = require('../data/allCourses.json')
+    const allCourses = require('../data/allCourses.json')
     // Gets user data from previous page
     const {state} = useLocation();
     const {user_data, recommendations} = state;
@@ -58,7 +58,11 @@ function Recommendations() {
             <h1>Recommendations for you</h1>
             <Container fluid className='recommendations-container'>
                 <Row>
-                    {recommendations.map((item, index) => {
+                    {recommendations.map(({course, score}, index) => {
+                        const item = allCourses.find(({key}) => {
+                            return key === course
+                        })
+
                         return (
                             <Col key={index} className={'col-'+col.toString()}>
                                 {console.log(col.toString())}

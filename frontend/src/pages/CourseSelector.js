@@ -84,7 +84,7 @@ function CourseSelector() {
         userData.forEach((item, index) => {
             if (currentCourse === item.course) {
                 userData[index] = {
-                    "course": currentCourse,
+                    "course": allCourses[currentCourse].key,
                     "semester": semesterOfCurrentCourse,
                     "like": likeCurrentCourse,
                     "grade": gradeOfCurrentCourse
@@ -92,13 +92,15 @@ function CourseSelector() {
                 found = true
             }
         })
-        if (!found)
+        if (!found){
             userData.push({
-                "course": currentCourse,
+                "course": allCourses[currentCourse].key,
                 "semester": semesterOfCurrentCourse,
                 "like": likeCurrentCourse,
                 "grade": gradeOfCurrentCourse
             })
+            console.log(currentCourse)
+        }
         setSemesterOfCurrentCourse(-1)
         setLikeCurrentCourse(-1)
         setGradeOfCurrentCourse(-1)

@@ -1,0 +1,711 @@
+VAR,RESPONSE,MEANING
+MD01x01,1,nicht gewählt
+MD01x01,2,ausgewählt
+MD01x02,1,nicht gewählt
+MD01x02,2,ausgewählt
+MD01x03,1,nicht gewählt
+MD01x03,2,ausgewählt
+MD01x04,1,nicht gewählt
+MD01x04,2,ausgewählt
+MD01x05,1,nicht gewählt
+MD01x05,2,ausgewählt
+MD01x06,1,nicht gewählt
+MD01x06,2,ausgewählt
+MD01x07,1,nicht gewählt
+MD01x07,2,ausgewählt
+MD01x08,1,nicht gewählt
+MD01x08,2,ausgewählt
+MD01x09,1,nicht gewählt
+MD01x09,2,ausgewählt
+MD01x10,1,nicht gewählt
+MD01x10,2,ausgewählt
+MD01x11,1,nicht gewählt
+MD01x11,2,ausgewählt
+MD01x12,1,nicht gewählt
+MD01x12,2,ausgewählt
+MD01x13,1,nicht gewählt
+MD01x13,2,ausgewählt
+MD01x14,1,nicht gewählt
+MD01x14,2,ausgewählt
+MD01x15,1,nicht gewählt
+MD01x15,2,ausgewählt
+MD01x16,1,nicht gewählt
+MD01x16,2,ausgewählt
+MD01x17,1,nicht gewählt
+MD01x17,2,ausgewählt
+MD01x18,1,nicht gewählt
+MD01x18,2,ausgewählt
+MD01x19,1,nicht gewählt
+MD01x19,2,ausgewählt
+MD01x20,1,nicht gewählt
+MD01x20,2,ausgewählt
+MD01x21,1,nicht gewählt
+MD01x21,2,ausgewählt
+MD01x22,1,nicht gewählt
+MD01x22,2,ausgewählt
+MD01x23,1,nicht gewählt
+MD01x23,2,ausgewählt
+MD01x24,1,nicht gewählt
+MD01x24,2,ausgewählt
+MD01x25,1,nicht gewählt
+MD01x25,2,ausgewählt
+MD01x26,1,nicht gewählt
+MD01x26,2,ausgewählt
+MD01x27,1,nicht gewählt
+MD01x27,2,ausgewählt
+MD01x28,1,nicht gewählt
+MD01x28,2,ausgewählt
+MD01x29,1,nicht gewählt
+MD01x29,2,ausgewählt
+MD01x30,1,nicht gewählt
+MD01x30,2,ausgewählt
+MD01x31,1,nicht gewählt
+MD01x31,2,ausgewählt
+KP01_01,1,10
+KP01_01,2,13
+KP01_01,3,17
+KP01_01,4,20
+KP01_01,5,23
+KP01_01,6,27
+KP01_01,7,30
+KP01_01,8,33
+KP01_01,9,37
+KP01_01,10,40
+KP01_01,11,50
+KP01_01,-9,nicht beantwortet
+KP02,1,1
+KP02,2,2
+KP02,3,3
+KP02,4,4
+KP02,5,5
+KP02,6,6 oder mehr
+KP02,-9,nicht beantwortet
+KP03,1,Nein
+KP03,2,Neutral
+KP03,3,Ja
+KP03,-9,nicht beantwortet
+RR01_01,1,10
+RR01_01,2,13
+RR01_01,3,17
+RR01_01,4,20
+RR01_01,5,23
+RR01_01,6,27
+RR01_01,7,30
+RR01_01,8,33
+RR01_01,9,37
+RR01_01,10,40
+RR01_01,11,50
+RR01_01,-9,nicht beantwortet
+RR02,1,1
+RR02,2,2
+RR02,3,3
+RR02,4,4
+RR02,5,5
+RR02,6,6 oder mehr
+RR02,-9,nicht beantwortet
+RR03,1,Nein
+RR03,2,Neutral
+RR03,3,Ja
+RR03,-9,nicht beantwortet
+AI01_01,1,10
+AI01_01,2,13
+AI01_01,3,17
+AI01_01,4,20
+AI01_01,5,23
+AI01_01,6,27
+AI01_01,7,30
+AI01_01,8,33
+AI01_01,9,37
+AI01_01,10,40
+AI01_01,11,50
+AI01_01,-9,nicht beantwortet
+AI02,1,1
+AI02,2,2
+AI02,3,3
+AI02,4,4
+AI02,5,5
+AI02,6,6 oder mehr
+AI02,-9,nicht beantwortet
+AI03,1,Nein
+AI03,2,Neutral
+AI03,3,Ja
+AI03,-9,nicht beantwortet
+A201_01,1,10
+A201_01,2,13
+A201_01,3,17
+A201_01,4,20
+A201_01,5,23
+A201_01,6,27
+A201_01,7,30
+A201_01,8,33
+A201_01,9,37
+A201_01,10,40
+A201_01,11,50
+A201_01,-9,nicht beantwortet
+A202,1,1
+A202,2,2
+A202,3,3
+A202,4,4
+A202,5,5
+A202,6,6 oder mehr
+A202,-9,nicht beantwortet
+A203,1,Nein
+A203,2,Neutral
+A203,3,Ja
+A203,-9,nicht beantwortet
+BS01_01,1,10
+BS01_01,2,13
+BS01_01,3,17
+BS01_01,4,20
+BS01_01,5,23
+BS01_01,6,27
+BS01_01,7,30
+BS01_01,8,33
+BS01_01,9,37
+BS01_01,10,40
+BS01_01,11,50
+BS01_01,-9,nicht beantwortet
+BS02,1,1
+BS02,2,2
+BS02,3,3
+BS02,4,4
+BS02,5,5
+BS02,6,6 oder mehr
+BS02,-9,nicht beantwortet
+BS03,1,Nein
+BS03,2,Neutral
+BS03,3,Ja
+BS03,-9,nicht beantwortet
+TI01_01,1,10
+TI01_01,2,13
+TI01_01,3,17
+TI01_01,4,20
+TI01_01,5,23
+TI01_01,6,27
+TI01_01,7,30
+TI01_01,8,33
+TI01_01,9,37
+TI01_01,10,40
+TI01_01,11,50
+TI01_01,-9,nicht beantwortet
+TI02,1,1
+TI02,2,2
+TI02,3,3
+TI02,4,4
+TI02,5,5
+TI02,6,6 oder mehr
+TI02,-9,nicht beantwortet
+TI03,1,Nein
+TI03,2,Neutral
+TI03,3,Ja
+TI03,-9,nicht beantwortet
+PV01_01,1,10
+PV01_01,2,13
+PV01_01,3,17
+PV01_01,4,20
+PV01_01,5,23
+PV01_01,6,27
+PV01_01,7,30
+PV01_01,8,33
+PV01_01,9,37
+PV01_01,10,40
+PV01_01,11,50
+PV01_01,-9,nicht beantwortet
+PV02,1,1
+PV02,2,2
+PV02,3,3
+PV02,4,4
+PV02,5,5
+PV02,6,6 oder mehr
+PV02,-9,nicht beantwortet
+PV03,1,Nein
+PV03,2,Neutral
+PV03,3,Ja
+PV03,-9,nicht beantwortet
+P201_01,1,10
+P201_01,2,13
+P201_01,3,17
+P201_01,4,20
+P201_01,5,23
+P201_01,6,27
+P201_01,7,30
+P201_01,8,33
+P201_01,9,37
+P201_01,10,40
+P201_01,11,50
+P201_01,-9,nicht beantwortet
+P202,1,1
+P202,2,2
+P202,3,3
+P202,4,4
+P202,5,5
+P202,6,6 oder mehr
+P202,-9,nicht beantwortet
+P203,1,Nein
+P203,2,Neutral
+P203,3,Ja
+P203,-9,nicht beantwortet
+MM01_01,1,10
+MM01_01,2,13
+MM01_01,3,17
+MM01_01,4,20
+MM01_01,5,23
+MM01_01,6,27
+MM01_01,7,30
+MM01_01,8,33
+MM01_01,9,37
+MM01_01,10,40
+MM01_01,11,50
+MM01_01,-9,nicht beantwortet
+MM02,1,1
+MM02,2,2
+MM02,3,3
+MM02,4,4
+MM02,5,5
+MM02,6,6 oder mehr
+MM02,-9,nicht beantwortet
+MM03,1,Nein
+MM03,2,Neutral
+MM03,3,Ja
+MM03,-9,nicht beantwortet
+DS01_01,1,10
+DS01_01,2,13
+DS01_01,3,17
+DS01_01,4,20
+DS01_01,5,23
+DS01_01,6,27
+DS01_01,7,30
+DS01_01,8,33
+DS01_01,9,37
+DS01_01,10,40
+DS01_01,11,50
+DS01_01,-9,nicht beantwortet
+DS02,1,1
+DS02,2,2
+DS02,3,3
+DS02,4,4
+DS02,5,5
+DS02,6,6 oder mehr
+DS02,-9,nicht beantwortet
+DS03,1,Nein
+DS03,2,Neutral
+DS03,3,Ja
+DS03,-9,nicht beantwortet
+D201_01,1,10
+D201_01,2,13
+D201_01,3,17
+D201_01,4,20
+D201_01,5,23
+D201_01,6,27
+D201_01,7,30
+D201_01,8,33
+D201_01,9,37
+D201_01,10,40
+D201_01,11,50
+D201_01,-9,nicht beantwortet
+D202,1,1
+D202,2,2
+D202,3,3
+D202,4,4
+D202,5,5
+D202,6,6 oder mehr
+D202,-9,nicht beantwortet
+D203,1,Nein
+D203,2,Neutral
+D203,3,Ja
+D203,-9,nicht beantwortet
+SE01_01,1,10
+SE01_01,2,13
+SE01_01,3,17
+SE01_01,4,20
+SE01_01,5,23
+SE01_01,6,27
+SE01_01,7,30
+SE01_01,8,33
+SE01_01,9,37
+SE01_01,10,40
+SE01_01,11,50
+SE01_01,-9,nicht beantwortet
+SE02,1,1
+SE02,2,2
+SE02,3,3
+SE02,4,4
+SE02,5,5
+SE02,6,6 oder mehr
+SE02,-9,nicht beantwortet
+SE03,1,Nein
+SE03,2,Neutral
+SE03,3,Ja
+SE03,-9,nicht beantwortet
+CB01_01,1,10
+CB01_01,2,13
+CB01_01,3,17
+CB01_01,4,20
+CB01_01,5,23
+CB01_01,6,27
+CB01_01,7,30
+CB01_01,8,33
+CB01_01,9,37
+CB01_01,10,40
+CB01_01,11,50
+CB01_01,-9,nicht beantwortet
+CB02,1,1
+CB02,2,2
+CB02,3,3
+CB02,4,4
+CB02,5,5
+CB02,6,6 oder mehr
+CB02,-9,nicht beantwortet
+CB03,1,Nein
+CB03,2,Neutral
+CB03,3,Ja
+CB03,-9,nicht beantwortet
+HC01_01,1,10
+HC01_01,2,13
+HC01_01,3,17
+HC01_01,4,20
+HC01_01,5,23
+HC01_01,6,27
+HC01_01,7,30
+HC01_01,8,33
+HC01_01,9,37
+HC01_01,10,40
+HC01_01,11,50
+HC01_01,-9,nicht beantwortet
+HC02,1,1
+HC02,2,2
+HC02,3,3
+HC02,4,4
+HC02,5,5
+HC02,6,6 oder mehr
+HC02,-9,nicht beantwortet
+HC03,1,Nein
+HC03,2,Neutral
+HC03,3,Ja
+HC03,-9,nicht beantwortet
+H201_01,1,10
+H201_01,2,13
+H201_01,3,17
+H201_01,4,20
+H201_01,5,23
+H201_01,6,27
+H201_01,7,30
+H201_01,8,33
+H201_01,9,37
+H201_01,10,40
+H201_01,11,50
+H201_01,-9,nicht beantwortet
+H202,1,1
+H202,2,2
+H202,3,3
+H202,4,4
+H202,5,5
+H202,6,6 oder mehr
+H202,-9,nicht beantwortet
+H203,1,Nein
+H203,2,Neutral
+H203,3,Ja
+H203,-9,nicht beantwortet
+IT01_01,1,10
+IT01_01,2,13
+IT01_01,3,17
+IT01_01,4,20
+IT01_01,5,23
+IT01_01,6,27
+IT01_01,7,30
+IT01_01,8,33
+IT01_01,9,37
+IT01_01,10,40
+IT01_01,11,50
+IT01_01,-9,nicht beantwortet
+IT02,1,1
+IT02,2,2
+IT02,3,3
+IT02,4,4
+IT02,5,5
+IT02,6,6 oder mehr
+IT02,-9,nicht beantwortet
+IT03,1,Nein
+IT03,2,Neutral
+IT03,3,Ja
+IT03,-9,nicht beantwortet
+CG01_01,1,10
+CG01_01,2,13
+CG01_01,3,17
+CG01_01,4,20
+CG01_01,5,23
+CG01_01,6,27
+CG01_01,7,30
+CG01_01,8,33
+CG01_01,9,37
+CG01_01,10,40
+CG01_01,11,50
+CG01_01,-9,nicht beantwortet
+CG02,1,1
+CG02,2,2
+CG02,3,3
+CG02,4,4
+CG02,5,5
+CG02,6,6 oder mehr
+CG02,-9,nicht beantwortet
+CG03,1,Nein
+CG03,2,Neutral
+CG03,3,Ja
+CG03,-9,nicht beantwortet
+ES01_01,1,10
+ES01_01,2,13
+ES01_01,3,17
+ES01_01,4,20
+ES01_01,5,23
+ES01_01,6,27
+ES01_01,7,30
+ES01_01,8,33
+ES01_01,9,37
+ES01_01,10,40
+ES01_01,11,50
+ES01_01,-9,nicht beantwortet
+ES02,1,1
+ES02,2,2
+ES02,3,3
+ES02,4,4
+ES02,5,5
+ES02,6,6 oder mehr
+ES02,-9,nicht beantwortet
+ES03,1,Nein
+ES03,2,Neutral
+ES03,3,Ja
+ES03,-9,nicht beantwortet
+RI01_01,1,10
+RI01_01,2,13
+RI01_01,3,17
+RI01_01,4,20
+RI01_01,5,23
+RI01_01,6,27
+RI01_01,7,30
+RI01_01,8,33
+RI01_01,9,37
+RI01_01,10,40
+RI01_01,11,50
+RI01_01,-9,nicht beantwortet
+RI02,1,1
+RI02,2,2
+RI02,3,3
+RI02,4,4
+RI02,5,5
+RI02,6,6 oder mehr
+RI02,-9,nicht beantwortet
+RI03,1,Nein
+RI03,2,Neutral
+RI03,3,Ja
+RI03,-9,nicht beantwortet
+CS01_01,1,10
+CS01_01,2,13
+CS01_01,3,17
+CS01_01,4,20
+CS01_01,5,23
+CS01_01,6,27
+CS01_01,7,30
+CS01_01,8,33
+CS01_01,9,37
+CS01_01,10,40
+CS01_01,11,50
+CS01_01,-9,nicht beantwortet
+CS02,1,1
+CS02,2,2
+CS02,3,3
+CS02,4,4
+CS02,5,5
+CS02,6,6 oder mehr
+CS02,-9,nicht beantwortet
+CS03,1,Nein
+CS03,2,Neutral
+CS03,3,Ja
+CS03,-9,nicht beantwortet
+GD01_01,1,10
+GD01_01,2,13
+GD01_01,3,17
+GD01_01,4,20
+GD01_01,5,23
+GD01_01,6,27
+GD01_01,7,30
+GD01_01,8,33
+GD01_01,9,37
+GD01_01,10,40
+GD01_01,11,50
+GD01_01,-9,nicht beantwortet
+GD02,1,1
+GD02,2,2
+GD02,3,3
+GD02,4,4
+GD02,5,5
+GD02,6,6 oder mehr
+GD02,-9,nicht beantwortet
+GD03,1,Nein
+GD03,2,Neutral
+GD03,3,Ja
+GD03,-9,nicht beantwortet
+FP01_01,1,10
+FP01_01,2,13
+FP01_01,3,17
+FP01_01,4,20
+FP01_01,5,23
+FP01_01,6,27
+FP01_01,7,30
+FP01_01,8,33
+FP01_01,9,37
+FP01_01,10,40
+FP01_01,11,50
+FP01_01,-9,nicht beantwortet
+FP02,1,1
+FP02,2,2
+FP02,3,3
+FP02,4,4
+FP02,5,5
+FP02,6,6 oder mehr
+FP02,-9,nicht beantwortet
+FP03,1,Nein
+FP03,2,Neutral
+FP03,3,Ja
+FP03,-9,nicht beantwortet
+DL01_01,1,10
+DL01_01,2,13
+DL01_01,3,17
+DL01_01,4,20
+DL01_01,5,23
+DL01_01,6,27
+DL01_01,7,30
+DL01_01,8,33
+DL01_01,9,37
+DL01_01,10,40
+DL01_01,11,50
+DL01_01,-9,nicht beantwortet
+DL02,1,1
+DL02,2,2
+DL02,3,3
+DL02,4,4
+DL02,5,5
+DL02,6,6 oder mehr
+DL02,-9,nicht beantwortet
+DL03,1,Nein
+DL03,2,Neutral
+DL03,3,Ja
+DL03,-9,nicht beantwortet
+PR01_01,1,10
+PR01_01,2,13
+PR01_01,3,17
+PR01_01,4,20
+PR01_01,5,23
+PR01_01,6,27
+PR01_01,7,30
+PR01_01,8,33
+PR01_01,9,37
+PR01_01,10,40
+PR01_01,11,50
+PR01_01,-9,nicht beantwortet
+PR02,1,1
+PR02,2,2
+PR02,3,3
+PR02,4,4
+PR02,5,5
+PR02,6,6 oder mehr
+PR02,-9,nicht beantwortet
+PR03,1,Nein
+PR03,2,Neutral
+PR03,3,Ja
+PR03,-9,nicht beantwortet
+BP01_01,1,10
+BP01_01,2,13
+BP01_01,3,17
+BP01_01,4,20
+BP01_01,5,23
+BP01_01,6,27
+BP01_01,7,30
+BP01_01,8,33
+BP01_01,9,37
+BP01_01,10,40
+BP01_01,11,50
+BP01_01,-9,nicht beantwortet
+BP02,1,1
+BP02,2,2
+BP02,3,3
+BP02,4,4
+BP02,5,5
+BP02,6,6 oder mehr
+BP02,-9,nicht beantwortet
+BP03,1,Nein
+BP03,2,Neutral
+BP03,3,Ja
+BP03,-9,nicht beantwortet
+SR01_01,1,10
+SR01_01,2,13
+SR01_01,3,17
+SR01_01,4,20
+SR01_01,5,23
+SR01_01,6,27
+SR01_01,7,30
+SR01_01,8,33
+SR01_01,9,37
+SR01_01,10,40
+SR01_01,11,50
+SR01_01,-9,nicht beantwortet
+SR02,1,1
+SR02,2,2
+SR02,3,3
+SR02,4,4
+SR02,5,5
+SR02,6,6 oder mehr
+SR02,-9,nicht beantwortet
+SR03,1,Nein
+SR03,2,Neutral
+SR03,3,Ja
+SR03,-9,nicht beantwortet
+BA01_01,1,10
+BA01_01,2,13
+BA01_01,3,17
+BA01_01,4,20
+BA01_01,5,23
+BA01_01,6,27
+BA01_01,7,30
+BA01_01,8,33
+BA01_01,9,37
+BA01_01,10,40
+BA01_01,11,50
+BA01_01,-9,nicht beantwortet
+BA02,1,1
+BA02,2,2
+BA02,3,3
+BA02,4,4
+BA02,5,5
+BA02,6,6 oder mehr
+BA02,-9,nicht beantwortet
+BA03,1,Nein
+BA03,2,Neutral
+BA03,3,Ja
+BA03,-9,nicht beantwortet
+K101_01,1,10
+K101_01,2,13
+K101_01,3,17
+K101_01,4,20
+K101_01,5,23
+K101_01,6,27
+K101_01,7,30
+K101_01,8,33
+K101_01,9,37
+K101_01,10,40
+K101_01,11,50
+K101_01,-9,nicht beantwortet
+K102,1,1
+K102,2,2
+K102,3,3
+K102,4,4
+K102,5,5
+K102,6,6 oder mehr
+K102,-9,nicht beantwortet
+K103,1,Nein
+K103,2,Neutral
+K103,3,Ja
+K103,-9,nicht beantwortet
+FINISHED,0,abgebrochen
+FINISHED,1,ausgefüllt
+Q_VIEWER,0,Teilnehmer
+Q_VIEWER,1,Durchklicker
