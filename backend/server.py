@@ -151,6 +151,12 @@ class Recommendations(Resource):
         # Do something with user data
         #print(request.json)
         recs = classifier([process_input(request.json)])
+        
+        #print(list(map(lambda x: x["course"], list(filter(lambda x: x["grade"] != "5.0", request.json)))))
+
+        #filter out passed modules
+        recs = recs.drop(list(map(lambda x: x["course"], list(filter(lambda x: x["grade"] != "5.0", request.json)))))
+
         out = process_output(recs)
         #print(out)
 
