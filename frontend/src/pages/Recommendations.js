@@ -36,7 +36,6 @@ function Recommendations() {
         link.download = "user_data.json";
         link.click();
     }
-    console.log(window.innerWidth)
     return (
         <>
             <Container fluid className='top-button-row'>
@@ -62,10 +61,8 @@ function Recommendations() {
                         const item = allCourses.find(({key}) => {
                             return key === course
                         })
-
                         return (
                             <Col key={index} className={'col-'+col.toString()}>
-                                {console.log(col.toString())}
                                 <Card className='course-card'>
                                     <p className="lp">{item.lp} LP</p>
                                     <p className='module-name'>{item.name}</p>

@@ -22,7 +22,6 @@ function LandingPage(){
             setIsLoading(true);
             sendDataToBackend(userData).then((recs) => {
                 setIsLoading(false);
-                console.log(recs);
                 navigate('/recommendations', { state: { user_data: userData, recommendations: recs } });
             }
             ).catch((err) => { console.log(err); })
