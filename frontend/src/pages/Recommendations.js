@@ -64,7 +64,16 @@ function Recommendations() {
                         return (
                             <Col key={index} className={'col-'+col.toString()}>
                                 <Card className='course-card'>
-                                    <p className="lp">{item.lp} LP</p>
+                                    <Container className='top-row-container'>
+                                        <Row className='top-row'>
+                                            <Col className='col-6'>
+                                                <p style={getScoreStyle(score)} className='score'>{(Math.floor(score*100)).toString()+'%'}</p>
+                                            </Col>
+                                            <Col className='col-6'>
+                                                <p className="lp">{item.lp} LP</p>
+                                            </Col>
+                                        </Row>
+                                    </Container>
                                     <p className='module-name'>{item.name}</p>
                                 </Card>
                             </Col>
@@ -89,6 +98,14 @@ function Recommendations() {
             </Container>
         </>
     )
+}
+
+function getScoreStyle(score){
+    if(score>=0.8)
+        return {color: 'green'}
+    if(score>=0.5)
+        return {color: 'orange'}
+    return {color: 'red'}
 }
 
 export default Recommendations

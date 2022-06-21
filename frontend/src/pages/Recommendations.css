@@ -18,11 +18,33 @@ h1{
     border-radius: 10px;
 }
 
+.top-row-container{
+    background: transparent;
+    padding: 0 !important;
+    margin: 0;
+}
+
+.top-row{
+    background: transparent;
+}
+
+.col{
+    background: transparent;
+}
+
 .module-name{
     background: transparent;
     font-size: 23px;
     position: relative;
     bottom: 10px;
+}
+
+.score{
+    text-align: start;
+    margin-left: 0.5vw;
+    background: transparent;
+    font-size: 16px;
+    font-weight: bolder;
 }
 
 .lp{
