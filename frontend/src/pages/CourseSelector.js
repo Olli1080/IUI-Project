@@ -10,7 +10,7 @@ const userData=[]
 function CourseSelector() {
     const navigate = useNavigate();
     const allCourses = require('../data/allCourses.json')
-    const [currentCourse, setCurrentCourse] = useState(-1)
+    const [currentCourseIndex, setCurrentCourseIndex] = useState(-1)
     const [semesterOfCurrentCourse, setSemesterOfCurrentCourse] = useState(-1) //-1: not set, 0: >6th
     const [likeCurrentCourse, setLikeCurrentCourse] = useState(-1) //-1: not set, 0: like, 1: neutral, 2: dislike
     const [gradeOfCurrentCourse, setGradeOfCurrentCourse] = useState(-1)
@@ -21,14 +21,15 @@ function CourseSelector() {
     const selectedCourses = useState(new Array(allCourses.length).fill(false))[0]
     const grades = ['1.0', '1.3', '1.7', '2.0', '2.3', '2.7', '3.0', '3.3', '3.7', '4.0', '5.0']
     const showNextCourse = () => {
-        if (currentCourse !== -1 && (semesterOfCurrentCourse === -1 || likeCurrentCourse === -1 || gradeOfCurrentCourse === -1)) {
+        if (currentCourseIndex !== -1 && (semesterOfCurrentCourse === -1 || likeCurrentCourse === -1 || gradeOfCurrentCourse === -1)) {
             setErrorMessage('Please fill in all the fields.')
             return
         }
-        if (currentCourse === -1) {
+        if (currentCourseIndex === -1) {
             let userDataToDelete = []
             userData.forEach((item, index) => {
-                if (!selectedCourses[item.course])
+                const courseIndex=getIndexByKey(item.course, allCourses)
+                if (!selectedCourses[courseIndex])
                     userDataToDelete.push(index)
             })
             userDataToDelete.forEach(index => {
@@ -37,18 +38,18 @@ function CourseSelector() {
         }
         else
             storeAndResetData()
-        if (currentCourse === selectedCourses.length - 1) {
+        if (currentCourseIndex === selectedCourses.length - 1) {
             setIsLoading(true);
             sendDataToBackend(userData).then((recs) => {
                 setIsLoading(false);
                 console.log(recs);
                 navigate('/recommendations', { state: { user_data: userData, recommendations: recs } });
             }
-            ).catch((err) => { console.log(err); })
+            ).catch((err) => { console.err(err); })
         }
-        for (let i = currentCourse + 1; i < selectedCourses.length; i++) {
+        for (let i = currentCourseIndex + 1; i < selectedCourses.length; i++) {
             if (selectedCourses[i]) {
-                setCurrentCourse(i)
+                setCurrentCourseIndex(i)
                 restoreCourseData(i)
                 break
             }
@@ -59,32 +60,31 @@ function CourseSelector() {
                     console.log(recs);
                     navigate('/recommendations', { state: { user_data: userData, recommendations: recs } });
                 }
-                ).catch((err) => { console.log(err); })
-
+                ).catch((err) => { console.err(err); })
             }
         }
     }
     const goBack = () => {
         storeAndResetData()
-        if (currentCourse === 0)
-            setCurrentCourse(-1)
-        for (let i = currentCourse - 1; i >= 0; i--) {
+        if (currentCourseIndex === 0)
+            setCurrentCourseIndex(-1)
+        for (let i = currentCourseIndex - 1; i >= 0; i--) {
             if (selectedCourses[i]) {
-                setCurrentCourse(i)
+                setCurrentCourseIndex(i)
                 restoreCourseData(i)
                 break
             }
             if (i === 0) {
-                setCurrentCourse(-1)
+                setCurrentCourseIndex(-1)
             }
         }
     }
     const storeAndResetData = () => {
         let found = false
         userData.forEach((item, index) => {
-            if (currentCourse === item.course) {
+            if (allCourses[currentCourseIndex].key === item.course) {
                 userData[index] = {
-                    "course": allCourses[currentCourse].key,
+                    "course": allCourses[currentCourseIndex].key,
                     "semester": semesterOfCurrentCourse,
                     "like": likeCurrentCourse,
                     "grade": gradeOfCurrentCourse
@@ -94,21 +94,20 @@ function CourseSelector() {
         })
         if (!found){
             userData.push({
-                "course": allCourses[currentCourse].key,
+                "course": allCourses[currentCourseIndex].key,
                 "semester": semesterOfCurrentCourse,
                 "like": likeCurrentCourse,
                 "grade": gradeOfCurrentCourse
             })
-            console.log(currentCourse)
         }
         setSemesterOfCurrentCourse(-1)
         setLikeCurrentCourse(-1)
         setGradeOfCurrentCourse(-1)
         setErrorMessage('')
     }
-    const restoreCourseData = (course) => {
+    const restoreCourseData = (courseIndex) => {
         userData.forEach(item => {
-            if (course === item.course) {
+            if (allCourses[courseIndex].key === item.course) {
                 setSemesterOfCurrentCourse(item.semester)
                 setLikeCurrentCourse(item.like)
                 setGradeOfCurrentCourse(item.grade)
@@ -122,7 +121,7 @@ function CourseSelector() {
                     <i className="fa-solid fa-house"></i>
                 </Button>
             </a>
-            {currentCourse === -1 &&
+            {currentCourseIndex === -1 &&
                 <>
                     <h1>First let's get to know you...</h1>
                     <h2>Which courses have you visited?</h2>
@@ -152,9 +151,9 @@ function CourseSelector() {
                     </Container>
                 </>
             }
-            {currentCourse !== -1 &&
+            {currentCourseIndex !== -1 &&
                 <>
-                    <h1>Questions regarding {allCourses[currentCourse].name}</h1>
+                    <h1>Questions regarding {allCourses[currentCourseIndex].name}</h1>
                     <h2>Which grade did you receive?</h2>
                     <Container className='form-container'>
                         <Form>
@@ -240,4 +239,13 @@ function makeOrdinal(number) {
         case 3: return '3rd'
         default: return number.toString() + 'th'
     }
+}
+
+function getIndexByKey(key, allCourses){
+    let res
+    allCourses.forEach((course, index)=>{
+        if(course.key===key)
+            res=index
+    })
+    return res
 }
