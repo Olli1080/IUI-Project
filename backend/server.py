@@ -155,7 +155,8 @@ class Recommendations(Resource):
         #print(list(map(lambda x: x["course"], list(filter(lambda x: x["grade"] != "5.0", request.json)))))
 
         #filter out passed modules
-        recs = recs.drop(list(map(lambda x: x["course"], list(filter(lambda x: x["grade"] != "5.0", request.json)))))
+        dropper = set(recs.index.to_list()).intersection(list(map(lambda x: x["course"], list(filter(lambda x: x["grade"] != "5.0", request.json)))))
+        recs = recs.drop(dropper)
 
         out = process_output(recs)
         #print(out)
