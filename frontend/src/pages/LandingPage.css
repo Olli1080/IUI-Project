@@ -19,7 +19,7 @@ h1{
 }
 
 .card-col{
-    background-color: white;
+    background-color: white !important;
 }
 
 .container{
