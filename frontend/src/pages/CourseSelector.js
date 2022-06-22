@@ -114,6 +114,19 @@ function CourseSelector() {
             }
         })
     }
+    const isLastCourse=()=>{
+        if (currentCourseIndex === selectedCourses.length - 1) {
+            return true
+        }
+        for (let i = currentCourseIndex + 1; i < selectedCourses.length; i++) {
+            if (selectedCourses[i]) {
+                return false
+            }
+            if (i === selectedCourses.length - 1) {
+                return true
+            }
+        }
+    }
     return (
         <> {isLoading === false && <>
             <a href='/'>
@@ -128,7 +141,7 @@ function CourseSelector() {
                     <Container className='ticks-container'>
                         {allCourses.map((item, index) => {
                             return (
-                                <Row style={{ marginBottom: '10px' }} key={index}>
+                                <Row className='ticks-row' key={index}>
                                     <Col className='col-10'>
                                         {item.name}
                                     </Col>
@@ -202,7 +215,7 @@ function CourseSelector() {
                             </Col>
                         </Row>
                     </Container>
-                    <Container className='ticks-container'>
+                    <Container className='bottom-buttons-container'>
                         <Row>
                             <Col>
                                 <Button className='button left-button' onClick={goBack}>
@@ -210,12 +223,21 @@ function CourseSelector() {
                                         arrow_left
                                     </span>
                                 </Button>
-                                <Button className='button right-button' onClick={showNextCourse}>
-                                    <span className="material-symbols-outlined arrow">
-                                        arrow_right
-                                    </span>
-                                </Button>
+                                {!isLastCourse() &&
+                                    <Button className='button right-button' onClick={showNextCourse}>
+                                        <span className="material-symbols-outlined arrow">
+                                            arrow_right
+                                        </span>
+                                    </Button>
+                                }
                             </Col>
+                            {isLastCourse() &&
+                                <Col>
+                                    <Button className='button finish-button' onClick={showNextCourse}>
+                                        Finish
+                                    </Button>
+                                </Col>
+                            }
                         </Row>
                     </Container>
                     {errorMessage !== '' &&
