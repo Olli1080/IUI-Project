@@ -3,7 +3,6 @@ import './Recommendations.css'
 import { Container, Row, Col, Card, Button } from 'react-bootstrap'
 import { useLocation } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom'
-import Breadcrumb from 'react-bootstrap/Breadcrumb'
 
 function Recommendations() {
     const allCourses = require('../data/allCourses.json')
@@ -111,6 +110,7 @@ function Recommendations() {
                                     </Card>
                                 </Col>
                             )
+                        else return null
                     })}
                 </Row>
             </Container>
@@ -130,6 +130,7 @@ function Recommendations() {
                                     </Card>
                                 </Col>
                             )
+                        else return null
                     })}
                 </Row>
             </Container>
@@ -149,6 +150,7 @@ function Recommendations() {
                                     </Card>
                                 </Col>
                             )
+                        else return null
                     })}
                 </Row>
             </Container>
