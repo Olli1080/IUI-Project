@@ -4,10 +4,11 @@ import { Container, Row, Col, Button, Form, Dropdown, DropdownButton } from 'rea
 import { useNavigate } from 'react-router-dom'
 import { sendDataToBackend } from '../Utils'
 import Loading from './Loading'
-
-const userData=[]
+import { useLocation } from 'react-router-dom'
 
 function CourseSelector() {
+    const {state} = useLocation();
+    const {userData}=state
     const navigate = useNavigate();
     const allCourses = require('../data/allCourses.json')
     const [currentCourseIndex, setCurrentCourseIndex] = useState(-1)
@@ -20,6 +21,11 @@ function CourseSelector() {
 
     const selectedCourses = useState(new Array(allCourses.length).fill(false))[0]
     const grades = ['1.0', '1.3', '1.7', '2.0', '2.3', '2.7', '3.0', '3.3', '3.7', '4.0', '5.0']
+
+    userData.forEach(userDataItem => {
+        selectedCourses[getIndexByKey(userDataItem.course, allCourses)]=true
+    })
+
     const showNextCourse = () => {
         if (currentCourseIndex !== -1 && (semesterOfCurrentCourse === -1 || likeCurrentCourse === -1 || gradeOfCurrentCourse === -1)) {
             setErrorMessage('Please fill in all the fields.')
@@ -32,8 +38,10 @@ function CourseSelector() {
                 if (!selectedCourses[courseIndex])
                     userDataToDelete.push(index)
             })
+            let offset=0
             userDataToDelete.forEach(index => {
-                userData.splice(index, 1)
+                userData.splice(index-offset, 1)
+                offset++
             })
         }
         else
@@ -129,11 +137,17 @@ function CourseSelector() {
     }
     return (
         <> {isLoading === false && <>
-            <a href='/'>
-                <Button className='home-button button'>
-                    <i className="fa-solid fa-house"></i>
-                </Button>
-            </a>
+        <Container fluid className='top-button-row'>
+                <Row>
+                    <Col>
+                        <a href='/'>
+                            <Button className='home-button-recommendations button'>
+                                <i className="fa-solid fa-house"></i>
+                            </Button>
+                        </a>
+                    </Col>
+                </Row>
+            </Container>
             {currentCourseIndex === -1 &&
                 <>
                     <h1>First let's get to know you...</h1>

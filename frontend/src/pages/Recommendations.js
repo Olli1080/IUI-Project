@@ -2,9 +2,11 @@ import React, { useEffect, useState } from 'react'
 import './Recommendations.css'
 import { Container, Row, Col, Card, Button } from 'react-bootstrap'
 import { useLocation } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 
 function Recommendations() {
     const allCourses = require('../data/allCourses.json')
+    const navigate = useNavigate();
     // Gets user data from previous page
     const {state} = useLocation();
     const {user_data, recommendations} = state;
@@ -46,6 +48,13 @@ function Recommendations() {
                                 <i className="fa-solid fa-house"></i>
                             </Button>
                         </a>
+                    </Col>
+                    <Col style={{textAlign:'center'}}>
+                        <Button className='home-button-recommendations button' onClick={()=>{
+                            navigate('/course-selector', { state: { userData: user_data } });
+                        }}>
+                            <i className="fa-solid fa-file-pen"></i>
+                        </Button>
                     </Col>
                     <Col>
                         <Button className='home-button-recommendations button float-end' onClick={exportData}>

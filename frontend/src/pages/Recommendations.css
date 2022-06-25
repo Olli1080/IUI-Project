@@ -60,15 +60,6 @@ h1{
     width: 80% !important;
 }
 
-.home-button{
-    padding: 8px;
-    font-size: 20px;
-    cursor: pointer;
-    border-radius: 7px;
-    margin-top: 50px;
-    margin-left: 10vw;
-    margin-right: 10vw;
-}
 
 .home-button-recommendations{
     font-size: 20px;
@@ -76,20 +67,7 @@ h1{
     border-radius: 7px;
 }
 
-.home-button:hover{
-    background-color: blueviolet;
-}
-
-.home-button:active{
-    box-shadow: 0px 0px 1px 3px rgb(165, 115, 211);
-}
-
-.fa-house{
-    color:whitesmoke;
-    background: transparent;
-}
-
-.fa-file-export{
+.fa-solid{
     color:whitesmoke;
     background: transparent;
 }

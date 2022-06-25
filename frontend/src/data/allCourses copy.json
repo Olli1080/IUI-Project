@@ -1,0 +1,20 @@
+[
+    {
+        "key": "KP",
+        "name":"Konzepte der Programmierung",
+        "lp":8,
+        "semesters":["WS"],
+        "sws":5,
+        "languages":["de"],
+        "learning-goals":"Lorem ipsum dolor sit amet",
+        "content":"blablalbf",
+        "type":"mandatory",
+        "duration":1
+    },
+    {
+        "type":"practical"
+    },
+    {
+        "type":"optional"
+    }
+]
