@@ -3,6 +3,7 @@ import './Recommendations.css'
 import { Container, Row, Col, Card, Button } from 'react-bootstrap'
 import { useLocation } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom'
+import Breadcrumb from 'react-bootstrap/Breadcrumb'
 
 function Recommendations() {
     const allCourses = require('../data/allCourses.json')
@@ -63,7 +64,7 @@ function Recommendations() {
                     </Col>
                 </Row>
             </Container>
-            <h1>Recommendations for you</h1>
+            <h1 className='recommendations-h1'>Recommendations for you</h1>
             <Container fluid className='recommendations-container'>
                 <Row>
                     {recommendations.map(({course, score}, index) => {
@@ -84,24 +85,70 @@ function Recommendations() {
                                         </Row>
                                     </Container>
                                     <p className='module-name'>{item.name}</p>
+                                    <Card className='semester-card'>
+                                        <p key={index} className='semester'>{item.semester}</p>
+                                    </Card>
                                 </Card>
                             </Col>
                         )
                     })}
                 </Row>
             </Container>
-            <h1>All Courses</h1>
+            <h1 className='recommendations-h1'>All Courses</h1>
+            <h2 className='recommendations-h2'>Mandatory Courses</h2>
             <Container fluid className='recommendations-container'>
                 <Row>
                     {allCourses.map((item, index) => {
-                        return (
-                            <Col key={index} className={'col-'+col.toString()}>
-                                <Card className='course-card'>
-                                    <p className="lp">{item.lp} LP</p>
-                                    <p className='module-name'>{item.name}</p>
-                                </Card>
-                            </Col>
-                        )
+                        if(item.type==='mandatory')
+                            return (
+                                <Col key={index} className={'col-'+col.toString()}>
+                                    <Card className='course-card'>
+                                        <p className="lp">{item.lp} LP</p>
+                                        <p className='module-name'>{item.name}</p>
+                                        <Card className='semester-card'>
+                                            <p key={index} className='semester'>{item.semester}</p>
+                                        </Card>
+                                    </Card>
+                                </Col>
+                            )
+                    })}
+                </Row>
+            </Container>
+            <h2 className='recommendations-h2'>Optional Courses</h2>
+            <Container fluid className='recommendations-container'>
+                <Row>
+                    {allCourses.map((item, index) => {
+                        if(item.type==='optional')
+                            return (
+                                <Col key={index} className={'col-'+col.toString()}>
+                                    <Card className='course-card'>
+                                        <p className="lp">{item.lp} LP</p>
+                                        <p className='module-name'>{item.name}</p>
+                                        <Card className='semester-card'>
+                                            <p key={index} className='semester'>{item.semester}</p>
+                                        </Card>
+                                    </Card>
+                                </Col>
+                            )
+                    })}
+                </Row>
+            </Container>
+            <h2 className='recommendations-h2'>Practical Courses</h2>
+            <Container fluid className='recommendations-container'>
+                <Row>
+                    {allCourses.map((item, index) => {
+                        if(item.type==='practical')
+                            return (
+                                <Col key={index} className={'col-'+col.toString()}>
+                                    <Card className='course-card'>
+                                        <p className="lp">{item.lp} LP</p>
+                                        <p className='module-name'>{item.name}</p>
+                                        <Card className='semester-card'>
+                                            <p key={index} className='semester'>{item.semester}</p>
+                                        </Card>
+                                    </Card>
+                                </Col>
+                            )
                     })}
                 </Row>
             </Container>

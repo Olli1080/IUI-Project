@@ -1,7 +1,13 @@
 h1{
     margin-top: 50px;
-    margin-left: 10vw;
-    margin-right: 10vw;
+    margin-left: 5vw;
+    margin-right: 5vw;
+}
+
+h2{
+    margin-left: 5vw;
+    margin-right: 5vw;
+    font-weight: lighter;
 }
 
 .course-card{
@@ -10,7 +16,7 @@ h1{
     padding-bottom: 30px;
     padding-left: 10px;
     padding-right: 10px;
-    height: 150px;
+    height: 190px;
     margin-bottom: 5px;
     background-color: white;
     text-align: center;
@@ -56,8 +62,8 @@ h1{
 }
 
 .recommendations-container{
-    margin-left: 10vw !important;
-    width: 80% !important;
+    margin-left: 5vw !important;
+    width: 90% !important;
 }
 
 
@@ -74,4 +80,27 @@ h1{
 
 .top-button-row {
     margin-top: 10px;
+}
+
+.recommendations-h1{
+    border-bottom: 2px solid #5e2b97;
+}
+
+.recommendations-h2{
+    border-bottom: 2px solid #aaaaaa;
+    margin-top: 20px;
+}
+
+.semester-card{
+    border: 1px solid #5e2b97;
+    border-radius: 20px;
+    width: 150px;
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+}
+
+.semester{
+    border-radius: 20px;
+    margin-bottom: 0px;
 }
