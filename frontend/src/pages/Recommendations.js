@@ -111,7 +111,7 @@ function Recommendations() {
                         const item = allCourses.find(({key}) => {
                             return key === course
                         })
-                        if(semesterFilter==='Winter' && item.semester==='Summer Semester' || semesterFilter==='Summer' && item.semester==='Winter Semester' || courseTypeFilter!=='All' && courseTypeFilter!==item.type)
+                        if((semesterFilter==='Winter' && item.semester==='Summer Semester') || (semesterFilter==='Summer' && item.semester==='Winter Semester') || (courseTypeFilter!=='All' && courseTypeFilter!==item.type))
                             return null
                         return (
                             <Col key={index} className={'col-'+col.toString()}>
@@ -155,7 +155,7 @@ function Recommendations() {
                     <Container fluid className='recommendations-container'>
                         <Row>
                             {allCourses.map((item, index) => {
-                                if(item.type==='Mandatory' && (semesterFilter==='All' || item.semester==='Every Semester' || semesterFilter==='Summer' && item.semester==='Summer Semester' || semesterFilter==='Winter' && item.semester==='Winter Semester'))
+                                if(item.type==='Mandatory' && (semesterFilter==='All' || item.semester==='Every Semester' || (semesterFilter==='Summer' && item.semester==='Summer Semester') || (semesterFilter==='Winter' && item.semester==='Winter Semester')))
                                     return (
                                         <Col key={index} className={'col-'+col.toString()}>
                                             <Card className='course-card'>
@@ -179,7 +179,7 @@ function Recommendations() {
                     <Container fluid className='recommendations-container'>
                         <Row>
                             {allCourses.map((item, index) => {
-                                if(item.type==='Optional' && (semesterFilter==='All' || item.semester==='Every Semester' || semesterFilter==='Summer' && item.semester==='Summer Semester' || semesterFilter==='Winter' && item.semester==='Winter Semester'))
+                                if(item.type==='Optional' && (semesterFilter==='All' || item.semester==='Every Semester' || (semesterFilter==='Summer' && item.semester==='Summer Semester') || (semesterFilter==='Winter' && item.semester==='Winter Semester')))
                                     return (
                                         <Col key={index} className={'col-'+col.toString()}>
                                             <Card className='course-card'>
@@ -203,7 +203,7 @@ function Recommendations() {
                     <Container fluid className='recommendations-container'>
                         <Row>
                             {allCourses.map((item, index) => {
-                                if(item.type==='Practical' && (semesterFilter==='All' || item.semester==='Every Semester' || semesterFilter==='Summer' && item.semester==='Summer Semester' || semesterFilter==='Winter' && item.semester==='Winter Semester'))
+                                if(item.type==='Practical' && (semesterFilter==='All' || item.semester==='Every Semester' || (semesterFilter==='Summer' && item.semester==='Summer Semester') || (semesterFilter==='Winter' && item.semester==='Winter Semester')))
                                     return (
                                         <Col key={index} className={'col-'+col.toString()}>
                                             <Card className='course-card'>
