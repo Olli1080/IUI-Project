@@ -4,7 +4,7 @@
     padding-bottom: 30px;
     padding-left: 10px;
     padding-right: 10px;
-    height: 190px;
+    height: 220px;
     margin-bottom: 5px;
     background-color: white;
     text-align: center;
@@ -96,4 +96,18 @@
 .semester{
     border-radius: 20px;
     margin-bottom: 0px;
+}
+
+.fa-triangle-exclamation{
+    color: #dac44d;
+    margin-right: 5px;
+}
+
+.semester-warning{
+    font-size: 14px;
+    position: absolute;
+    left: 20px;
+    bottom: 35px;
+    background: transparent;
+    color: #dac44d;
 }

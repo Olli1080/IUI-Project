@@ -19,11 +19,11 @@ function Recommendations() {
     })
 
     const updateDimensions=() => {
-        if(window.innerWidth>=1320)
+        if(window.innerWidth>=1330)
             setCol(3)
-        else if(window.innerWidth>=946)
+        else if(window.innerWidth>=1002)
             setCol(4)
-        else if(window.innerWidth>=637)
+        else if(window.innerWidth>=674)
             setCol(6)
         else
             setCol(12)
@@ -38,6 +38,26 @@ function Recommendations() {
         link.download = "user_data.json";
         link.click();
     }
+
+    const getMinimumSemesterOfCourse=(courseKey)=>{
+        const course = allCourses.find(({key}) => {
+            return key === courseKey
+        })
+        let minSemester=100
+        course.regular_semester.forEach((regSem)=>{
+            let regSemInt=parseInt(regSem)
+            if(regSemInt<minSemester)
+                minSemester=regSemInt
+        })
+        return minSemester
+    }
+
+    let currentSemester=1
+    user_data.forEach(item => {
+        if(item.semester>=currentSemester)
+            currentSemester=item.semester+1
+    })
+
     return (
         <>
             <Container fluid className='top-button-row'>
@@ -87,6 +107,12 @@ function Recommendations() {
                                     <Card className='semester-card'>
                                         <p key={index} className='semester'>{item.semester}</p>
                                     </Card>
+                                    {getMinimumSemesterOfCourse(course)>currentSemester &&
+                                        <p className='semester-warning'>
+                                            <i className="fa-solid fa-triangle-exclamation"/>
+                                            This course may be too early for you.
+                                        </p>
+                                    }
                                 </Card>
                             </Col>
                         )
