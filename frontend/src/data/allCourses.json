@@ -3,7 +3,7 @@
         "name": "Bachelor-Arbeit",
         "key":"BA",
         "lp":15,
-        "type":"practical",
+        "type":"Practical",
         "semester": "Every Semester",
         "languages": [
             "de",
@@ -20,7 +20,7 @@
         "name": "Bachelor-Seminar",
         "key":"SR",
         "lp":5,
-        "type":"practical",
+        "type":"Practical",
         "semester": "Every Semester",
         "languages": [
             "de"
@@ -37,7 +37,7 @@
         "name": "Bachelor-Praktikum",
         "key":"BP",
         "lp":6,
-        "type":"practical",
+        "type":"Practical",
         "semester": "Every Semester",
         "languages": [
             "de"
@@ -54,7 +54,7 @@
         "name": "Bachelor-Projekt",
         "key":"PR",
         "lp":8,
-        "type":"practical",
+        "type":"Practical",
         "semester": "Winter Semester",
         "languages": [
             "de"
@@ -71,7 +71,7 @@
         "name": "Konzepte der Programmierung",
         "key":"KP",
         "lp":8,
-        "type":"mandatory",
+        "type":"Mandatory",
         "semester": "Winter Semester",
         "languages": [
             "de"
@@ -88,7 +88,7 @@
         "name": "Rechnerarchitektur und Rechnernetze",
         "key":"RR",
         "lp":8,
-        "type":"mandatory",
+        "type":"Mandatory",
         "semester": "Winter Semester",
         "languages": [
             "de"
@@ -105,7 +105,7 @@
         "name": "Algorithmen und Datenstrukturen I",
         "key":"AI",
         "lp":8,
-        "type":"mandatory",
+        "type":"Mandatory",
         "semester": "Summer Semester",
         "languages": [],
         "learning-goals": "Die Studenten sollen lernen, Daten zu strukturieren und dynamisch zu repr\u00e4sentieren. Wichtig ist hierbei die enge Verkn\u00fcpfung dieser Datenstrukturen und der hierauf angewandten Algorithmen. Ein weiteres Ziel ist die Vermittlung von Kenntnissen zur Komplexit\u00e4tsanalyse von Algorithmen (methodische Kompetenz). In der Fragestunde k\u00f6nnen Lehrinhalte beim Dozenten spezifisch nachgefragt und individuell nachgearbeitet werden.Sie dient der individuellen F\u00f6rderung.",
@@ -120,7 +120,7 @@
         "name": "Betriebssysteme",
         "key":"BS",
         "lp":5,
-        "type":"mandatory",
+        "type":"Mandatory",
         "semester": "Winter Semester",
         "languages": [
             "de"
@@ -137,7 +137,7 @@
         "name": "Theoretische Informatik I",
         "key":"TI",
         "lp":8,
-        "type":"mandatory",
+        "type":"Mandatory",
         "semester": "Summer Semester",
         "languages": [
             "de"
@@ -154,7 +154,7 @@
         "name": "Parallele und Verteilte Systeme I",
         "key":"PV",
         "lp":5,
-        "type":"mandatory",
+        "type":"Mandatory",
         "semester": "Winter Semester",
         "languages": [
             "de"
@@ -171,7 +171,7 @@
         "name": "Multimediale Systeme I",
         "key":"MM",
         "lp":5,
-        "type":"optional",
+        "type":"Optional",
         "semester": "Summer Semester",
         "languages": [
             "de"
@@ -187,7 +187,7 @@
         "name": "Datenbanken und Informationssysteme I",
         "key":"DS",
         "lp":8,
-        "type":"mandatory",
+        "type":"Mandatory",
         "semester": "Summer Semester",
         "languages": [
             "de"
@@ -204,7 +204,7 @@
         "name": "Software Engineering I",
         "key":"SE",
         "lp":8,
-        "type":"mandatory",
+        "type":"Mandatory",
         "semester": "Summer Semester",
         "languages": [
             "de"
@@ -221,7 +221,7 @@
         "name": "K\u00fcnstliche Intelligenz I",
         "key":"K1",
         "lp":5,
-        "type":"optional",
+        "type":"Optional",
         "semester": "Winter Semester",
         "languages": [
             "de"
@@ -237,7 +237,7 @@
         "name": "Compilerbau",
         "key":"CB",
         "lp":5,
-        "type":"mandatory",
+        "type":"Mandatory",
         "semester": "Winter Semester",
         "languages": [
             "de"
@@ -254,7 +254,7 @@
         "name": "Mensch-Computer-Interaktion I",
         "key":"HC",
         "lp":5,
-        "type":"optional",
+        "type":"Optional",
         "semester": "Summer Semester",
         "languages": [
             "de"
@@ -270,7 +270,7 @@
         "name": "IT-Sicherheit",
         "key":"IT",
         "lp":5,
-        "type":"optional",
+        "type":"Optional",
         "semester": "Summer Semester",
         "languages": [
             "de"
@@ -286,7 +286,7 @@
         "name": "Parallele und Verteilte Systeme II",
         "key":"P2",
         "lp":5,
-        "type":"optional",
+        "type":"Optional",
         "semester": "Summer Semester",
         "languages": [
             "de"
@@ -302,7 +302,7 @@
         "name": "Computergraphik I",
         "key":"CG",
         "lp":5,
-        "type":"optional",
+        "type":"Optional",
         "semester": "Summer Semester",
         "languages": [
             "de",
@@ -319,7 +319,7 @@
         "name": "Eingebettete Systeme",
         "key":"ES",
         "lp":5,
-        "type":"optional",
+        "type":"Optional",
         "semester": "Summer Semester",
         "languages": [
             "de"
@@ -335,7 +335,7 @@
         "name": "Datenbanken und Informationssysteme II",
         "key":"D2",
         "lp":5,
-        "type":"optional",
+        "type":"Optional",
         "semester": "Winter Semester",
         "languages": [
             "de"
@@ -351,7 +351,7 @@
         "name": "Algorithmen und Datenstrukturen II",
         "key":"A2",
         "lp":8,
-        "type":"optional",
+        "type":"Optional",
         "semester": "Winter Semester",
         "languages": [
             "de"
@@ -367,7 +367,7 @@
         "name": "Robotik I",
         "key":"RI",
         "lp":5,
-        "type":"optional",
+        "type":"Optional",
         "semester": "Winter Semester",
         "languages": [
             "de"
@@ -383,7 +383,7 @@
         "name": "Computersehen",
         "key":"CS",
         "lp":5,
-        "type":"optional",
+        "type":"Optional",
         "semester": "Summer Semester",
         "languages": [
             "de"
@@ -399,7 +399,7 @@
         "name": "Animation und Simulation",
         "key":"AS",
         "lp":5,
-        "type":"optional",
+        "type":"Optional",
         "semester": "Winter Semester",
         "languages": [
             "de",
@@ -416,7 +416,7 @@
         "name": "K\u00fcnstliche Intelligenz II",
         "key":"KI",
         "lp":5,
-        "type":"optional",
+        "type":"Optional",
         "semester": "Summer Semester",
         "languages": [
             "de"
@@ -432,7 +432,7 @@
         "name": "Funktionale Programmierung",
         "key":"FK",
         "lp":5,
-        "type":"optional",
+        "type":"Optional",
         "semester": "Winter Semester",
         "languages": [
             "de"
@@ -448,7 +448,7 @@
         "name": "Theoretische Informatik II",
         "key":"T2",
         "lp":5,
-        "type":"optional",
+        "type":"Optional",
         "semester": "Winter Semester",
         "languages": [],
         "learning-goals": "Die Studenten sollen tiefere Kenntnisse in den Bereiche Logik und Komplexit\u00e4tstheorie erwerben und die vermittelten Verkn\u00fcpfungen zwischen den beiden Gebietenverstehen. Sie sollen das vermittelte Material reproduzieren und erkl\u00e4ren k\u00f6nnen. Sie sollen in der Lage sein, die Kenntnisse aus der Vorlesung in \u00dcbungen anzuwenden. The students should obtain deeper knowledge in the areas of logic and computational complexity; and should understand the treated connections between these areas. They should be able to reproduce and explain the course material. They should be able to apply their knowledge from the lecture in exercises.",
@@ -462,7 +462,7 @@
         "name": "Grundlagen der Modellierung",
         "key":"GD",
         "lp":5,
-        "type":"optional",
+        "type":"Optional",
         "semester": "Every Semester",
         "languages": [
             "de",
@@ -479,7 +479,7 @@
         "name": "Sicherheit in verteilten Systemen",
         "key":"SV",
         "lp":5,
-        "type":"optional",
+        "type":"Optional",
         "semester": "Summer Semester",
         "languages": [
             "de"
@@ -495,7 +495,7 @@
         "name": "Fortgeschrittene Programmierkonzepte in C++",
         "key":"FP",
         "lp":5,
-        "type":"optional",
+        "type":"Optional",
         "semester": "Winter Semester",
         "languages": [
             "de"
@@ -511,7 +511,7 @@
         "name": "Mensch-Computer-Interaktion II",
         "key":"H2",
         "lp":5,
-        "type":"optional",
+        "type":"Optional",
         "semester": "Winter Semester",
         "languages": [
             "de",
@@ -528,7 +528,7 @@
         "name": "Programming, Data Analysis and Deep Learning in Python",
         "key":"DL",
         "lp":5,
-        "type":"optional",
+        "type":"Optional",
         "semester": "Winter Semester",
         "languages": [
             "en"
@@ -544,7 +544,7 @@
         "name": "Intelligent User Interfaces",
         "key":"IU",
         "lp":5,
-        "type":"optional",
+        "type":"Optional",
         "semester": "Summer Semester",
         "languages": [
             "en"

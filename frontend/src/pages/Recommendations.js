@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import './Recommendations.css'
-import { Container, Row, Col, Card, Button } from 'react-bootstrap'
+import { Container, Row, Col, Card, Button, Dropdown, DropdownButton } from 'react-bootstrap'
 import { useLocation } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom'
 
@@ -12,6 +12,8 @@ function Recommendations() {
     const {user_data, recommendations} = state;
 
     const[col, setCol]=useState(3)
+    const[semesterFilter, setSemesterFilter]=useState('All')
+    const[courseTypeFilter, setCourseTypeFilter]=useState('All')
 
     useEffect(() => {
         updateDimensions()
@@ -83,6 +85,25 @@ function Recommendations() {
                     </Col>
                 </Row>
             </Container>
+            <Container fluid className='recommendations-container'>
+                <Row className='filter-dropdown-row'>
+                    <Col className='col-auto'>
+                        <DropdownButton className='filter-dropdown' id="dropdown-basic-button" title={'Semester: '+semesterFilter}>
+                            <Dropdown.Item onClick={()=>{setSemesterFilter('Winter')}}>Winter Semester</Dropdown.Item>
+                            <Dropdown.Item onClick={()=>{setSemesterFilter('Summer')}}>Summer Semester</Dropdown.Item>
+                            <Dropdown.Item onClick={()=>{setSemesterFilter('All')}}>All</Dropdown.Item>
+                        </DropdownButton>
+                    </Col>
+                    <Col className='col-auto'>
+                        <DropdownButton className='filter-dropdown' id="dropdown-basic-button" title={'Course Type: '+courseTypeFilter}>
+                            <Dropdown.Item onClick={()=>{setCourseTypeFilter('Mandatory')}}>Mandatory</Dropdown.Item>
+                            <Dropdown.Item onClick={()=>{setCourseTypeFilter('Optional')}}>Optional</Dropdown.Item>
+                            <Dropdown.Item onClick={()=>{setCourseTypeFilter('Practical')}}>Practical</Dropdown.Item>
+                            <Dropdown.Item onClick={()=>{setCourseTypeFilter('All')}}>All</Dropdown.Item>
+                        </DropdownButton>
+                    </Col>
+                </Row>
+            </Container>
             <h1 className='recommendations-h1'>Recommendations for you</h1>
             <Container fluid className='recommendations-container'>
                 <Row>
@@ -90,6 +111,8 @@ function Recommendations() {
                         const item = allCourses.find(({key}) => {
                             return key === course
                         })
+                        if(semesterFilter==='Winter' && item.semester==='Summer Semester' || semesterFilter==='Summer' && item.semester==='Winter Semester' || courseTypeFilter!=='All' && courseTypeFilter!==item.type)
+                            return null
                         return (
                             <Col key={index} className={'col-'+col.toString()}>
                                 <Card className='course-card'>
@@ -125,67 +148,80 @@ function Recommendations() {
                     })}
                 </Row>
             </Container>
-            <h1 className='recommendations-h1'>All Courses</h1>
-            <h2 className='recommendations-h2'>Mandatory Courses</h2>
-            <Container fluid className='recommendations-container'>
-                <Row>
-                    {allCourses.map((item, index) => {
-                        if(item.type==='mandatory')
-                            return (
-                                <Col key={index} className={'col-'+col.toString()}>
-                                    <Card className='course-card'>
-                                        <p className="lp">{item.lp} LP</p>
-                                        <p className='module-name'>{item.name}</p>
-                                        <Card className='semester-card'>
-                                            <p key={index} className='semester'>{item.semester}</p>
-                                        </Card>
-                                    </Card>
-                                </Col>
-                            )
-                        else return null
-                    })}
-                </Row>
-            </Container>
-            <h2 className='recommendations-h2'>Optional Courses</h2>
-            <Container fluid className='recommendations-container'>
-                <Row>
-                    {allCourses.map((item, index) => {
-                        if(item.type==='optional')
-                            return (
-                                <Col key={index} className={'col-'+col.toString()}>
-                                    <Card className='course-card'>
-                                        <p className="lp">{item.lp} LP</p>
-                                        <p className='module-name'>{item.name}</p>
-                                        <Card className='semester-card'>
-                                            <p key={index} className='semester'>{item.semester}</p>
-                                        </Card>
-                                    </Card>
-                                </Col>
-                            )
-                        else return null
-                    })}
-                </Row>
-            </Container>
-            <h2 className='recommendations-h2'>Practical Courses</h2>
-            <Container fluid className='recommendations-container'>
-                <Row>
-                    {allCourses.map((item, index) => {
-                        if(item.type==='practical')
-                            return (
-                                <Col key={index} className={'col-'+col.toString()}>
-                                    <Card className='course-card'>
-                                        <p className="lp">{item.lp} LP</p>
-                                        <p className='module-name'>{item.name}</p>
-                                        <Card className='semester-card'>
-                                            <p key={index} className='semester'>{item.semester}</p>
-                                        </Card>
-                                    </Card>
-                                </Col>
-                            )
-                        else return null
-                    })}
-                </Row>
-            </Container>
+            <h1 className='recommendations-h1 all-courses'>All Courses</h1>
+            {(courseTypeFilter==='All' || courseTypeFilter==='Mandatory') &&
+                <>
+                    <h2 className='recommendations-h2'>Mandatory Courses</h2>
+                    <Container fluid className='recommendations-container'>
+                        <Row>
+                            {allCourses.map((item, index) => {
+                                if(item.type==='Mandatory' && (semesterFilter==='All' || item.semester==='Every Semester' || semesterFilter==='Summer' && item.semester==='Summer Semester' || semesterFilter==='Winter' && item.semester==='Winter Semester'))
+                                    return (
+                                        <Col key={index} className={'col-'+col.toString()}>
+                                            <Card className='course-card'>
+                                                <p className="lp">{item.lp} LP</p>
+                                                <p className='module-name'>{item.name}</p>
+                                                <Card className='semester-card'>
+                                                    <p key={index} className='semester'>{item.semester}</p>
+                                                </Card>
+                                            </Card>
+                                        </Col>
+                                    )
+                                else return null
+                            })}
+                        </Row>
+                    </Container>
+                </>
+            }
+            {(courseTypeFilter==='All' || courseTypeFilter==='Optional') && 
+                <>
+                    <h2 className='recommendations-h2'>Optional Courses</h2>
+                    <Container fluid className='recommendations-container'>
+                        <Row>
+                            {allCourses.map((item, index) => {
+                                if(item.type==='Optional' && (semesterFilter==='All' || item.semester==='Every Semester' || semesterFilter==='Summer' && item.semester==='Summer Semester' || semesterFilter==='Winter' && item.semester==='Winter Semester'))
+                                    return (
+                                        <Col key={index} className={'col-'+col.toString()}>
+                                            <Card className='course-card'>
+                                                <p className="lp">{item.lp} LP</p>
+                                                <p className='module-name'>{item.name}</p>
+                                                <Card className='semester-card'>
+                                                    <p key={index} className='semester'>{item.semester}</p>
+                                                </Card>
+                                            </Card>
+                                        </Col>
+                                    )
+                                else return null
+                            })}
+                        </Row>
+                    </Container>
+                </>
+            }
+            {(courseTypeFilter==='All' || courseTypeFilter==='Practical') &&
+                <>
+                    <h2 className='recommendations-h2'>Practical Courses</h2>
+                    <Container fluid className='recommendations-container'>
+                        <Row>
+                            {allCourses.map((item, index) => {
+                                if(item.type==='Practical' && (semesterFilter==='All' || item.semester==='Every Semester' || semesterFilter==='Summer' && item.semester==='Summer Semester' || semesterFilter==='Winter' && item.semester==='Winter Semester'))
+                                    return (
+                                        <Col key={index} className={'col-'+col.toString()}>
+                                            <Card className='course-card'>
+                                                <p className="lp">{item.lp} LP</p>
+                                                <p className='module-name'>{item.name}</p>
+                                                <Card className='semester-card'>
+                                                    <p key={index} className='semester'>{item.semester}</p>
+                                                </Card>
+                                            </Card>
+                                        </Col>
+                                    )
+                                else return null
+                            })}
+                        </Row>
+                    </Container>
+                </>
+            }
+            
         </>
     )
 }

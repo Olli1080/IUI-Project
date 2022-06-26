@@ -72,9 +72,13 @@
 
 .recommendations-h1{
     border-bottom: 2px solid #5e2b97;
-    margin-top: 50px !important;
+    margin-top: 0px;
     margin-left: 5vw;
     margin-right: 5vw;
+}
+
+.all-courses{
+    margin-top: 50px !important;
 }
 
 .recommendations-h2{
@@ -125,4 +129,12 @@
     position: absolute;
     left: 20px;
     bottom: 55px;
+}
+
+.filter-dropdown{
+    float: right;
+}
+
+.filter-dropdown-row{
+    justify-content: end;
 }
