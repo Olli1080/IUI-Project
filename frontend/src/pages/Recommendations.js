@@ -107,6 +107,12 @@ function Recommendations() {
                                     <Card className='semester-card'>
                                         <p key={index} className='semester'>{item.semester}</p>
                                     </Card>
+                                    {item.type==='practical' &&
+                                        <p className='practical-course-info'>
+                                            <i className="fa-solid fa-circle-info"/>
+                                            The subject of this course varies. Please refer to a chair for further information.
+                                        </p>
+                                    }
                                     {getMinimumSemesterOfCourse(course)>currentSemester &&
                                         <p className='semester-warning'>
                                             <i className="fa-solid fa-triangle-exclamation"/>

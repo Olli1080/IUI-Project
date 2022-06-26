@@ -85,7 +85,7 @@
 }
 
 .semester-card{
-    border: 1px solid #5e2b97;
+    border: 1px solid #5e2b97 !important;
     border-radius: 20px !important;
     width: 150px;
     position: absolute !important;
@@ -110,4 +110,19 @@
     bottom: 35px;
     background: transparent;
     color: #dac44d;
+}
+
+.fa-circle-info{
+    color: #0a7abf;
+    margin-right: 5px;
+}
+
+.practical-course-info{
+    font-size: 14px;
+    color: #0a7abf;
+    background: transparent;
+    text-align: left;
+    position: absolute;
+    left: 20px;
+    bottom: 55px;
 }
