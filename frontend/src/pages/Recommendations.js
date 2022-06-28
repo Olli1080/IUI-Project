@@ -5,11 +5,11 @@ import { useLocation } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom'
 
 function Recommendations() {
-    const allCourses = require('../data/allCourses.json')
+    // const allCourses = require('../data/allCourses.json')
     const navigate = useNavigate();
     // Gets user data from previous page
     const {state} = useLocation();
-    const {user_data, recommendations} = state;
+    const {user_data, recommendations, allCourses} = state;
 
     const[col, setCol]=useState(3)
     const[semesterFilter, setSemesterFilter]=useState('All')

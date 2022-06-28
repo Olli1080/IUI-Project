@@ -142,30 +142,28 @@ def main():
     CORS(app)
     api = Api(app)
     api.add_resource(Recommendations, "/userdata")
+    api.add_resource(CourseData, "/course_data")
     app.run(debug=True)
 
 
 class Recommendations(Resource):
     
     def put(self):
-        # Do something with user data
-        #print(request.json)
         recs = classifier([process_input(request.json)])
-        
         #print(list(map(lambda x: x["course"], list(filter(lambda x: x["grade"] != "5.0", request.json)))))
-
         #filter out passed modules
         dropper = set(recs.index.to_list()).intersection(list(map(lambda x: x["course"], list(filter(lambda x: x["grade"] != "5.0", request.json)))))
         recs = recs.drop(dropper)
 
         out = process_output(recs)
-        #print(out)
-
-        #with open('./recommendations/recommendations.json') as test_data:
-         #   test_recommendations = json.load(test_data)
-        #time.sleep(5)
-        #return test_recommendations
         return out
+
+
+class CourseData(Resource):
+    def get(self):
+        with open("./data/allCourses.json") as course_file:
+            course_data = json.load(course_file)
+        return course_data
 
 
 if __name__ == "__main__":

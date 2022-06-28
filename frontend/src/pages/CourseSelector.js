@@ -8,9 +8,9 @@ import { useLocation } from 'react-router-dom'
 
 function CourseSelector() {
     const {state} = useLocation();
-    const {userData}=state
+    const {userData, allCourses}=state
     const navigate = useNavigate();
-    const allCourses = require('../data/allCourses.json')
+    // const allCourses = require('../data/allCourses.json')
     const [currentCourseIndex, setCurrentCourseIndex] = useState(-1)
     const [semesterOfCurrentCourse, setSemesterOfCurrentCourse] = useState(-1) //-1: not set, 0: >6th
     const [likeCurrentCourse, setLikeCurrentCourse] = useState(-1) //-1: not set, 0: like, 1: neutral, 2: dislike
@@ -51,7 +51,7 @@ function CourseSelector() {
             sendDataToBackend(userData).then((recs) => {
                 setIsLoading(false);
                 console.log(recs);
-                navigate('/recommendations', { state: { user_data: userData, recommendations: recs } });
+                navigate('/recommendations', { state: { user_data: userData, recommendations: recs, allCourses: allCourses } });
             }
             ).catch((err) => { console.err(err); })
         }
@@ -66,7 +66,7 @@ function CourseSelector() {
                 sendDataToBackend(userData).then((recs) => {
                     setIsLoading(false);
                     console.log(recs);
-                    navigate('/recommendations', { state: { user_data: userData, recommendations: recs } });
+                    navigate('/recommendations', { state: { user_data: userData, recommendations: recs, allCourses: allCourses } });
                 }
                 ).catch((err) => { console.err(err); })
             }

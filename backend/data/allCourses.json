@@ -1,0 +1,559 @@
+[
+    {
+        "name": "Bachelor-Arbeit",
+        "key":"BA",
+        "lp":15,
+        "type":"Practical",
+        "semester": "Every Semester",
+        "languages": [
+            "de",
+            "en"
+        ],
+        "learning-goals": "In der Bachelorarbeit werden methodische Kompetenzen zum L\u00f6sen von Informatikproblemen erworben. Die Bachelorarbeit soll bevorzugt ein Thema aus einem der Anwendungsf\u00e4cher bearbeiten, f\u00fcr welches eine Informatikl\u00f6sung aufzubauen ist. Der Studierende erlernt interdisziplin\u00e4res Analysieren und Vorgehen und erwirbt damit fach\u00fcbergreifende und kommunikative Kompetenzen. Der Studierende erarbeitet das zu bearbeitende Thema selbst\u00e4ndig und systematisch (Selbstkompetenz) und wird dabei vom Betreuer angeleitet und unterst\u00fctzt.. Die schriftliche Ausarbeitung dient dazu, die Ergebnisse der Arbeit in wissenschaftlicher Weise angemessen darzustellen (kommunikative Kompetenz).. Dem Studierenden wird hierzu eine fachspezifische Einf\u00fchrung in das Verfassen wissenschaftlicher Arbeiten vermittelt. Der Studierende pr\u00e4sentiert die Ergebnisse seiner Ausarbeitungund stellt sich der Diskussion. Er erwirbt damit kommunikative Kompetenzen, die sich insbesondere auch auf die Verteidigung und Diskussion der Arbeit erstrecken. Der Studierende erlernt das Zusammenfassen komplexer Aufgabenstellungen, deren Pr\u00e4sentation, die Diskussion (kritischer) Fragen zu Konzeption und Aufbau der Bachelorarbeit. Au\u00dferdem wird die Auseinandersetzung mit anderen Arbeiten erlernt, da Kommilitonen ihre Arbeit ebenfalls zur Diskussion stellen.",
+        "content": "Abh\u00e4ngig vom anbietenden Lehrstuhl wird ein Thema der Informatik bzw. Angewandten Informatik und/oder eines Anwendungsfaches bearbeitet und hinsichtlich einer konkreten Aufgabenstellung untersucht und besc hrieben. Im Kolloquium werden regelm\u00e4\u00dfig die (Zwischen-) Ergebnisse aller aktuell bear beiteten Abschlussarbeite. einer Arbeitsgruppe dargestellt und diskutiert. Typischerweise wird vom Studierenden die Abschlussarbeit in mehreren Schritten vorgestellt und verteidigt:erste Konzeption, Zwischenresultate, Abschlussbericht. Bachelor - Arbei.",
+        "duration": "1",
+        "regular_semester": [
+            "6"
+        ]
+    },
+    {
+        "name": "Bachelor-Seminar",
+        "key":"SR",
+        "lp":5,
+        "type":"Practical",
+        "semester": "Every Semester",
+        "languages": [
+            "de"
+        ],
+        "learning-goals": "Der Studierende erwirbt methodische Kompetenzen im Bereich wissenschaftlicher Arbeitstechniken (insbesondere Literaturstudium, Pr\u00e4sentations- und Schreibtechniken) sowie kommunikative Kompetenzen in der m\u00fcndlichen und schriftlichen Darstellung von wissenschaftlichen Inhalten.",
+        "content": "Ein ausgew\u00e4hltes Thema aus der Informatik wird in einer schriftlichen Ausarbeitung dargestellt und m\u00fcndlich pr\u00e4sentiert.",
+        "duration": "1",
+        "regular_semester": [
+            "5",
+            "6"
+        ]
+    },
+    {
+        "name": "Bachelor-Praktikum",
+        "key":"BP",
+        "lp":6,
+        "type":"Practical",
+        "semester": "Every Semester",
+        "languages": [
+            "de"
+        ],
+        "learning-goals": "Im Vordergrund steht der Erwerb von individuellen, algorithmischen, Design-und Realisierungskompetenzen. Die Studierenden sollen in die Lage versetzt werden, Software beschr\u00e4nkten Umfangs und beschr\u00e4nkten Schwierigkeitsgrads systematisch zu entwickeln (methodische Kompetenz) sowie die von ihnen erarbeitete L\u00f6sung zu pr\u00e4sentieren (kommunikative Kompetenz).",
+        "content": "Die Studierenden entwickeln individuell und unter Anleitung kleinere Softwaresysteme. Probleme werden a nalysiert, Anforderungen definiert, ein Systementwurf erstellt, und die Komponenten des Systementwurfs werden implementiert und getestet. Hinzu kommt die Pr\u00e4sentation der L\u00f6sungskonzepte..",
+        "duration": "1",
+        "regular_semester": [
+            "3",
+            "4"
+        ]
+    },
+    {
+        "name": "Bachelor-Projekt",
+        "key":"PR",
+        "lp":8,
+        "type":"Practical",
+        "semester": "Winter Semester",
+        "languages": [
+            "de"
+        ],
+        "learning-goals": "Die Studierenden sollen in der Lage sein, im Team eine umfangreiche Projektaufgabe zu l\u00f6sen. Diese Projektaufgabe kann interdisziplin\u00e4ren Charakter aufweisen. Im Einzelnen sind folgende Projektaufgaben von den Teilnehmern zu realisieren:die Strukturierung des Problems (z.B. in Form eines Lastenhefts), die Definition einer L\u00f6sung (z.B. in Form eines Pflichtenhefts), die Organisation der Umsetzung in Teilprojekten, den Test der Implementierung und die Pr\u00e4sentation und Abnahme der L\u00f6sung.. Fach\u00fcbergreifende Kompetenzen werden durch interdisziplin\u00e4res Arbeiten erworben. Ein weiterer Schwerpunkt liegt auf der Vermittlung von Projektmanagementkompetenzen und kommunikativen Kompetenzen (Kooperation im Projektteam).",
+        "content": "Die Aufgabenstellung wird im Rahmen eines Projekts gel\u00f6st, das idealerweise zwischen 6 und 12 Mitgliedern hat. Die Arbeit wird mit Methoden des Projektmanagements geplant, koordiniert und \u00fcberwacht. Zur Projektarbeit geh\u00f6rt auch die Pr\u00e4sentation der erarbeiteten L\u00f6sung.",
+        "duration": "1",
+        "regular_semester": [
+            "5",
+            "6"
+        ]
+    },
+    {
+        "name": "Konzepte der Programmierung",
+        "key":"KP",
+        "lp":8,
+        "type":"Mandatory",
+        "semester": "Winter Semester",
+        "languages": [
+            "de"
+        ],
+        "learning-goals": "Ziel der Veranstaltung ist, den Studierenden ein fundiertes Verst\u00e4ndnis der Programmierung zu vermitteln, das im weiteren Studium als Fundament f\u00fcr die Informatik-Ausbildung dient. Dabei dient Java als Beispielsprache. Der Vorkurs richtet sich insbesondere an Studierende ohne Programmiervorkenntnisse, wird aber allen Studierenden empfohlen. Er dient dazu, der fachlichen Diversit\u00e4t der Studierenden zu begegnen. Als Einstiegssprache wird Python verwendet. . Der Schwerpunkt liegt auf dem Erwerb von methodischen Kompetenzen:Durch das Verst\u00e4ndnis fundamentaler Konzepte wie Kontroll-und Datenstrukturen, Methoden, Objektorientierung, Syntax, Typkonzept etc. sollen die Studierenden in die Lage versetzt werden, diese Konzepte bei der Umsetzung von Algorithmen in Programme einzusetzen und sich ferner in andere Programmiersprachen einzuarbeiten. Erste algorithmische Kompetenzen werden ebenfalls erworben. Sie legen die Grundlage f\u00fcr weiterf\u00fchrende Veranstaltungen (z.B. Algorithmen und Datenstrukturen). Die Intensiv\u00fcbungen richten sich an Studierende, die die Modulpr\u00fcfung im Sommersemester absolvieren und zur individuellen F\u00f6rderung und Differenzierung.",
+        "content": "Vorkurs:Grundbegriffe, Algorithmen, einfache Programme in Pytho. Einf\u00fchrung:Grundbegriff. Algorithmen:wesentliche Eigenschaften, erste Beispiel. Programme:Umsetzung von Algorithmen in eine Programmiersprach. Syntax:EBNF, Ableitungsb\u00e4ume, Syntaxdiagramm. Elementare Datentypen:ganze Zahlen, Gleitpunktzahlen, Zeichen, Wahrheitswert. Ausdr\u00fccke:Syntax, Priorit\u00e4ten, Auswertungsb\u00e4um. Anweisungen:Zuweisungen, Kontrollstrukturen, Flussdiagramme, strukturierte Programmierun. Methoden:Syntax, Aufruf, Ausf\u00fchrung, Aufrufstape. Rekursion:Klassifikation von Rekursionsarten, Ausf\u00fchrung, Elimination von Rekursio. Strukturierte Datentypen:Arrays und Verbunde; Eigenschaften von Objekttypen, Referenze. Objekte und Klassen:Grundbegriffe, Felder, Methoden, Konstruktoren, Klassen- vs. Objekteigenschaften, abstrakte Klasse. Vererbung: Einfachvererbung, Substituierbarkeit, Polymorphie, Vererbungsregel. Schnittstellen:Konzept, Abgrenzung gegen abstrakte Klassen, Implementierung von Schnittstellen, Mehrfachvererbung auf Schnittstelle. Generizit\u00e4t:generische Datentypen, Abgrenzung von Generizit\u00e4t und Vererbun. Ausnahmebehandlung:Ausnahmeobjekte, Ausnahmebehandler, gesch\u00fctzte Bl\u00f6ck. Funktionale Programmierung in Jav. Inhalt der Intensiv\u00fcbung:Programmierung ausgew\u00e4hlter Kapitel der Vorlesun.",
+        "duration": "1",
+        "regular_semester": [
+            "1",
+            "2"
+        ]
+    },
+    {
+        "name": "Rechnerarchitektur und Rechnernetze",
+        "key":"RR",
+        "lp":8,
+        "type":"Mandatory",
+        "semester": "Winter Semester",
+        "languages": [
+            "de"
+        ],
+        "learning-goals": "Das Ziel der Veranstaltung besteht in der Vermittlung grundlegender technologischer Kompetenz mit dem Schwerpunkt der Vermittlung von Kenntnissen des Aufbaus von Rechnersystemen mit Speicherhierarchie und Prozessoren. Vermittelt werden auch formale und algorithmische Kompetenzen, die zur Analyse und dem Entwurf digitaler Schaltkreise bef\u00e4higen, sowie Design- und Realisierungskompetenzen zum Entwurf komplexer Schaltkreise. Durch Erlernen qualitativer Analyseverfahren zur Leistungsbewertung von Rechnersystemen und Rechnernetzen werden grundlegende methodische Kompetenzen im Bereich Rechnersysteme und Rechnernetze erworben, die Grundlagen f\u00fcr weiterf\u00fchrende Veranstaltungen legen.",
+        "content": "Leistungsbewertung von Rechnern und grunds\u00e4tzlicher Rechneraufba. Maschinensprachen als Schnittstelle zwischen Hardware und Softwar. Zahlendarstellungen und Rechnerarithmeti. Entwurf digitaler Schaltkreis. Kombinatorische Schaltunge. Konstruktion von Speicherelemente. Speicherorganisation und Prozessorganisation,. Grundlagen und Leistungsbewertungen von Rechnernetze. Schichtenprotokolle und Kommunikationsablau. Wichtige Protokolle von Verbindungsschicht, Netzwerkschicht und Transportschicht",
+        "duration": "1",
+        "regular_semester": [
+            "1",
+            "2"
+        ]
+    },
+    {
+        "name": "Algorithmen und Datenstrukturen I",
+        "key":"AI",
+        "lp":8,
+        "type":"Mandatory",
+        "semester": "Summer Semester",
+        "languages": [],
+        "learning-goals": "Die Studenten sollen lernen, Daten zu strukturieren und dynamisch zu repr\u00e4sentieren. Wichtig ist hierbei die enge Verkn\u00fcpfung dieser Datenstrukturen und der hierauf angewandten Algorithmen. Ein weiteres Ziel ist die Vermittlung von Kenntnissen zur Komplexit\u00e4tsanalyse von Algorithmen (methodische Kompetenz). In der Fragestunde k\u00f6nnen Lehrinhalte beim Dozenten spezifisch nachgefragt und individuell nachgearbeitet werden.Sie dient der individuellen F\u00f6rderung.",
+        "content": "Listen, Keller, Such - und Sortierverfahren, bin\u00e4re B\u00e4ume, Suchb\u00e4ume (AVL), Graphen, Hash-Verfahre n, Komplexit\u00e4t von Algorithmen, Algorithmentheorie. .",
+        "duration": "1",
+        "regular_semester": [
+            "2",
+            "3"
+        ]
+    },
+    {
+        "name": "Betriebssysteme",
+        "key":"BS",
+        "lp":5,
+        "type":"Mandatory",
+        "semester": "Winter Semester",
+        "languages": [
+            "de"
+        ],
+        "learning-goals": "Lernziele des Moduls sind das Verst\u00e4ndnis des grunds\u00e4tzlichen Aufbaus von Betriebssystemen, das Verst\u00e4ndnis der eingesetzten Verfahren, sowie das Lernen der sinnvollen Auswahl und des Einsatz von Betriebssystemen. Es werden keine Einschr\u00e4nkung auf ein bestimmtes Betriebssystem vorgenommen und auch keine Implementierungsdetails vermittelt. Allgemein werden Methoden zur effizienten Verwaltung von zeitlichen bzw. r\u00e4umlichen Ressourcen vermittelt.",
+        "content": "Einleitung:Definition, Schnittstellen, Historie, Aufbau. Prozessverwaltung:Prozesse/Threads, Prozesssynchronisation, -scheduling, - kommunikation. Speicherverwaltung:Speicherbelegung, -adressierung, - seiten, Segmentierung, Caches, Schutz. Dateiverwaltung:Dateisysteme, - namen, - attribute, - funktionen, - organisation. Ein-/Ausgabeverwaltung:E/A - Aufgaben, Ger\u00e4temodelle, Treiber. Systemsicherheit:Kryptographie, Authentifikation, Angriffe, Schutz. Studi en-/Pr\u00fcfungsleistungen: Portfoliopr\u00fcfung, bestehend aus einer Klausur (Gewicht 0,85) und w\u00f6chentlichen schriftliche n Hausaufgaben (Gewicht 0,15) . Zum Bestehen des Moduls muss die Gesamtnote mindestens 4,0 betragen.",
+        "duration": "1",
+        "regular_semester": [
+            "3",
+            "4"
+        ]
+    },
+    {
+        "name": "Theoretische Informatik I",
+        "key":"TI",
+        "lp":8,
+        "type":"Mandatory",
+        "semester": "Summer Semester",
+        "languages": [
+            "de"
+        ],
+        "learning-goals": "Die Studierenden sollen die Grundlagen von regul\u00e4ren, kontextfreien, berechenbaren und effizient berechenbaren formalen Sprachen verstehen. Sie sollen in der Lage sein, bestimmte Sprachen in Klassen einzuordnen und zu erkl\u00e4ren warum, oder warum nicht sie Mitglied einer Klasse sind. Die Studierenden sollen in der Lage sein, die Verfahren aus der Vorlesung zu erkl\u00e4ren und auf Beispiele anzuwenden. Die Studierenden sollen die Ergebnisse der Vorlesung verstehen und anwenden k\u00f6nnen und ihre Beweise verstehen. In der Fragestunde k\u00f6nnen Lehrinhalte beim Dozenten spezifisch nachgefragt und individuell nachgearbeitet werden.Sie dient der individuellenF\u00f6rderung.",
+        "content": "Formale Sprache. Automaten, Grammatiken und die Chomsky-Hierarchi. Theoretische Berechnungsmodell. EntscheidbarkeitTheoretische Informatik . Komplexit\u00e4 tstheori.",
+        "duration": "1",
+        "regular_semester": [
+            "3",
+            "4"
+        ]
+    },
+    {
+        "name": "Parallele und Verteilte Systeme I",
+        "key":"PV",
+        "lp":5,
+        "type":"Mandatory",
+        "semester": "Winter Semester",
+        "languages": [
+            "de"
+        ],
+        "learning-goals": "Ziel der Veranstaltung ist es, den Studenten grundlegende Techniken der parallelen und verteilten Programmierung zu vermitteln. Dabei werden besondere methodische Kompetenzen erworben:Durch das Verst\u00e4ndnis grundlegender Problemstellungen wie Lastverteilung und Skalierbarkeit und die Vermittlung von Synchronisations-und Kommunikationstechniken werden die Studenten in die Lage versetzt, parallele Algorithmen zu entwerfen und mit Hilfe von Kommunikations- und Threadbibliotheken in effiziente parallele und verteilte Programme umzusetzen. Dabei werden sowohl gemeinsame als auch verteilte Adressr\u00e4ume erlernt.",
+        "content": "Architektur und Verbindungsnetzwerke f\u00fcr parallele System. Leistung, Laufzeitanalyse und Skalierbarkeit paralleler Programm. Programmier - und Synchronisationstechniken f\u00fcr gemeinsamen Adressraum mit Multi-Threading. Koordination paralleler und verteilter Programm. Anwendung der Programmiertechniken auf komplexe Beispiele aus verschiedene. Anwendungsgebieten. Programmiertechniken f\u00fcr verteilte Adressr\u00e4ume und Message-Passing und Realisierung typischer Kommunikationsmuste.",
+        "duration": "1",
+        "regular_semester": [
+            "5",
+            "6"
+        ]
+    },
+    {
+        "name": "Multimediale Systeme I",
+        "key":"MM",
+        "lp":5,
+        "type":"Optional",
+        "semester": "Summer Semester",
+        "languages": [
+            "de"
+        ],
+        "learning-goals": "Die Veranstaltung f\u00fchrt in die technologischen Grundlagen multimedialer Systeme ein. Im Mittelpunkt stehen Medientypen (Text, Bilder, Grafiken, 3D-Modelle, Audio und Video) und deren Repr\u00e4sentation. Dabei werden jeweils grundlegende Standards zur Repr\u00e4sentation von Medienobjekten besprochen. Dar\u00fcber hinaus wird aber auch die werkzeugunterst\u00fctzte Erstellung und Verwendung von Medienobjekten vermittelt. In erster Linie dient die Veranstaltung dem Erwerb technologischer Kompetenzen.",
+        "content": "Die Veranstaltung beginnt mit einer Einleitung \u00fcber Medienobjekte, multimediale Objekte, multimediale Systeme und Medientypen. Darauf folgt ein \u00dcberblick \u00fcber die verschiedenen Medientypen und Codierungen, angefangen mit der generellen Codierung von Text und Markup-Sprachen, \u00fcber Grafik und Animation mit skalierbaren Vektorgrafiken (SVG) und VRML, Bildformate wie JPEG, JPEG 2000 und PNG, der digitalen Codierung von Audiosignal en mittels Psychoakustik (MP3 und AAC), bis hin zu Videoformaten, wie Analogvideo, HDTV, Digitalvideo, MPEG 1-4 und H.264. Beispiele f\u00fcr \u00dcbungen werden so weit wie m\u00f6glich aus den Anwendungsbereichen \u00fcbernommen.",
+        "duration": "1",
+        "regular_semester": [
+            "1"
+        ]
+    },
+    {
+        "name": "Datenbanken und Informationssysteme I",
+        "key":"DS",
+        "lp":8,
+        "type":"Mandatory",
+        "semester": "Summer Semester",
+        "languages": [
+            "de"
+        ],
+        "learning-goals": "Ziel ist die Vermittlung grundlegender Kenntnisse zum Entwurf von (relationalen) Datenbanken. Die Studierenden sollen Analyse-, Entwurfs und Realisierungskompetenzen vermittelt bekommen, so dass sie selbst\u00e4ndig eine Anwendungssituation analysieren und darauf aufbauend ein datenbankgest\u00fctzte Anwendungen entwickeln k\u00f6nnen. Daneben sollen Grundkenntnisse bez\u00fcglich des Aufbaus und des Betriebs von Datenbanksystemen vermittelt werden, so dass die Studierenden einen prinzipiellen Einblick in die Technologie von Datenbanksystemen bekommen.. \u00dcber den \u00dcbungsbetrieb sollen die Studierenden den praktischen Umgang mit Datenbanken und deren Anwendungen erlernen. In den Intensiv\u00fcbungen werden dar\u00fcber hinaus programmiertechnische F\u00e4higkeiten vermittelt und Studierende individuell gef\u00f6rdert.",
+        "content": "Entwurf von Datenbanksystemen:Aufbau konzeptioneller Schemata (Von Entity-Relationship - Diagrammen zu Relationen), Normalisierung, Relationenalgebra, Einf\u00fchrung in SQL, Verwendung von Datenbanksystemen (SQL als DB - Schnittstelle), Objektrelationale Datenbanksysteme; Aufbau von Datenbanksystemen (Architektur), Einf\u00fchrung ins Transaktionsmanagement; Aufbau von Informationssystemen (Arten von Informationssystemen), Anw endungen von Datenbanken in den Bereichen Bio-, Ingenieur - und Umweltinformatik; Vorstellung von Beispielen und Fallstudien. en und Informationssysteme . Inhalt der Intensiv\u00fcbung:Programmierung ausgew\u00e4hlter Kapitel der Vorlesung.",
+        "duration": "1",
+        "regular_semester": [
+            "1",
+            "5"
+        ]
+    },
+    {
+        "name": "Software Engineering I",
+        "key":"SE",
+        "lp":8,
+        "type":"Mandatory",
+        "semester": "Summer Semester",
+        "languages": [
+            "de"
+        ],
+        "learning-goals": "Die Studierenden sollen einen m\u00f6glichst breiten \u00dcberblick \u00fcber Sprachen, Methoden und Werkzeuge f\u00fcr das Software Engineering erhalten und deren Anwendung an kleineren Beispielen \u00fcben. Einen Schwerpunkt bildet dabei die objektorientierte Softwareentwicklung. Es werden (abgesehen vom Programmieren im Kleinen) alle Arbeitsbereiche des Software Engineering abgedeckt. Insbesondere werden Analyse-und Design-Kompetenzen vermittelt, die f\u00fcr die Entwicklung gro\u00dfer Softwaresysteme von zentraler Bedeutung sind. Dar\u00fcber hinaus werden methodische Kompetenzen u.a. in Projektmanagement, Konfigurationsverwaltung und Qualit\u00e4tssicherung vermittel.",
+        "content": "Software Engineering:Definition, Lebenszyklusmodelle, Phasen, Arbeitsbereiche, Diszipline. Requirements Engineering:Kernaktivit\u00e4ten (Dokumentation, Gewinnung, \u00dcbereinstimmung), Anforderungsspezifikation, Pflichtenheft, Lastenhef. A nforderungsanalyse:Analysemodell, Objekt- und Klassendiagramme, Anwendungsfalldiagramme, Aktivit\u00e4tsdiagramm. Entwurf:Architekturbegriff, Paketdiagramme, Klassendiagramme, Sequenzdiagramme, Kommunikationsdiagramme, Zustandsdiagramm. Entwurfsmuster:Design for Change, ausgew\u00e4hlte Entwurfsmuster (Observer, Composite, State, Factory etc.. Formale Spezifikationen:algebraische Spezifikatione. Projektmanagement:Funktionen, Organisationsstrukturen, Planung mit CPM-Netzwerken und Gantt - Diagrammen Engineering . Konfigurationsm anagement:Versionskontrolle, optimistische und pessimistische Synchronisation, \u00c4nderungskontroll. Qualit\u00e4tssicherung:Qualit\u00e4tsmerkmale, Prinzipien, Verifikation, Testverfahren (Black Box und White Box), Inspektionen und Review. Vorgehensmodelle:plangetr iebene vs. agile Prozesse, Capability Maturity Model, Personal Software Process, Extreme Programming, Scrum, Rational Unified Process, V-Model.",
+        "duration": "1",
+        "regular_semester": [
+            "4",
+            "5"
+        ]
+    },
+    {
+        "name": "K\u00fcnstliche Intelligenz I",
+        "key":"K1",
+        "lp":5,
+        "type":"Optional",
+        "semester": "Winter Semester",
+        "languages": [
+            "de"
+        ],
+        "learning-goals": "In der Veranstaltung werden Fertigkeiten und Kenntnisse der wichtigsten KI-Methoden und deren Anwendung in der Praxis vermittelt. Dabei soll unter anderem die Programmierung wissensbasierter Inferenzsysteme in Pr\u00e4dikatenlogik, mit der Programmiersprache Prolog erlernt werden. Des Weiteren werden Wissensrepr\u00e4sentationsformen sowie Probleml\u00f6sungs-, Such-und Planungsalgorithmen vermittelt. Die Studenten sollen einen \u00dcberblick \u00fcber gebr\u00e4uchliche Methoden des Sch\u00e4tzens, wie zum Beispiel Bayes\u2019sche Inferenz und DempsterShafer Theorie erhalten.",
+        "content": "Die Veranstaltung besch\u00e4ftigt sich zun\u00e4chst mit dem Programmieren in Prolog, der Pr\u00e4dikatenlogik und Zwangsbedingungen. Dann werden Wissen, Wissensrepr\u00e4sentation und Inferenz sowie die Struktur wissensbasierter Systeme besprochen. Zum Abschluss werden verschiedene Verfahren zum wahrscheinlichkeitsbasierten Schlie\u00dfen, wie zum Beispiel Bayes\u2019sche In ferenz und Dempster - Shafer Theorie vorgestellt und untersucht. Studien/Pr\u00fcfungsleistungen: Portfoliopr\u00fcfung, bestehend aus einer m\u00fcndlichen oder schriftlichen Pr\u00fcfung (Gewicht 0,85) und w\u00f6chentlichen schriftlichen Hausaufgaben (Gewicht 0,15). Zum Bestehen des Moduls muss die Gesamtnote mindestens 4,0 betragen.K\u00fcnstliche Intelligenz I .",
+        "duration": "1",
+        "regular_semester": [
+            "3"
+        ]
+    },
+    {
+        "name": "Compilerbau",
+        "key":"CB",
+        "lp":5,
+        "type":"Mandatory",
+        "semester": "Winter Semester",
+        "languages": [
+            "de"
+        ],
+        "learning-goals": "Ziel der Veranstaltung ist es, den Studenten eine Einf\u00fchrung in die Theorie und Praxis des Compilerbaus zu bieten. Dazu werden, beginnend mit der Beschreibung der Grammatik einfacher Sprachen, die Grundideen vorgestellt, die hinter der Compiler-Technologie stehen. Diese Ideen werden weiter vertieft indem wichtige Themen wie die lexikalische Analyse, die Syntaxanalyse, Typ\u00fcberpr\u00fcfung, Zwischencodegenerierung, etc. behandelt werden.",
+        "content": "Semantik von algorithmischen Sprache. Aufbau von Compilern und Interpreter. Lexikalische und syntaktische Analys. Typsysteme, Typsynthese, Typ\u00fcberpr\u00fcfun. Zwischencodegenerierun. Studien/Pr\u00fcfungsleistungen: Modulpr\u00fcf ung (die w\u00e4hrend der Vorlesungszeit erbrachten \u00dcbungsleistungen werden bei der Bildung der Gesamtnote f\u00fcr die Modulpr\u00fcf ung ber\u00fcc ksichtigt)Compilerba.",
+        "duration": "1",
+        "regular_semester": [
+            "4",
+            "5"
+        ]
+    },
+    {
+        "name": "Mensch-Computer-Interaktion I",
+        "key":"HC",
+        "lp":5,
+        "type":"Optional",
+        "semester": "Summer Semester",
+        "languages": [
+            "de"
+        ],
+        "learning-goals": "Die Veranstaltung f\u00fchrt in die Grundlagen der Mensch-Computer-Interaktion ein. Die Lernziele sind:\u2022Theoretisches Verst\u00e4ndnis des Designprozesses Interaktiver Systeme.\u2022Die F\u00e4higkeit, einen benutzerzentrierten Designprozess f\u00fcr ein interaktives System durchzuf\u00fchren.",
+        "content": "Geschichte interaktiver Systeme und Fallstudien aus Industrie und Forschung. Benutzerzentrierter Designprozess: Modelle, Phasen, Ziele.. Datensammlung:Interviews, Frageb\u00f6gen, Beobachtungen, Datenanalyse. Kreativit\u00e4tstechniken:Sketching, Prototypen, etc. Konzepte:Affordances, Conceptual Models, Mappings, Constraints etc. Evaluierung:Modellbasierte Evaluierung, Expertenevaluierung, Qualitative Evaluierung, Formale Experimente, Experimentaldesign, Statistische Auswertung von Experimenten.",
+        "duration": "1",
+        "regular_semester": [
+            "3"
+        ]
+    },
+    {
+        "name": "IT-Sicherheit",
+        "key":"IT",
+        "lp":5,
+        "type":"Optional",
+        "semester": "Summer Semester",
+        "languages": [
+            "de"
+        ],
+        "learning-goals": "Das Modul vermittelt grundlegende Kenntnisse zu IT-Sicherheit. Die Studierenden werden mit den Zielen der IT-Sicherheit sowie den zentralen Bestandteilen und Konzepten zu ihrer Erf\u00fcllung vertraut gemacht. Die Studierenden sollen dadurch in die Lage versetzt werden, Gefahrensituatio-nen zu erkennen, zu analysieren undgeeignete L\u00f6sungsans\u00e4tze vorzuschlagen. The module conveys a systematicunderstanding of IT security. The students will be introduced to the goals as well as to central components and concept for the realisation of IT security. The students shall be enabled to recognize and analyse hazardous situations and provide possible solutions.",
+        "content": "Die Veranstaltung deckt die wesentlichen Themen zu IT-Sicherheit ab. Zu den behandelten Bereichen z\u00e4hlen ins besondere die Aspekte Kryptographie, Signaturen (Sicherheitsprotokolle), Authentifizierung (Passw\u00f6rter, Si cherheitstoken, Biometrie, Authentifizierungsprotokolle), Autorisierung, Accountability, Datenschutz sowie Human Factors. The course covers the main topics of IT security. The topics dealt with are primarily cryptography, signatures (security protocols), authentication (passwords, security tokens, biometry, authentication protocols), authorization, accountability, data protection as well as human factors..",
+        "duration": "1",
+        "regular_semester": [
+            "3"
+        ]
+    },
+    {
+        "name": "Parallele und Verteilte Systeme II",
+        "key":"P2",
+        "lp":5,
+        "type":"Optional",
+        "semester": "Summer Semester",
+        "languages": [
+            "de"
+        ],
+        "learning-goals": "Ziel der Veranstaltung ist es, den Studenten vertiefte Kenntnisse von Techniken der parallelen und verteilten Programmierung zu vermitteln. Dabei werden schwerpunktm\u00e4\u00dfig methodische und technologische Kompetenzen erworben. Aufbauend auf vertiefte Kenntnisse von Standardprotokollen f\u00fcr Rechnernetzen wie IP oder TCP/UDP erwerben die Studenten die F\u00e4higkeit, verteilte Programme zu planen und zu implementieren; dabei werden sowohl passive Kommunikationsmechanismen wie Sockets aber auch aktive Mechanismen wie RPC, RMI oder CORBA eingesetzt. Vermittelt werden au\u00dferdem Design- und Realisierungskompetenzen, indem die vermittelten Techniken auf eine Vielzahl von Beispielen angewendet werden. The goal of this course is to give the students a deep understanding of important techniques in parallel and distributed programming. The emphasis lies on the acquiring of methodical and technical competences. Based on a deep understanding of standard protocols for computer networks such as IP or TCP/UDP, the students are enabled to design and implement distributed programs. The course covers message-passing approaches such as MPI, passive communication mechanisms such as sockets, and also active mechanisms such as RPC, RMI, or CORBA. The course also imparts design and implementation competences by applying the techniques to a variety of examples.",
+        "content": "Die Vo rlesung vermittelt die Grundlagen von parallelen und verteilten Systemen. Aufbauend auf dem 1. Teil der Vorlesung werden u.a. folgende Themen behandelt. Vertiefte Techniken der Programmierung in verteilten Adressr\u00e4ume. Grundlegende Kommunikationsprotokolle in verteilten SystemenParallele und Verteilte Systeme II. Kommunikations - , Koordinations - und Synchronisationsmechanismen in verteilten Systemen (Beispiele:Sockets, RPC, Java RMI. Koordinaten mit verteilten Objekten (Beispiel:CORBA. Sicherheitsaspekte und - mechanismen f\u00fcr verteilte Sys tem. The course covers the basics of parallel and distributed systems with an emphasis on distributed systems. Based on the first part of the course, the following topics are covered. Message - Passing programming (MPI. Important communication protocols in distributed system. Communication, coordination and synchronization mechanisms in distributed systems (examples:Sockets, RPC, Java RMI. Coordination with distributed objects (example:CORBA. Security aspects and mechanisms in distributed system.",
+        "duration": "1",
+        "regular_semester": [
+            "3"
+        ]
+    },
+    {
+        "name": "Computergraphik I",
+        "key":"CG",
+        "lp":5,
+        "type":"Optional",
+        "semester": "Summer Semester",
+        "languages": [
+            "de",
+            "en"
+        ],
+        "learning-goals": "Die Veranstaltung f\u00fchrt in die Grundlagen der interaktiven Grafikprogrammierung ein. Insbesondere sollen die Struktur von und der Umgang mit Graphikpaketen erlernt werden, sowie das Design und die Analyse von Algorithmen der Computergraphik. Insbesondere soll dabei auch die Shaderprogrammierung erlernt werden. The lecture introduces the principles of interactive graphics programming. The emphasis lies on learning the structure and the use of graphics APIs, as well as on the design and analysis of computer graphics algorithms. Especially shader programming should be learned by the students. The course is primarily intended to acquire technical skills.",
+        "content": "Der erste Teil der Veranstaltung behandelt die Graphik - Hardware und die Rendering Pipeline. Dazu geh\u00f6ren unter anderem die Repr\u00e4sentation von Objekten, Raster- und Sichtbarkeitsalgorithmen sowie einfache Beleuchtungsmodelle und Texturen. Parallel dazu werden in den \u00dcbungen die Benutzung der OpenGL Rendering API und die Shaderprogrammierung mit Cg abgehandelt. Neben hardwarenahen API besch\u00e4ftigt sich die Vorlesung im zweiten Teil mit Szenengraphen, wie sie in aktuellen Game-Engines verwendet werden. The first part of the lecture convers graphics hardware and the rendering pipelines. This also includes the representation of objects, rasterization and visibility algorithms, as well as simple lightning models and texturing. In parallel, the use of the OpenGL rendering API and shader programming with Cg are covered by the exercises. In addition to low-level programming, the second part of the lecture covers scene graphs like those used in current game engines.",
+        "duration": "1",
+        "regular_semester": [
+            "3"
+        ]
+    },
+    {
+        "name": "Eingebettete Systeme",
+        "key":"ES",
+        "lp":5,
+        "type":"Optional",
+        "semester": "Summer Semester",
+        "languages": [
+            "de"
+        ],
+        "learning-goals": "Das Modul vermittelt allgemein die informationsverarbeitenden Methoden im Bereich der Eingebetteten Systeme. Insbesondere werden Methoden vermittelt zur Analyse, Modellierung, Entwurf, Aufbau, Programmierung, Technologien und Anbindung von Eingebetteten Systeme. Hierbeiwird auch der Umgang mit den nichtfunktionalen Eigenschaften (Echtzeitanforderungen, Fehlertoleranz, ...) diskutiert. The module generally imparts methods of information processing in the area of embedded systems. In particular, it imparts methods to analyse, model, design, build, program and link embedded systems. The handling of non-functional characteristics, like real time requirements, fault tolerance, etc., is discussed as well.",
+        "content": "Einleitung (Allgemeine Struktur, Beispiele). Echtzeitsysteme (Modellierung und Entwurf). Programmierung (Sprachen und Konzepte),. Algorithmen (Signalverarbeitung, Digitale Regelung, Fuzzy Logik, Neuronale Netze), Daten\u00fcbertragung (Feldbusse und AD/DA - Wandlung). Peripherie (Mikro - Sensorik und Mikro - Ak tuatorik. Technologien ( SPS, \u00b5Controller, DSP, PLD. Introduction (common structures, examples. Real time systems (modelling and designing. Programming (languages and concepts) Algorithms (signal processing, digital control, fuzzy logic, neural nets. Data transfer (field buses, AD/DA conversion. Peripherals ( micro sensors , micro actuators . Technology (SPC, microcontroller, DSP, PLD.",
+        "duration": "1",
+        "regular_semester": [
+            "4"
+        ]
+    },
+    {
+        "name": "Datenbanken und Informationssysteme II",
+        "key":"D2",
+        "lp":5,
+        "type":"Optional",
+        "semester": "Winter Semester",
+        "languages": [
+            "de"
+        ],
+        "learning-goals": "Vermittlung vertiefter technologischer Kenntnisse zur Umsetzung von Datenbanksystemen hinsichtlich Aufbau (Architektur) und Transaktionsmanagement; Vermittlung von analytischen F\u00e4higkeiten zum Aufbau von Schichtenarchitekturen; \u00dcber den \u00dcbungsbetrieb werden Realisierungskompetenzen hinsichtlich der Umsetzung von komplexen Architekturen vermittelt. Auf die Umsetzung komplexer Architekturen in den Anwendungsgebieten wird eingegangen.In der Intensiv\u00fcbung wird im Rahmen der Vorbereitung auf die Modulpr\u00fcfung durch individuelle Behandlung der Fragen von Studierenden der fachlichen Diversit\u00e4t begegnet.. Imparting methodological expertise as well as design competencies within the subject of model based software development. Realization of complex architectures in the application fields Bio Informatics, Environmental Informatics and Engineer Informatics will be discussed.",
+        "content": "Architektur von Datenbanksysteme:Externspeicherverwaltung, Systempufferverwaltung, Zugriffspfade, Seitenverwaltung, interne, satzorientierte und mengenorientierte Schnittstelle; Transaktionsverarbeitung:ACID Konzept, Implementierung von transaktionalen Eigenschaften, Synchronisation, 2PC-Protokoll, Logging, Recovery, Transaktionsmodelle. Anwendung von Architekturmodellen auf komplexe Anwendungen der Anwendungsbereiche. Die Intensiv\u00fcbung greift wichtige Inhalte der Vorlesung auf und vertieft diese. Concepts \u201cmodel\u201d and \u201cmeta - model\u201d, Eclipse Modeling Framework (EMF), structure of modeling languages, model editors (using text, graphic and tree representations), Object Constraint language (OCL).",
+        "duration": "1",
+        "regular_semester": [
+            "3"
+        ]
+    },
+    {
+        "name": "Algorithmen und Datenstrukturen II",
+        "key":"A2",
+        "lp":8,
+        "type":"Optional",
+        "semester": "Winter Semester",
+        "languages": [
+            "de"
+        ],
+        "learning-goals": "Das Modul vermittelt erweiterte Kenntnisse zum Entwurf und zur Analyse von Algorithmen und Datenstrukturen. Insbesondere werden aktuelle Ergebnisse aus diesem Themenbereich vermittelt und es wird gezeigt, wie diese auf typische Problemstellungen angewendet werden k\u00f6nnen. This module teaches advanced techniques for the design and analysis of algorithms and data structures. It demonstrates how to apply them to typical application problems.",
+        "content": "Es werden Themen behandelt wie. - allgemeine algorithmische Entwurfsprinzipien. - Graphenalgorithme. - geometrische Algorithmen und Datenstrukturen. - zahlentheoretische Algorithmen. - Algorithmen und Datenstrukturen f\u00fcr Zeichenkette. - Approximationsalgorithmen. Possible topics are: - algorithm design principle. - graph algorithm. - geometric algorithms and data structure. - number theoretic algorithm . - algorithms and data structures for strings - approximation algorithm.",
+        "duration": "1",
+        "regular_semester": [
+            "3"
+        ]
+    },
+    {
+        "name": "Robotik I",
+        "key":"RI",
+        "lp":5,
+        "type":"Optional",
+        "semester": "Winter Semester",
+        "languages": [
+            "de"
+        ],
+        "learning-goals": "Das Modul vermittelt ein systematisches und vertieftes Verst\u00e4ndnis der Methoden zur Ansteuerung von komplexen, sich bewegenden Maschinen. Insbesondere werden Methoden zum Aufbau, zur Modellierung, zur Steuerung und zur Programmierung vermittelt. Die Anwendungen liegen beispielsweise in den Bereichen Industrierobotik, Mobile Robotik, Humanoide Robotik oder Werkzeugmaschinen. The module conveys a systematic and deepened understanding of the methods for the control of complex and moving mechanism. The subjects taught comprise methods of construction, modelling, control and programming. They are applied for example in industrial robotics, mobile robotics, humanoid robotics and machine tools.",
+        "content": "Mechanik ; Geometrie ; Kinematik (Vorw\u00e4rts, R\u00fcckw\u00e4rts, Jacobi); Dynamik ; Trajektorien ; Programmierung ; Sensoren (Interne, Externe, Integration); System architekture. Mechanics ; Geometry ; Kinematics (forwards, inverse, Jacobi); Dynamics ; Trajectories ; Programming ; Sensors (intern, extern, integration); System architecture.",
+        "duration": "1",
+        "regular_semester": [
+            "4"
+        ]
+    },
+    {
+        "name": "Computersehen",
+        "key":"CS",
+        "lp":5,
+        "type":"Optional",
+        "semester": "Summer Semester",
+        "languages": [
+            "de"
+        ],
+        "learning-goals": "Das Modul vermittelt ein systematisches und vertieftes Verst\u00e4ndnis von Modellen, Methoden und Technologien zum automatisierten Verstehen einer Szene aus einem oder mehreren Kamerabildern. Weiterhin sind die Lernziele: \u2022Die typischen Verarbeitungsstufen beim Computersehen verstehe. \u2022Die Technologien zur Bilderzeugung verstehen\u2022Die Modellierung digitalen Verarbeitung von analogen Signalen anwenden k\u00f6nnen\u2022Die typischen Algorithmen des Computersehens analysieren k\u00f6nnen\u2022Die Grundlagen der Mustererkennung (Mastermodul) verstehe. \u2022Die Besonderheiten von Multisensor-Systemen verstehe. This module imparts a systematic and advanced comprehension of methods for sensor data analysis and processing. Particularly, the comprehension about sensor data processing with respect to different types of Computersehe. camera images is negotiated. Applications are for example in the fields of automation, quality management, transport engineering, or security engineering.",
+        "content": "Einf\u00fchrung, Kameratechnologien, Kameramodelle, Spektralanalyse, Digitalisierung, Signalfilterung, Segmentierung, Merkmalsbestimmung, Klassifikation, Multikamerasystem. Introduction; Camera technologies, Camera models Spectral analysis; Digitalisation; Filtering; Segmentation; Feature extraction; Classification; Multi-camera s ystems .",
+        "duration": "1",
+        "regular_semester": [
+            "4"
+        ]
+    },
+    {
+        "name": "Animation und Simulation",
+        "key":"AS",
+        "lp":5,
+        "type":"Optional",
+        "semester": "Winter Semester",
+        "languages": [
+            "de",
+            "en"
+        ],
+        "learning-goals": "Die Studenten lernen die Grundtechniken der physikalisch basierten Animation und Simulation f\u00fcr Computergraphik. Die Vorlesung soll die Studenten in die Lage versetzen, geeignete mathematische Modelle auszuw\u00e4hlen. Auf Basis der Algorithmen und ihrer Vor- und Nachteile sollen sie geeignete Softwarel\u00f6sungen f\u00fcr spezifische Problemstellungen der Simulation und Animation entwickeln k\u00f6nnen. The students learn the basic techniques of physics based animation and simulation for computer graphics. The lecture enable the student to choose appropriate mathematical models. Based on the algorithms and their advantages and disadvantages, they should be able to develop software solutions for specific problems of simulation and animation.",
+        "content": "Thema der Veranstaltung sind Techniken der physikalisch-basierten Simulation f\u00fcr Anwendungen in der Computergraphik und Computeranimation. Solche Techniken finden zunehmend Verwendung zur Erzeugung komplexer Animationsfilme (wie etwa \"Avatar\"), in Anwendungen der sogenannten \"Virtuellen Realit\u00e4t\" und auch bei Computerspielen. Es sollen folgende Themen behandelt werden:Physikalisch-basierte Partikelsystemsimulationen; Kollisionserkennungsalgorithmen; Simulation starrer K\u00f6rper; Simulation von Mehrk\u00f6rpersystemen (insbesondere von Avataren); Simulation und Animation deformierbarer Materialien (Textilien, Haare); schnelle n\u00e4herungsweise Simulation und Animation von Str\u00f6mungseffekten. Animation und Simulation. The to pic of the lecture are techniques of physics based simulation and animation for applications in computer graphics and computer animation. Such techniques are increasingly used to produce complex animation movies (like e.g. \u201cAvatar\u201d), in applications of the so - called \u201cvirtual reality\u201d and even in computer games. The following topics will be covered:simulation of rigid bodies; simulation of multi-body systems; simulation and animation of deformable models (cloth, hair); fast approximate simulation and animation of flows.",
+        "duration": "1",
+        "regular_semester": [
+            "5"
+        ]
+    },
+    {
+        "name": "K\u00fcnstliche Intelligenz II",
+        "key":"KI",
+        "lp":5,
+        "type":"Optional",
+        "semester": "Summer Semester",
+        "languages": [
+            "de"
+        ],
+        "learning-goals": "In der Veranstaltung werden Fertigkeiten und Kenntnisse der wichtigsten KI-Methoden und deren Anwendung in der Praxis vertieft. Dabei soll unter anderem die regelbasierte Systeme und Verfahren zu maschinellem Lernen erlernt werden. Des Weiteren werden Wissensrepr\u00e4sentationsformen sowie Bewegungs-, Entscheidungs-und Planungsalgorithmen vermittelt. Die Studenten sollen einen \u00dcberblick \u00fcber Anwendungen der k\u00fcnstlichen Intelligenz bei der Spiele-Programmierung erhalten. The course recesses skills and knowledge of the most important AI methods and their application in practice. Amongst others, rule based systems and methods for machine learning should be learned. In addition, knowledge representations, movement, decision and planning algorithms are taught. The students should gain an overview over applications of artificial intelligence in game programming. The course is primarily intended to acquire technical skills.",
+        "content": "Der Fokus liegt bei den KI - Verfahren, die bei der Entwicklung von Computergegnern in Spielen Anwendung finden. Das setzt die wichtigsten Themen der KI voraus. Die Veranstaltung besch\u00e4ftigt sich zun\u00e4chst mit Bewegungs - und Planungsalgorithmen. Dann wird der Entscheidungsprozess und maschinelles Lernen in- klusive regelbasierte Systeme und neuronale Netze besprochen. Zum Abschluss werden verschiedene Einzelheiten bei der Spiele - Programmierung, wie zum Beispiel Level of Detail und Spiel-KI Design, vorgestellt un d untersucht. The course first covers movement and planning algorithms. Then the decision process and machine learning, including rule based systems and neural networks are discussed. In the end, different details of game programming, like level of detail and game AI design are presented and investigated.",
+        "duration": "1",
+        "regular_semester": [
+            "5"
+        ]
+    },
+    {
+        "name": "Funktionale Programmierung",
+        "key":"FK",
+        "lp":5,
+        "type":"Optional",
+        "semester": "Winter Semester",
+        "languages": [
+            "de"
+        ],
+        "learning-goals": "Funktionscharakter von Problemen erkennen und analysieren. Funktionale Algorithmen formulieren und implementieren. Seiteneffektfreie Programmiertechniken praktisch einsetzen. In erster Linie dient die Veranstaltung dem Erwerb technologischer Kompetenzen.",
+        "content": "Funktionen als universelles Programmierkonstrukt. Freie Datentypen und strukturelle Rekursion. Fortgeschrittene Rekursionsformen. Applikatives Programmieren. Funktionen h\u00f6herer Ordnung. Anonyme Funktionen. Abstrakte Datentypen und Modularisierung. Algebraische Analyse und Umformung von Programmen. Typsysteme f\u00fcr Funktionen. Funktionaler Programmierstil in konventionellen Programmiersprachen.",
+        "duration": "1",
+        "regular_semester": [
+            "5"
+        ]
+    },
+    {
+        "name": "Theoretische Informatik II",
+        "key":"T2",
+        "lp":5,
+        "type":"Optional",
+        "semester": "Winter Semester",
+        "languages": [],
+        "learning-goals": "Die Studenten sollen tiefere Kenntnisse in den Bereiche Logik und Komplexit\u00e4tstheorie erwerben und die vermittelten Verkn\u00fcpfungen zwischen den beiden Gebietenverstehen. Sie sollen das vermittelte Material reproduzieren und erkl\u00e4ren k\u00f6nnen. Sie sollen in der Lage sein, die Kenntnisse aus der Vorlesung in \u00dcbungen anzuwenden. The students should obtain deeper knowledge in the areas of logic and computational complexity; and should understand the treated connections between these areas. They should be able to reproduce and explain the course material. They should be able to apply their knowledge from the lecture in exercises.",
+        "content": "Komplexit\u00e4tstheori. Logi. Computational Complexit. Logic",
+        "duration": "1",
+        "regular_semester": [
+            "5"
+        ]
+    },
+    {
+        "name": "Grundlagen der Modellierung",
+        "key":"GD",
+        "lp":5,
+        "type":"Optional",
+        "semester": "Every Semester",
+        "languages": [
+            "de",
+            "en"
+        ],
+        "learning-goals": "Vermittlung der Grundlagen modellgetriebener Softwareentwicklung. Modelle dienen zur Beschreibung von Programmen auf einer hohen Abstraktionsebene. Aus Modellen werden Programme generiert, die in der konventionellen Softwareentwicklung manuell programmiert werden m\u00fcssen. In diesem Modul werden methodische, Design- und Realisierungskompetenzen im Bereich modellgetriebener Softwareentwicklung vermittelt.. The course addresses foundations of model-driven software development. Students are expect to acquire methodological, design, and realization competencies.",
+        "content": "Einf\u00fchrung (Modelle und modellgetriebene Entwicklung), Modellierung mit Klassendiagrammen, Metamodelle, Codegenerierung aus Klassendiagrammen, Definition von Constraints , Modelleditoren, Modelltransformatione. Introduction (Models and model - driven software development), modeling with class diagrams, code generation from class diagrams, definition of constraints, model editors, model transformation.",
+        "duration": "1",
+        "regular_semester": [
+            "3"
+        ]
+    },
+    {
+        "name": "Sicherheit in verteilten Systemen",
+        "key":"SV",
+        "lp":5,
+        "type":"Optional",
+        "semester": "Summer Semester",
+        "languages": [
+            "de"
+        ],
+        "learning-goals": "Ziel der Veranstaltung ist die Vermittlung grundlegender und vertiefender Kenntnisse wichtiger Techniken und Algorithmen, die die Sicherheit von Programmen in Netzwerkumgebungen gew\u00e4hrleisten. Dabei werden durch die Vermittlung grundlegender Sicherheitsaspekte in Softwaresystemen und Netzwerken analytische und methodische Kompetenzen erworben:die Studenten werden in die Lage versetzt, Softwaresysteme im Hinblick auf die Sicherheitsaspekte zu analysieren und geeignete Sicherheitstechniken zur Verbesserung der Sicherheit der Systeme einzusetzen. Algorithmische und methodische Kompetenzen werden durch Vermittlung der methodischen Grundlagen von Verschl\u00fcsselungs-und Signaturtechniken und der darauf aufbauenden Algorithmen erworben. The goal of this course is to give the students a deep understanding of important techniques and algorithms that ensure the security of programs in networks environments. The course covers important security aspects in software systems and networks and therefore conveys analytical and methodical competences. The students are enabled to analyse software systems with respect to security aspects and to apply suitable security techniques to increase the security of the systems. Algorithmic and methodical competences are conveyed by covering important encryption techniques and the algorithms used.",
+        "content": "Sicherheitsprobleme in Programmen, Netzwerken und Netzwerkprotokolle. Symmetrische und asymmetrische kryptographische Verfahren zur Verschl\u00fcsselung von Daten;. Elektronische Signaturen und Schl\u00fcsselmanagemen. Authentifizierungsverfahren:Grundlagen und Systeme Firewall - Technologien und Sicherheitsprotokoll. The following topics are covered. Security problems in programs, networks, and network protocol. Symmetric and asymmetric methods for the encryption of data:mathematical background, encryption algorithm s, application. Message authentication and secure hash function. Electronic signatures and key managemen. Authentication methods:basics and system. Firewall technologies and security protocol.",
+        "duration": "1",
+        "regular_semester": [
+            "3"
+        ]
+    },
+    {
+        "name": "Fortgeschrittene Programmierkonzepte in C++",
+        "key":"FP",
+        "lp":5,
+        "type":"Optional",
+        "semester": "Winter Semester",
+        "languages": [
+            "de"
+        ],
+        "learning-goals": "Das Modul lehrt Studierende das Programmieren effizienter, fehlerrobuster und wartbarer Anwendungen durch die Nutzung fortgeschrittener, sprachnaher Programmierkonzepte. Die Konzepte werden im Rahmen der Veranstaltung anhand der Multiparadigmen-Sprach. C++ erl\u00e4utert. Insbesondere konzentriert sich die Veranstaltung auf die Programmiermittel i. neuen Sprachstandard C++11. Mit den erworbenen Fertigkeiten k\u00f6nnen die Studierenden schnelle,. sichere und elegante Programml\u00f6sungen f\u00fcr vielf\u00e4ltige Aufgabenstellungen entwickeln. Beispielsweise eignen sich die erworbenen Fertigkeiten als konzeptuelle Grundlage zu. Umsetzung abstrakter Software-Entwurfsmuster. Typische Einsatzfelder finden sich i. der hardwarenahen oder leistungsorientierten Programmierung, zum Beispiel in der Robotik. in Computerspielen, oder bei eingebetteten Systemen.",
+        "content": "Sprachenunabh\u00e4ngige Speichermodelle und Zeigerarithmeti. Konzepte zur manuellen und automatischen Speicherverwaltun. Konzept e zur robusten Fehler behandlung mit Ausnahmen und Fehler sicherheitsgarantie. RAII - Konzepte mittels Konstruktoren und Destruktore. Scope - Guard - Konzept f\u00fcr automatisches Fehler - Rollbac. Konzept der Mehrfachvererbun. Metaprogrammierung mit Klassen - und Funkti onsschablone. Funktionale Programmierung und Lambda-Ausdr\u00fcck.",
+        "duration": "1",
+        "regular_semester": [
+            "3"
+        ]
+    },
+    {
+        "name": "Mensch-Computer-Interaktion II",
+        "key":"H2",
+        "lp":5,
+        "type":"Optional",
+        "semester": "Winter Semester",
+        "languages": [
+            "de",
+            "en"
+        ],
+        "learning-goals": "Die Veranstaltung f\u00fchrt in Modelle und Konstruktion in der Mensch-Computer-Interaktion ein. Die Lernziele sind: 1.Theoretisches Verst\u00e4ndnis grundlegender Modelle der Interaktion. 2.Die F\u00e4higkeit, ein interaktives System inklusive aller Komponenten zu implementieren.",
+        "content": "Theoretische Grundlagen:Fitts Law, Human Model Processor, Signalverarbeitungsperspektive, Regelungstechnische Modelle, Design Space of Input Devices, Biomechanik, etc. Eingabeger\u00e4te und Ausgabeger\u00e4te:Sensoren, Aktoren, Konstruktion. Interaktionstechniken:Zeigen, Kommandoauswahl, Men\u00fctechniken, Texteingabe, etc. Modellierung, Simulation und Optimierung von Interaktionstechniken.",
+        "duration": "1",
+        "regular_semester": [
+            "3"
+        ]
+    },
+    {
+        "name": "Programming, Data Analysis and Deep Learning in Python",
+        "key":"DL",
+        "lp":5,
+        "type":"Optional",
+        "semester": "Winter Semester",
+        "languages": [
+            "en"
+        ],
+        "learning-goals": "Die Studierenden lernen, numerische Programme in Python zu entwickeln. Dazu lernen Sie Python als Programmiersprache und als Umgebung f\u00fcr wissenschaftliches Rechnen. Verwendete Bibliotheken sind NumPy, SciPy, Matplotlib, Pandas, und TensorFlow/Keras. Students learn to quickly prototype and implement numerical programs in Python. They learn Python as a programming language and a scientific computing environment. They acquire knowledge of the basic programming language, as well as of important libraries for scientific computing, such as NumPy, SciPy, Matplotlib, Pandas, and TensorFlow/Keras. They develop. practical and applied skills in exploratory computing, rapid prototyping, and implementation of numerical methods. In contrast to other environments, the Python scientific computing environment is open source, widely used, optimized for programmer productivity, and benefits from a large community and library ecosystem.",
+        "content": "Die Python Programmiersprache, Datentypen, Kontrollstrukturen, Funktionen, Objektorientierte Programmierung, Debugging.218: Programming, Data Analysis and Deep Learning in Pytho. Algorithmen:Rekursion, Dynamische Programmierung, Newton\u2019s Methode. Rechnen mit Matrizen:Lineare Algebra mit NumPy, Matrixfaktorisierungen, Eigenvektoren und \u2013 werte, Diagonalisierung, SVD, Methode der kleinsten Quadrate, Pseudoinverse. Datenanalyse:Pandas, Clustering, Plotten. Neuronale Netze und Deep Learning. The Python programming language:Programming philosophy in Python, data types, control structures, functions, object - oriented programming, debugging. Algorithms:Basic algorithms, recursion, dynamic programming, Newton\u2019s method. Matrix methods:Linear Algebra with NumPy, matrix factorizations, eigenvectors and values. diagonalization, SVD, least squares and pseudoinverse. Data analysis:Pandas, clustering, plotting. Neural networks and deep learning. Studien-/Pr\u00fc fungsleistungen: Portfoliopr\u00fcfung, bestehend aus einer m\u00fcndlichen oder schriftlichen Pr\u00fcfung (Gewicht 0,85) und schriftlichen Hausaufgaben (Gewicht 0,15). Zum Bestehen des Moduls muss die Gesamtnote mindestens 4,0 betragen.",
+        "duration": "1",
+        "regular_semester": [
+            "3"
+        ]
+    },
+    {
+        "name": "Intelligent User Interfaces",
+        "key":"IU",
+        "lp":5,
+        "type":"Optional",
+        "semester": "Summer Semester",
+        "languages": [
+            "en"
+        ],
+        "learning-goals": "Das Modul vermittelt ein systematisches und vertieftes Verst\u00e4ndnis von fundamentalen Konzepten sowie ausgew\u00e4hlten Verfahren und Methoden zu Design, Umsetzung und Evaluation von intelligenten Nutzerschnittstellen. Die Lernziele sind:\u2022Grundkonzepte, Einsatzgebiete und Chancen/Herausforderungen von intelligenten Nutzerschnittstellen verstehe. \u2022Konkrete Verfahren zu Design, Umsetzung und Evaluation von intelligenten Nutzerschnittstellen anwenden k\u00f6nnen. \u2022Existierende intelligente Nutzerschnittstellen analysieren k\u00f6nne. This module provides a systematic overview of intelligent user interfaces and an advanced understanding of their fundamental concepts and of selected technical approaches and methods for their design, implementation and evaluation. The learning goals are:\u2022Understanding of fundamental concepts, application areas, and benefits and challenges of intelligent user interface. \u2022Ability to apply specific approaches and methods in thedesign, implementation and evaluation ofintelligent user interface. Ability to analyse existing intelligent user interface.",
+        "content": "\u2022 Introduction to Intelligent User Interfaces (e.g. motivation, examples, core concepts)\u2022 HCI + AI recap/preparations (e.g. basic concepts; practical prototyping with Python (backend, AI, algorithms) and JS/HTML/CSS (user interface, interaction))\u2022 Recommender systems (e.g. movie recommendations. \u2022 Conversational user interfaces (e.g. chatbots, voice assistants) 219: Intelligent User Interfaces\u2022 Interaction with text (e.g. personalised keyboards, text suggestions, language modelling)\u2022 User/input modelling and adaptive UIs (e.g. touch, pointing, typing, menus)\u2022 Computational UI desi gn and evaluation (e.g. layout optimisation)\u2022 Broader perspective (e.g. explainable AI, ethics.",
+        "duration": "1",
+        "regular_semester": [
+            "3"
+        ]
+    }
+]

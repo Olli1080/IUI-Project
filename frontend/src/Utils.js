@@ -12,3 +12,13 @@ export async function sendDataToBackend(data){
             return response.json();
         });
 }
+
+export async function getCourseJson(data){
+    return fetch('http://localhost:5000/course_data')
+        .then(response => {
+            if (!response.ok) {
+                throw new Error("HTTP status " + response.status);
+            }
+            return response.json();
+        });
+}
