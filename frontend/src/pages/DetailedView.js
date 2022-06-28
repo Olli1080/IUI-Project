@@ -15,12 +15,15 @@ function DetailedView(props) {
 
     return (
         <>
-            <Modal className="dv-modal" show={show} onHide={handleClose} centered={true} animation={false}
-                    style={{
-                    position: 'absolute', left: '50%', top: '50%',
-                    transform: 'translate(-50%, -50%)'
+            <Modal className="dv-modal" show={show} onHide={handleClose} centered={true} animation={false} scrollable={true}
+                style={{
+                    // display: 'flex',
+                    // alignItems: 'center',
+                    // justifyContent: 'center',
+                    // position: 'absolute', left: '50%', top: '50%',
+                    // transform: 'translate(-50%, -50%)'
                 }}>
-                    {course.name}
+                {course.name}
             </Modal>
 
         </>
