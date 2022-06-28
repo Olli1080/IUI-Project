@@ -1,0 +1,24 @@
+.modal {
+    width: 80% !important;
+    height: 80% !important;
+    border-radius: 5px;
+    margin: 5px;
+    background-color: white;
+}
+
+.modal-dialog {
+    margin: 0px !important;
+    width: 100% !important;
+    height: 100% !important;
+}
+
+.modal-content {
+    border-radius: 0px !important;
+    border-width: 0px !important;
+    width: 100% !important;
+    height: 100% !important;
+}
+
+
+
+

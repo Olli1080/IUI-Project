@@ -17,6 +17,7 @@ function CourseSelector() {
     const [gradeOfCurrentCourse, setGradeOfCurrentCourse] = useState(-1)
     const [errorMessage, setErrorMessage] = useState('')
 
+
     const [isLoading, setIsLoading] = useState(false);
 
     const selectedCourses = useState(new Array(allCourses.length).fill(false))[0]

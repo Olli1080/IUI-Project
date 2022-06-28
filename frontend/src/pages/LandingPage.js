@@ -35,7 +35,7 @@ function LandingPage(){
         reader.onload = (e) => {
             const text = e.target.result
             userData=JSON.parse(text)
-            navigate('/course-selector', { state: { userData: userData, allCourses:  courseData} });
+            navigate('/course-selector', { state: { userData: userData, allCourses: courseData} });
         };
         reader.readAsText(e.target.files[0])
     };
