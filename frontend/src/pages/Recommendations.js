@@ -169,7 +169,7 @@ function Recommendations() {
                                 if (item.type === 'Mandatory' && (semesterFilter === 'All' || item.semester === 'Every Semester' || (semesterFilter === 'Summer' && item.semester === 'Summer Semester') || (semesterFilter === 'Winter' && item.semester === 'Winter Semester')))
                                     return (
                                         <Col key={index} className={'col-' + col.toString()}>
-                                            <Card className='course-card'>
+                                            <Card className='course-card' onClick={() => { openDetailedView(item.key) }}>
                                                 <p className="lp">{item.lp} LP</p>
                                                 <p className='module-name'>{item.name}</p>
                                                 <Card className='semester-card'>
@@ -193,7 +193,7 @@ function Recommendations() {
                                 if (item.type === 'Optional' && (semesterFilter === 'All' || item.semester === 'Every Semester' || (semesterFilter === 'Summer' && item.semester === 'Summer Semester') || (semesterFilter === 'Winter' && item.semester === 'Winter Semester')))
                                     return (
                                         <Col key={index} className={'col-' + col.toString()}>
-                                            <Card className='course-card'>
+                                            <Card className='course-card' onClick={() => { openDetailedView(item.key) }}>
                                                 <p className="lp">{item.lp} LP</p>
                                                 <p className='module-name'>{item.name}</p>
                                                 <Card className='semester-card'>
@@ -217,7 +217,7 @@ function Recommendations() {
                                 if (item.type === 'Practical' && (semesterFilter === 'All' || item.semester === 'Every Semester' || (semesterFilter === 'Summer' && item.semester === 'Summer Semester') || (semesterFilter === 'Winter' && item.semester === 'Winter Semester')))
                                     return (
                                         <Col key={index} className={'col-' + col.toString()}>
-                                            <Card className='course-card'>
+                                            <Card className='course-card' onClick={() => { openDetailedView(item.key) }}>
                                                 <p className="lp">{item.lp} LP</p>
                                                 <p className='module-name'>{item.name}</p>
                                                 <Card className='semester-card'>
