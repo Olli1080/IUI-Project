@@ -44,7 +44,7 @@ function LandingPage(){
         {!isLoading &&
         <div className='overall-container'>
             <Card className='landing-card'>
-                    <h1>Have you been here before?</h1>
+                    <h1 className='card-headline'>Have you been here before?</h1>
                     <Container fluid className='container'>
                         <Row>
                             <Col className='card-col col-6'>

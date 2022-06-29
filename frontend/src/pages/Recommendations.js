@@ -6,7 +6,6 @@ import { useNavigate } from 'react-router-dom'
 import DetailedView from './DetailedView'
 
 function Recommendations() {
-    // const allCourses = require('../data/allCourses.json')
     const navigate = useNavigate();
     // Gets user data from previous page
     const { state } = useLocation();
