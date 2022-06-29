@@ -10,6 +10,19 @@ import numpy as np
 import math
 from sklearn.neighbors import NearestNeighbors
 
+import json
+from collections import ChainMap
+
+
+with open('./data/allCourses.json', 'r') as f:
+    data = json.load(f)
+
+def load_reg(x):
+    return { x["key"] + "02" : (int(x["regular_semester"][0]) - 1) / 5.0 }
+
+regular_sem = pd.Series(data=dict(ChainMap(*map(load_reg, data))))
+
+
 course_codes = ["KP", "RR", "AI", "A2", "BS", "TI", "T2", "PV", "P2", "MM", "DS", "D2", "SE", "KI", "CB", "HC", "H2", "IT", "CG", "ES", "RI", "CS", "GD", "FP", "DL", "PR", "BP", "SR", "BA", "K1", "IU"]
 
 course_rating_codes = list()
@@ -26,18 +39,41 @@ for c in course_codes:
     course_semester_codes.append(c + "02")
     course_rating_codes.append(c + "03")
 
+def semester_rec(current, other):
+    other = 0.05 + 0.95 * np.exp(-8 * (other - current))
+    other[other > 1.0] = 1.0
+
+    return other
+    #common = np.exp(5*(other-current))
+    #return 1.0 - 0.9 * common / (1.0 + common)
+
 def get_recommendations(user_data, knn, exists_all, filtered):
+    current = pd.Series(user_data[0])[course_semester_codes].max()
+    
+    score_regular_sem = semester_rec(current, regular_sem)
+    for i in score_regular_sem.index:
+        score_regular_sem[i[0:2]] = score_regular_sem[i]
+    score_regular_sem = score_regular_sem.drop(set(course_semester_codes).intersection(set(score_regular_sem.index)))
+
+    print(score_regular_sem)
+
     distances, neighbour_users = knn.kneighbors(user_data)
     
     similarity = 1 / (distances + 1)
     temp = filtered.iloc[neighbour_users.flatten()].loc[:, exists_all.iloc[neighbour_users.flatten()].any()]
     temp2 = pd.DataFrame()
+    temp_grade = pd.DataFrame()
+    sem = pd.DataFrame()
     for i in course_codes:
         if i + "01_01" in temp.columns:
             temp2[i] = temp[[i + "03"]]
+            temp_grade[i] = 1.0 - temp[[i + "01_01"]]
+            #sem[i] = temp[[i + "02"]].apply(lambda x: semester_rec(current, x))
+    #temp2[temp2.notna()] += 0.2
     qwe = pd.DataFrame()
     for col in temp2.columns:
-        qwe[col] = temp2[col].fillna(0.0).dot(similarity.T)
+        #qwe[col] = ((temp2[col] + 0.5 * temp_grade[col] + 100.0 * sem[col]) / 101.5).fillna(0.0).dot(similarity.T)
+        qwe[col] = ((temp2[col] * 0.5 + temp_grade[col] + 2.0 * score_regular_sem[col]) / 3.5).fillna(0.0).dot(similarity.T)
 
     a = exists_all.iloc[neighbour_users.flatten()].loc[:, course_rating_codes]
     a = a.loc[:, a.any()]
@@ -51,11 +87,11 @@ def get_recommendations(user_data, knn, exists_all, filtered):
         asdf[col] = a[col].fillna(0.0).dot(similarity.T)
 
     results = (qwe / asdf).iloc[0].sort_values(ascending=False)
-    return results
+    return results #/ 1.2
 
 def get_classifier():
     temp = course_data_codes + ["FINISHED"]
-    data = pd.read_csv('./data/data_tutorial316936_2022-06-15_10-39.csv', encoding = "ISO-8859-1")
+    data = pd.read_csv('./data/data_tutorial316936_2022-06-29_12-50.csv', encoding = "ISO-8859-1")
 
     filtered = pd.DataFrame()
     for i in temp:
@@ -84,7 +120,7 @@ def get_classifier():
     def semester(i):
         if math.isnan(float(i)) or i == "-9":
             return np.NAN
-        return (int(i) - 1) / 5.0
+        return (int(i) - 1) / 5.0#np.exp(int(i) * np.log(2.0) / 6.0) - 1.0 #
 
     def like(i):
         if math.isnan(float(i)) or i == "-9":
@@ -100,17 +136,30 @@ def get_classifier():
         filtered[c_like] = filtered[c_like].map(like)
 
     semesters = filtered.loc[:, course_semester_codes]
-    filtered.loc[:, course_semester_codes] = semesters.T.fillna(semesters.max(axis=1)).T
+
+    def fill_reg_max(x):
+        m = x.max()
+        cp = regular_sem.copy()
+        cp[cp < m] = m
+
+        x[x.isna()] = cp[x.isna()]
+        
+        return x
+
+    fi = filtered.copy()
+    fi.loc[:, course_semester_codes] = semesters.apply(fill_reg_max, axis=1)
+    fi = fi.fillna(0.5)
+    #filtered.loc[:, course_semester_codes] = semesters.T.fillna(semesters.max(axis=1)).T
 
     fi = filtered.fillna(0.5)
-    knn = NearestNeighbors(n_neighbors=4)
+    knn = NearestNeighbors(n_neighbors=5)
     knn.fit(fi)
     return lambda user_data: get_recommendations(user_data, knn, exists_all, filtered)
 
 def pr_sem(sem):
     if sem == 0:
         return 1.0
-    return (sem - 1) / 5.0
+    return (int(sem) - 1) / 5.0#np.exp(int(sem) * np.log(2.0) / 6.0) - 1.0 #
 
 def pr_like(like):
     return (2 - like) / 2.0
