@@ -1,25 +1,9 @@
-.modal {
-    width: 95% !important;
-    height: 90% !important;
-    border-radius: 5px;
-    margin-right: 2.5%;
-    margin-left: 2.5%;
-    margin-top: 2.5%;
-    margin-bottom: 2.5%;
-    background-color: white;
-}
-
-.modal-dialog {
-    margin: 0px !important;
-    width: 100% !important;
-    height: 100% !important;
-}
-
-.modal-content {
-    border-radius: 0px !important;
-    border-width: 0px !important;
-    width: 100% !important;
-    height: 100% !important;
+.course-name {
+    background: transparent;
+    font-size: 23px;
+    position: relative;
+    bottom: 10px;
+    background-color: white !important;
 }
 
 

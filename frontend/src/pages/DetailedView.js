@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { Modal } from 'react-bootstrap'
+import { Modal, Container, Row, Col, ModalTitle } from 'react-bootstrap'
 import "./DetailedView.css"
 
 function DetailedView(props) {
@@ -15,15 +15,16 @@ function DetailedView(props) {
 
     return (
         <>
-            <Modal className="dv-modal" show={show} onHide={handleClose} centered={true} animation={false} scrollable={true}
-                style={{
-                    // display: 'flex',
-                    // alignItems: 'center',
-                    // justifyContent: 'center',
-                    // position: 'absolute', left: '50%', top: '50%',
-                    // transform: 'translate(-50%, -50%)'
-                }}>
-                {course.name}
+            <Modal className="dv-modal" show={show} onHide={handleClose} centered={true} animation={true} scrollable={true}>
+                <Container>
+                    <Row>
+                        <Col>
+                            <div className='courseName'>
+                                {course.name}
+                            </div>
+                        </Col>
+                    </Row>
+                </Container>
             </Modal>
 
         </>
