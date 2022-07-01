@@ -238,9 +238,9 @@ function Recommendations() {
 }
 
 function getScoreStyle(score) {
-    if (score >= 0.8)
-        return { color: 'green' }
     if (score >= 0.5)
+        return { color: 'green' }
+    if (score >= 0.25)
         return { color: 'orange' }
     return { color: 'red' }
 }
