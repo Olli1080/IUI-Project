@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import './CourseSelector.css'
 import { Container, Row, Col, Button, Form, Dropdown, DropdownButton } from 'react-bootstrap'
 import { useNavigate } from 'react-router-dom'
@@ -8,17 +8,15 @@ import { useLocation } from 'react-router-dom'
 
 function CourseSelector() {
     const {state} = useLocation();
-    const {userData, allCourses}=state
+    const {userData, allCourses, dirty}=state
     const navigate = useNavigate();
-    // const allCourses = require('../data/allCourses.json')
     const [currentCourseIndex, setCurrentCourseIndex] = useState(-1)
     const [semesterOfCurrentCourse, setSemesterOfCurrentCourse] = useState(-1) //-1: not set, 0: >6th
     const [likeCurrentCourse, setLikeCurrentCourse] = useState(-1) //-1: not set, 0: like, 1: neutral, 2: dislike
     const [gradeOfCurrentCourse, setGradeOfCurrentCourse] = useState(-1)
     const [errorMessage, setErrorMessage] = useState('')
-
-
     const [isLoading, setIsLoading] = useState(false);
+    const [unsavedData, setUnsavedData]=useState(dirty)
 
     const selectedCourses = useState(new Array(allCourses.length).fill(false))[0]
     const grades = ['1.0', '1.3', '1.7', '2.0', '2.3', '2.7', '3.0', '3.3', '3.7', '4.0', '5.0']
@@ -26,6 +24,18 @@ function CourseSelector() {
     userData.forEach(userDataItem => {
         selectedCourses[getIndexByKey(userDataItem.course, allCourses)]=true
     })
+
+    useEffect(() => {
+        window.addEventListener('beforeunload', alertUser)
+        return () => {
+            window.removeEventListener('beforeunload', alertUser)
+        }
+    }, [])
+
+    const alertUser=(e)=>{
+        e.preventDefault()
+        e.returnValue=''
+    }
 
     const showNextCourse = () => {
         if (currentCourseIndex !== -1 && (semesterOfCurrentCourse === -1 || likeCurrentCourse === -1 || gradeOfCurrentCourse === -1)) {
@@ -52,7 +62,7 @@ function CourseSelector() {
             sendDataToBackend(userData).then((recs) => {
                 setIsLoading(false);
                 console.log(recs);
-                navigate('/recommendations', { state: { user_data: userData, recommendations: recs, allCourses: allCourses } });
+                navigate('/recommendations', { state: { user_data: userData, recommendations: recs, allCourses: allCourses, unsavedData: unsavedData } });
             }
             ).catch((err) => { console.err(err); })
         }
@@ -67,7 +77,7 @@ function CourseSelector() {
                 sendDataToBackend(userData).then((recs) => {
                     setIsLoading(false);
                     console.log(recs);
-                    navigate('/recommendations', { state: { user_data: userData, recommendations: recs, allCourses: allCourses } });
+                    navigate('/recommendations', { state: { user_data: userData, recommendations: recs, allCourses: allCourses, unsavedData: unsavedData } });
                 }
                 ).catch((err) => { console.err(err); })
             }
@@ -162,7 +172,10 @@ function CourseSelector() {
                                     </Col>
                                     <Col className='col-2'>
                                         <Form>
-                                            <Form.Check defaultChecked={selectedCourses[index]} className='toggle' type='switch' id='custom-switch' onChange={() => selectedCourses[index] = !selectedCourses[index]} />
+                                            <Form.Check defaultChecked={selectedCourses[index]} className='toggle' type='switch' id='custom-switch' onChange={() => {
+                                                selectedCourses[index] = !selectedCourses[index]
+                                                setUnsavedData(true)
+                                            }}/>
                                         </Form>
                                     </Col>
                                 </Row>
@@ -187,7 +200,10 @@ function CourseSelector() {
                         <Form>
                             {grades.map((grade, index) => {
                                 return (
-                                    <Form.Check checked={grade === gradeOfCurrentCourse} key={index} inline name='group-1' type='radio' id='default-radio' label={grade} onChange={() => setGradeOfCurrentCourse(grade)} />
+                                    <Form.Check checked={grade === gradeOfCurrentCourse} key={index} inline name='group-1' type='radio' id='default-radio' label={grade} onChange={() => {
+                                        setGradeOfCurrentCourse(grade)
+                                        setUnsavedData(true)
+                                    }} />
                                 )
                             })}
                         </Form>
@@ -195,34 +211,64 @@ function CourseSelector() {
                     <h2 style={{ marginTop: '20px' }}>In which semester did you work on this module?</h2>
                     <Container className='form-container'>
                         <DropdownButton id="dropdown-basic-button" title={semesterOfCurrentCourse === -1 ? 'Semester' : makeOrdinal(semesterOfCurrentCourse)}>
-                            <Dropdown.Item onClick={() => setSemesterOfCurrentCourse(1)}>1st</Dropdown.Item>
-                            <Dropdown.Item onClick={() => setSemesterOfCurrentCourse(2)}>2nd</Dropdown.Item>
-                            <Dropdown.Item onClick={() => setSemesterOfCurrentCourse(3)}>3rd</Dropdown.Item>
-                            <Dropdown.Item onClick={() => setSemesterOfCurrentCourse(4)}>4th</Dropdown.Item>
-                            <Dropdown.Item onClick={() => setSemesterOfCurrentCourse(5)}>5th</Dropdown.Item>
-                            <Dropdown.Item onClick={() => setSemesterOfCurrentCourse(6)}>6th</Dropdown.Item>
-                            <Dropdown.Item onClick={() => setSemesterOfCurrentCourse(0)}>{'>'} 6th</Dropdown.Item>
+                            <Dropdown.Item onClick={() => {
+                                setSemesterOfCurrentCourse(1)
+                                setUnsavedData(true)
+                            }}>1st</Dropdown.Item>
+                            <Dropdown.Item onClick={() => {
+                                setSemesterOfCurrentCourse(2)
+                                setUnsavedData(true)
+                            }}>2nd</Dropdown.Item>
+                            <Dropdown.Item onClick={() => {
+                                setSemesterOfCurrentCourse(3)
+                                setUnsavedData(true)
+                            }}>3rd</Dropdown.Item>
+                            <Dropdown.Item onClick={() => {
+                                setSemesterOfCurrentCourse(4)
+                                setUnsavedData(true)
+                            }}>4th</Dropdown.Item>
+                            <Dropdown.Item onClick={() => {
+                                setSemesterOfCurrentCourse(5)
+                                setUnsavedData(true)
+                            }}>5th</Dropdown.Item>
+                            <Dropdown.Item onClick={() => {
+                                setSemesterOfCurrentCourse(6)
+                                setUnsavedData(true)
+                            }}>6th</Dropdown.Item>
+                            <Dropdown.Item onClick={() => {
+                                setSemesterOfCurrentCourse(0)
+                                setUnsavedData(true)
+                            }}>{'>'} 6th</Dropdown.Item>
                         </DropdownButton>
                     </Container>
                     <h2 style={{ marginTop: '20px' }}>Did you like it?</h2>
                     <Container className='form-container'>
                         <Row>
                             <Col className='col-auto'>
-                                <Button className={likeCurrentCourse === 0 ? '' : 'like-button-inactive'} onClick={() => setLikeCurrentCourse(0)}>
+                                <Button className={likeCurrentCourse === 0 ? '' : 'like-button-inactive'} onClick={() => {
+                                    setLikeCurrentCourse(0)
+                                    setUnsavedData(true)
+                                }}>
                                     <span className="material-symbols-outlined">
                                         thumb_up
                                     </span>
                                 </Button>
                             </Col>
                             <Col className='col-auto'>
-                                <Button className={likeCurrentCourse === 1 ? '' : 'like-button-inactive'} onClick={() => setLikeCurrentCourse(1)}>
+                                <Button className={likeCurrentCourse === 1 ? '' : 'like-button-inactive'} onClick={() => {
+                                    setLikeCurrentCourse(1)
+                                    setUnsavedData(true)
+                                }}>
                                     <span className="material-symbols-outlined">
                                         horizontal_rule
                                     </span>
                                 </Button>
                             </Col>
                             <Col className='col-auto'>
-                                <Button className={likeCurrentCourse === 2 ? '' : 'like-button-inactive'} onClick={() => setLikeCurrentCourse(2)}>
+                                <Button className={likeCurrentCourse === 2 ? '' : 'like-button-inactive'} onClick={() => {
+                                    setLikeCurrentCourse(2)
+                                    setUnsavedData(true)
+                                }}>
                                     <span className="material-symbols-outlined">
                                         thumb_down
                                     </span>

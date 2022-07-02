@@ -35,7 +35,7 @@ function LandingPage(){
         reader.onload = (e) => {
             const text = e.target.result
             userData=JSON.parse(text)
-            navigate('/course-selector', { state: { userData: userData, allCourses: courseData} });
+            navigate('/course-selector', { state: { userData: userData, allCourses: courseData, dirty: false} });
         };
         reader.readAsText(e.target.files[0])
     };
@@ -49,7 +49,7 @@ function LandingPage(){
                         <Row>
                             <Col className='card-col col-6'>
                                 <Button className='button' onClick={()=>{
-                                    navigate('/course-selector', { state: { userData: [], allCourses:  courseData} })
+                                    navigate('/course-selector', { state: { userData: [], allCourses:  courseData, dirty: false} })
                                 }}>No, I'm new</Button>
                             </Col>
                             <Col className='card-col col-6'>

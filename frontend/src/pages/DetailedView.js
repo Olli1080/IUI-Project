@@ -32,10 +32,10 @@ function DetailedView(props) {
                 </Modal.Header>
                 <Modal.Body>
                     <Container>
-                        {Object.entries(course).map((property) => {
+                        {Object.entries(course).map((property, index) => {
                             if (!["name", "key", "languages", "content", "learning-goals", "regular_semester"].includes(property[0])) {
                                 return (
-                                    <Row className='detail-row'>
+                                    <Row className='detail-row' key={index}>
                                         <Col>
                                             <div className="course-property">
                                                 {property_int_name_to_name[property[0]]}
@@ -52,7 +52,7 @@ function DetailedView(props) {
 
                             if (["languages", "regular_semester"].includes(property[0])) {
                                 return (
-                                    <Row className='detail-row'>
+                                    <Row className='detail-row' key={index}>
                                         <Col>
                                             <div className="course-property">
                                                 {property_int_name_to_name[property[0]]}
@@ -60,7 +60,7 @@ function DetailedView(props) {
                                         </Col>
                                         <Col>
                                             <div className="course-value">
-                                                {property[1].map((elem => { return (<Badge bg="detail-badge">{elem}</Badge>) }))}
+                                                {property[1].map(((elem, i) => { return (<Badge bg="detail-badge" key={i}>{elem}</Badge>) }))}
                                             </div>
                                         </Col>
                                     </Row>
@@ -69,7 +69,7 @@ function DetailedView(props) {
 
                             if (["content", "learning-goals"].includes(property[0])) {
                                 return (
-                                    <Row className='detail-row'>
+                                    <Row className='detail-row' key={index}>
                                         <Col>
                                             <div className="course-property">
                                                 {property_int_name_to_name[property[0]]}
