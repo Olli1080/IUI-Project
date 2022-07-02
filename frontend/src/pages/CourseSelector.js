@@ -16,7 +16,7 @@ function CourseSelector() {
     const [gradeOfCurrentCourse, setGradeOfCurrentCourse] = useState(-1)
     const [errorMessage, setErrorMessage] = useState('')
     const [isLoading, setIsLoading] = useState(false);
-    const [unsavedData, setUnsavedData]=useState(dirty)
+    let [unsavedData, setUnsavedData]=useState(dirty)
 
     const selectedCourses = useState(new Array(allCourses.length).fill(false))[0]
     const grades = ['1.0', '1.3', '1.7', '2.0', '2.3', '2.7', '3.0', '3.3', '3.7', '4.0', '5.0']
@@ -74,6 +74,7 @@ function CourseSelector() {
             }
             if (i === selectedCourses.length - 1) {
                 setIsLoading(true);
+                // eslint-disable-next-line
                 sendDataToBackend(userData).then((recs) => {
                     setIsLoading(false);
                     console.log(recs);
@@ -174,7 +175,7 @@ function CourseSelector() {
                                         <Form>
                                             <Form.Check defaultChecked={selectedCourses[index]} className='toggle' type='switch' id='custom-switch' onChange={() => {
                                                 selectedCourses[index] = !selectedCourses[index]
-                                                setUnsavedData(true)
+                                                unsavedData=true
                                             }}/>
                                         </Form>
                                     </Col>
