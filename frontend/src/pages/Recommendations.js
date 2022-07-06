@@ -15,7 +15,9 @@ function Recommendations() {
     const [courseTypeFilter, setCourseTypeFilter] = useState('All')
     const [showDetail, setShowDetail] = useState(false);
     const [selCourse, setSelCourse] = useState(allCourses[0]);
-    const [dirty, setDirty]=useState(unsavedData)
+    const [forceUpdate, setForceUpdate] = useState(false);
+    const [dirty, setDirty]=useState(unsavedData);
+    
 
     useEffect(() => {
         updateDimensions()
@@ -69,6 +71,7 @@ function Recommendations() {
 
     const openDetailedView = (course) => {
         setSelCourse(allCourses.find(c => c.key === course));
+        setForceUpdate(!forceUpdate);
         setShowDetail(true);
     }
 
@@ -80,7 +83,7 @@ function Recommendations() {
 
     return (
         <>
-            <DetailedView selCourse={selCourse} openModal={showDetail}></DetailedView>
+            <DetailedView selCourse={selCourse} openModal={showDetail} forceUpdate={forceUpdate}></DetailedView>
             <Container fluid className='top-button-row'>
                 <Row>
                     <Col>

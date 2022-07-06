@@ -3,10 +3,12 @@ import { Modal, Container, Row, Col, Badge, Form} from 'react-bootstrap'
 import "./DetailedView.css"
 
 function DetailedView(props) {
-    const { selCourse, openModal } = props;
+    const { selCourse, openModal, forceUpdate } = props;
     const [show, setShow] = useState(false);
     const [course, setCourse] = useState(selCourse);
+    const [fUpdate, setFUpdate] = useState(forceUpdate);
     const handleClose = () => { setShow(false); };
+    if (fUpdate) {};
 
     const property_int_name_to_name = {
         "lp": "ECTS",
@@ -20,9 +22,10 @@ function DetailedView(props) {
     }
 
     useEffect(() => {
-        setCourse(selCourse)
-        setShow(openModal)
-    }, [selCourse, openModal]);
+        setCourse(selCourse);
+        setShow(openModal);
+        setFUpdate(forceUpdate);
+    }, [selCourse, openModal, forceUpdate]);
 
     return (
         <>
