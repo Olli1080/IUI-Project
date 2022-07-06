@@ -12,6 +12,10 @@
     border-radius: 10px;
 }
 
+.course-card:hover{
+    background-color: #ece6f3;
+}
+
 .top-row-container{
     background: transparent;
     padding: 0 !important;
