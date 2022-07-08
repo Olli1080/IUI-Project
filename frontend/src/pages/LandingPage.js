@@ -2,6 +2,7 @@ import React, {useState, useEffect} from "react";
 import {Card, Container, Row, Button, Col} from 'react-bootstrap'
 import './LandingPage.css'
 import {useNavigate} from 'react-router-dom'
+import { sendDataToBackend } from '../Utils'
 import {getCourseJson} from '../Utils'
 import Loading from './Loading'
 
@@ -35,7 +36,13 @@ function LandingPage(){
         reader.onload = (e) => {
             const text = e.target.result
             userData=JSON.parse(text)
-            navigate('/course-selector', { state: { userData: userData, allCourses: courseData, dirty: false} });
+            setIsLoading(true);
+            // eslint-disable-next-line
+            sendDataToBackend(userData).then((recs) => {
+                setIsLoading(false);
+                navigate('/recommendations', { state: { user_data: userData, recommendations: recs, allCourses: courseData, unsavedData: false } });
+            }
+            ).catch((err) => { console.err(err); })
         };
         reader.readAsText(e.target.files[0])
     };

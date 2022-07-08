@@ -61,7 +61,6 @@ function CourseSelector() {
             setIsLoading(true);
             sendDataToBackend(userData).then((recs) => {
                 setIsLoading(false);
-                console.log(recs);
                 navigate('/recommendations', { state: { user_data: userData, recommendations: recs, allCourses: allCourses, unsavedData: unsavedData } });
             }
             ).catch((err) => { console.err(err); })
@@ -77,7 +76,6 @@ function CourseSelector() {
                 // eslint-disable-next-line
                 sendDataToBackend(userData).then((recs) => {
                     setIsLoading(false);
-                    console.log(recs);
                     navigate('/recommendations', { state: { user_data: userData, recommendations: recs, allCourses: allCourses, unsavedData: unsavedData } });
                 }
                 ).catch((err) => { console.err(err); })
