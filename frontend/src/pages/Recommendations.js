@@ -9,29 +9,19 @@ function Recommendations() {
     const navigate = useNavigate();
     // Gets user data from previous page
     const { state } = useLocation();
-    const { user_data, recommendations, allCourses, unsavedData } = state;
+    const { user_data, recommendations, allCourses } = state;
     const [col, setCol] = useState(3)
     const [semesterFilter, setSemesterFilter] = useState('All')
     const [courseTypeFilter, setCourseTypeFilter] = useState('All')
     const [showDetail, setShowDetail] = useState(false);
     const [selCourse, setSelCourse] = useState(allCourses[0]);
     const [forceUpdate, setForceUpdate] = useState(false);
-    const [dirty, setDirty]=useState(unsavedData);
     
 
     useEffect(() => {
         updateDimensions()
         window.addEventListener('resize', updateDimensions)
-        if(dirty)
-            window.addEventListener('beforeunload', alertUser)
-    },
-    // eslint-disable-next-line
-    [])
-
-    const alertUser=(e)=>{
-        e.preventDefault()
-        e.returnValue=''
-    }
+    })
 
     const updateDimensions = () => {
         if (window.innerWidth >= 1330)
@@ -52,8 +42,6 @@ function Recommendations() {
         link.href = jsonString;
         link.download = "user_data.json";
         link.click();
-        setDirty(false)
-        window.removeEventListener('beforeunload', alertUser)
     }
 
     const getMinimumSemesterOfCourse = (courseKey) => {
@@ -95,8 +83,7 @@ function Recommendations() {
                     </Col>
                     <Col style={{ textAlign: 'center' }}>
                         <Button className='home-button-recommendations button' onClick={() => {
-                            window.removeEventListener('beforeunload', alertUser)
-                            navigate('/course-selector', { state: { userData: user_data, allCourses: allCourses, dirty: dirty } })
+                            navigate('/course-selector', { state: { userData: user_data, allCourses: allCourses } })
                         }}>
                             <i className="fa-solid fa-file-pen"></i>
                         </Button>

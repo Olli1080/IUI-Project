@@ -6,12 +6,13 @@ import { sendDataToBackend } from '../Utils'
 import {getCourseJson} from '../Utils'
 import Loading from './Loading'
 
+let userData
+
 function LandingPage(){
     const navigate = useNavigate();
 
     // Get Course Data at beginning
     const [isLoading, setIsLoading] = useState(true);
-    let userData
     const hiddenFileInput = React.useRef(null)
     const [courseData, setCourseData] = useState();
 
@@ -21,7 +22,11 @@ function LandingPage(){
             setCourseData(courses);
         }
         ).catch((err) => { console.err(err); })
-
+        const localStorageUserData=JSON.parse(localStorage.getItem('courseRecUserData'))
+        if(localStorageUserData){
+            userData=localStorageUserData
+            console.log(userData)
+        }
     }, []);
 
 
@@ -37,10 +42,10 @@ function LandingPage(){
             const text = e.target.result
             userData=JSON.parse(text)
             setIsLoading(true);
-            // eslint-disable-next-line
             sendDataToBackend(userData).then((recs) => {
                 setIsLoading(false);
-                navigate('/recommendations', { state: { user_data: userData, recommendations: recs, allCourses: courseData, unsavedData: false } });
+                localStorage.setItem('courseRecUserData', JSON.stringify(userData))
+                navigate('/recommendations', { state: { user_data: userData, recommendations: recs, allCourses: courseData } });
             }
             ).catch((err) => { console.err(err); })
         };
@@ -54,14 +59,25 @@ function LandingPage(){
                     <h1 className='card-headline'>Have you been here before?</h1>
                     <Container fluid className='container'>
                         <Row>
-                            <Col className='card-col col-6'>
+                            <Col className='card-col'>
                                 <Button className='button' onClick={()=>{
-                                    navigate('/course-selector', { state: { userData: [], allCourses:  courseData, dirty: false} })
+                                    navigate('/course-selector', { state: { userData: [], allCourses:  courseData} })
                                 }}>No, I'm new</Button>
                             </Col>
-                            <Col className='card-col col-6'>
+                            <Col className='card-col'>
                                 <input type="file" id="file" accept='.json' ref={hiddenFileInput} style={{ display: "none" }} onChange={handleChange}/>
-                                <Button className='button' onClick={handleClick}>Yes, upload existing data</Button>
+                                <Button className='button' onClick={handleClick}>Yes, upload file</Button>
+                            </Col>
+                            <Col className='card-col'>
+                                <Button className='button' disabled={userData===undefined} onClick={()=>{
+                                    setIsLoading(true);
+                                    sendDataToBackend(userData).then((recs) => {
+                                        setIsLoading(false);
+                                        localStorage.setItem('courseRecUserData', JSON.stringify(userData))
+                                        navigate('/recommendations', { state: { user_data: userData, recommendations: recs, allCourses: courseData } });
+                                    }
+                                    ).catch((err) => { console.err(err); })
+                                }}>Yes, use data from last time</Button>
                             </Col>
                         </Row>
                     </Container>

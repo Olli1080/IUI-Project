@@ -8,7 +8,7 @@ import { useLocation } from 'react-router-dom'
 
 function CourseSelector() {
     const {state} = useLocation();
-    const {userData, allCourses, dirty}=state
+    const {userData, allCourses}=state
     const navigate = useNavigate();
     const [currentCourseIndex, setCurrentCourseIndex] = useState(-1)
     const [semesterOfCurrentCourse, setSemesterOfCurrentCourse] = useState(-1) //-1: not set, 0: >6th
@@ -16,7 +16,6 @@ function CourseSelector() {
     const [gradeOfCurrentCourse, setGradeOfCurrentCourse] = useState(-1)
     const [errorMessage, setErrorMessage] = useState('')
     const [isLoading, setIsLoading] = useState(false);
-    let [unsavedData, setUnsavedData]=useState(dirty)
 
     const selectedCourses = useState(new Array(allCourses.length).fill(false))[0]
     const grades = ['1.0', '1.3', '1.7', '2.0', '2.3', '2.7', '3.0', '3.3', '3.7', '4.0', '5.0']
@@ -61,7 +60,8 @@ function CourseSelector() {
             setIsLoading(true);
             sendDataToBackend(userData).then((recs) => {
                 setIsLoading(false);
-                navigate('/recommendations', { state: { user_data: userData, recommendations: recs, allCourses: allCourses, unsavedData: unsavedData } });
+                localStorage.setItem('courseRecUserData', JSON.stringify(userData))
+                navigate('/recommendations', { state: { user_data: userData, recommendations: recs, allCourses: allCourses } });
             }
             ).catch((err) => { console.err(err); })
         }
@@ -73,10 +73,10 @@ function CourseSelector() {
             }
             if (i === selectedCourses.length - 1) {
                 setIsLoading(true);
-                // eslint-disable-next-line
                 sendDataToBackend(userData).then((recs) => {
                     setIsLoading(false);
-                    navigate('/recommendations', { state: { user_data: userData, recommendations: recs, allCourses: allCourses, unsavedData: unsavedData } });
+                    localStorage.setItem('courseRecUserData', JSON.stringify(userData))
+                    navigate('/recommendations', { state: { user_data: userData, recommendations: recs, allCourses: allCourses } });
                 }
                 ).catch((err) => { console.err(err); })
             }
@@ -173,7 +173,6 @@ function CourseSelector() {
                                         <Form>
                                             <Form.Check defaultChecked={selectedCourses[index]} className='toggle' type='switch' id='custom-switch' onChange={() => {
                                                 selectedCourses[index] = !selectedCourses[index]
-                                                unsavedData=true
                                             }}/>
                                         </Form>
                                     </Col>
@@ -201,7 +200,6 @@ function CourseSelector() {
                                 return (
                                     <Form.Check checked={grade === gradeOfCurrentCourse} key={index} inline name='group-1' type='radio' id='default-radio' label={grade} onChange={() => {
                                         setGradeOfCurrentCourse(grade)
-                                        setUnsavedData(true)
                                     }} />
                                 )
                             })}
@@ -212,31 +210,24 @@ function CourseSelector() {
                         <DropdownButton id="dropdown-basic-button" title={semesterOfCurrentCourse === -1 ? 'Semester' : makeOrdinal(semesterOfCurrentCourse)}>
                             <Dropdown.Item onClick={() => {
                                 setSemesterOfCurrentCourse(1)
-                                setUnsavedData(true)
                             }}>1st</Dropdown.Item>
                             <Dropdown.Item onClick={() => {
                                 setSemesterOfCurrentCourse(2)
-                                setUnsavedData(true)
                             }}>2nd</Dropdown.Item>
                             <Dropdown.Item onClick={() => {
                                 setSemesterOfCurrentCourse(3)
-                                setUnsavedData(true)
                             }}>3rd</Dropdown.Item>
                             <Dropdown.Item onClick={() => {
                                 setSemesterOfCurrentCourse(4)
-                                setUnsavedData(true)
                             }}>4th</Dropdown.Item>
                             <Dropdown.Item onClick={() => {
                                 setSemesterOfCurrentCourse(5)
-                                setUnsavedData(true)
                             }}>5th</Dropdown.Item>
                             <Dropdown.Item onClick={() => {
                                 setSemesterOfCurrentCourse(6)
-                                setUnsavedData(true)
                             }}>6th</Dropdown.Item>
                             <Dropdown.Item onClick={() => {
                                 setSemesterOfCurrentCourse(0)
-                                setUnsavedData(true)
                             }}>{'>'} 6th</Dropdown.Item>
                         </DropdownButton>
                     </Container>
@@ -246,7 +237,6 @@ function CourseSelector() {
                             <Col className='col-auto'>
                                 <Button className={likeCurrentCourse === 0 ? '' : 'like-button-inactive'} onClick={() => {
                                     setLikeCurrentCourse(0)
-                                    setUnsavedData(true)
                                 }}>
                                     <span className="material-symbols-outlined">
                                         thumb_up
@@ -256,7 +246,6 @@ function CourseSelector() {
                             <Col className='col-auto'>
                                 <Button className={likeCurrentCourse === 1 ? '' : 'like-button-inactive'} onClick={() => {
                                     setLikeCurrentCourse(1)
-                                    setUnsavedData(true)
                                 }}>
                                     <span className="material-symbols-outlined">
                                         horizontal_rule
@@ -266,7 +255,6 @@ function CourseSelector() {
                             <Col className='col-auto'>
                                 <Button className={likeCurrentCourse === 2 ? '' : 'like-button-inactive'} onClick={() => {
                                     setLikeCurrentCourse(2)
-                                    setUnsavedData(true)
                                 }}>
                                     <span className="material-symbols-outlined">
                                         thumb_down
