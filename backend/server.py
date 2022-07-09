@@ -1,6 +1,3 @@
-import json
-import time
-
 from flask import Flask, request
 from flask_cors import CORS
 from flask_restful import Api, Resource
@@ -199,8 +196,8 @@ class Recommendations(Resource):
     
     def put(self):
         recs = classifier([process_input(request.json)])
-        #print(list(map(lambda x: x["course"], list(filter(lambda x: x["grade"] != "5.0", request.json)))))
-        #filter out passed modules
+        # print(list(map(lambda x: x["course"], list(filter(lambda x: x["grade"] != "5.0", request.json)))))
+        # filter out passed modules
         dropper = set(recs.index.to_list()).intersection(list(map(lambda x: x["course"], list(filter(lambda x: x["grade"] != "5.0", request.json)))))
         recs = recs.drop(dropper)
 

@@ -13,12 +13,22 @@ export async function sendDataToBackend(data){
         });
 }
 
+
 export async function getCourseJson(data){
-    return fetch('http://localhost:5000/course_data')
-        .then(response => {
-            if (!response.ok) {
-                throw new Error("HTTP status " + response.status);
-            }
-            return response.json();
-        });
+    const controller = new AbortController()
+    const timeoutId = setTimeout(() => {controller.abort();},  3000)
+    
+    const requestOptions = {
+        signal: controller.signal
+    };
+    
+    const response = await fetch('http://localhost:5000/course_data', requestOptions).catch( err => {clearTimeout(timeoutId); throw new Error("Timeout Error")});
+
+    if (!response.ok) {
+        clearTimeout(timeoutId);
+        throw new Error("HTTP status " + response.status);
+    }
+
+    clearTimeout(timeoutId);
+    return response.json();
 }
