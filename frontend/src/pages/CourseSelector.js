@@ -5,6 +5,7 @@ import { useNavigate } from 'react-router-dom'
 import { sendDataToBackend } from '../Utils'
 import Loading from './Loading'
 import { useLocation } from 'react-router-dom'
+import ErrorMessage from "./ErrorMessage";
 
 function CourseSelector() {
     const {state} = useLocation();
@@ -16,6 +17,7 @@ function CourseSelector() {
     const [gradeOfCurrentCourse, setGradeOfCurrentCourse] = useState(-1)
     const [errorMessage, setErrorMessage] = useState('')
     const [isLoading, setIsLoading] = useState(false);
+    const [errorMessages, setErrorMessages] = useState([]);
 
     const selectedCourses = useState(new Array(allCourses.length).fill(false))[0]
     const grades = ['1.0', '1.3', '1.7', '2.0', '2.3', '2.7', '3.0', '3.3', '3.7', '4.0', '5.0']
@@ -63,7 +65,7 @@ function CourseSelector() {
                 localStorage.setItem('courseRecUserData', JSON.stringify(userData))
                 navigate('/recommendations', { state: { user_data: userData, recommendations: recs, allCourses: allCourses } });
             }
-            ).catch((err) => { console.err(err); })
+            ).catch((err) => { setErrorMessages(e_m => {return [...e_m,err]}) })
         }
         for (let i = currentCourseIndex + 1; i < selectedCourses.length; i++) {
             if (selectedCourses[i]) {
@@ -78,7 +80,7 @@ function CourseSelector() {
                     localStorage.setItem('courseRecUserData', JSON.stringify(userData))
                     navigate('/recommendations', { state: { user_data: userData, recommendations: recs, allCourses: allCourses } });
                 }
-                ).catch((err) => { console.err(err); })
+                ).catch((err) => { setErrorMessages(e_m => {return [...e_m,err]}); })
             }
         }
     }
@@ -146,7 +148,9 @@ function CourseSelector() {
         }
     }
     return (
-        <> {isLoading === false && <>
+        <>
+        <ErrorMessage error_messages={errorMessages}></ErrorMessage> 
+        {isLoading === false && <>
         <Container fluid className='top-button-row'>
                 <Row>
                     <Col>

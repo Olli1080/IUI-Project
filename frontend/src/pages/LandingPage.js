@@ -23,13 +23,12 @@ function LandingPage() {
             setIsLoading(false);
             setCourseData(courses);
         }
-        ).catch((err) => {setErrorMessages(e_m => {return [...e_m,err.message]})}); //console.err(err);
+        ).catch((err) => {setErrorMessages(e_m => {return [...e_m,err]})}); //console.err(err);
 
 
         const localStorageUserData = JSON.parse(localStorage.getItem('courseRecUserData'))
         if (localStorageUserData) {
             userData = localStorageUserData
-            console.log(userData)
         }
     }, []);
 
@@ -51,7 +50,7 @@ function LandingPage() {
                 localStorage.setItem('courseRecUserData', JSON.stringify(userData))
                 navigate('/recommendations', { state: { user_data: userData, recommendations: recs, allCourses: courseData } });
             }
-            ).catch((err) => { setErrorMessages([...errorMessages, err]); })
+            ).catch((err) => {setErrorMessages(e_m => {return [...e_m,err]})})
         };
         reader.readAsText(e.target.files[0])
     };
@@ -81,7 +80,7 @@ function LandingPage() {
                                             localStorage.setItem('courseRecUserData', JSON.stringify(userData))
                                             navigate('/recommendations', { state: { user_data: userData, recommendations: recs, allCourses: courseData } });
                                         }
-                                        ).catch((err) => { setErrorMessages([...errorMessages, err]) })
+                                        ).catch((err) => {setErrorMessages(e_m => {return [...e_m,err]})})
                                     }}>Yes, use data from last time</Button>
                                 </Col>
                             </Row>
