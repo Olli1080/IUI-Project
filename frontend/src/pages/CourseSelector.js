@@ -155,7 +155,7 @@ function CourseSelector() {
                 <Row>
                     <Col>
                         <a href='/'>
-                            <Button className='home-button-recommendations button'>
+                            <Button className='home-button-recommendations button' title="Home">
                                 <i className="fa-solid fa-house"></i>
                             </Button>
                         </a>

@@ -76,20 +76,20 @@ function Recommendations() {
                 <Row>
                     <Col>
                         <a href='/'>
-                            <Button className='home-button-recommendations button'>
+                            <Button className='home-button-recommendations button' title="Home">
                                 <i className="fa-solid fa-house"></i>
                             </Button>
                         </a>
                     </Col>
                     <Col style={{ textAlign: 'center' }}>
-                        <Button className='home-button-recommendations button' onClick={() => {
+                        <Button className='home-button-recommendations button' title="Modify courses"  onClick={() => {
                             navigate('/course-selector', { state: { userData: user_data, allCourses: allCourses } })
                         }}>
                             <i className="fa-solid fa-file-pen"></i>
                         </Button>
                     </Col>
                     <Col>
-                        <Button className='home-button-recommendations button float-end' onClick={exportData}>
+                        <Button className='home-button-recommendations button float-end' title="Export as json" onClick={exportData}>
                             <i className="fa-solid fa-file-export"></i>
                         </Button>
                     </Col>
