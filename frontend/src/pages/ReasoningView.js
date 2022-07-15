@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { Modal, Container, Row, Col, Badge, Form} from 'react-bootstrap'
+import { Modal, Container, Row, Col} from 'react-bootstrap'
 import "./ReasoningView.css"
 
 function DetailedView(props) {
