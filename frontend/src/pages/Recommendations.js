@@ -26,11 +26,11 @@ function Recommendations() {
     })
 
     const updateDimensions = () => {
-        if (window.innerWidth >= 1330)
+        if (window.innerWidth >= 1490)
             setCol(3)
-        else if (window.innerWidth >= 1002)
+        else if (window.innerWidth >= 1110)
             setCol(4)
-        else if (window.innerWidth >= 674)
+        else if (window.innerWidth >= 750)
             setCol(6)
         else
             setCol(12)
