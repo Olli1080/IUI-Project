@@ -48,7 +48,7 @@ function LandingPage() {
             sendDataToBackend(userData).then((recs) => {
                 setIsLoading(false);
                 localStorage.setItem('courseRecUserData', JSON.stringify(userData))
-                navigate('/recommendations', { state: { user_data: userData, recommendations: recs, allCourses: courseData } });
+                navigate('/recommendations', { state: { user_data: userData, recommendations: recs, allCourses: courseData, showTutorial: false} });
             }
             ).catch((err) => {setErrorMessages(e_m => {return [...e_m,err]})})
         };
@@ -65,7 +65,7 @@ function LandingPage() {
                             <Row>
                                 <Col className='card-col'>
                                     <Button className='button' onClick={() => {
-                                        navigate('/course-selector', { state: { userData: [], allCourses: courseData } })
+                                        navigate('/course-selector', { state: { userData: [], allCourses: courseData, showTutorial: true} })
                                     }}>No, I'm new</Button>
                                 </Col>
                                 <Col className='card-col'>
@@ -78,7 +78,7 @@ function LandingPage() {
                                         sendDataToBackend(userData).then((recs) => {
                                             setIsLoading(false);
                                             localStorage.setItem('courseRecUserData', JSON.stringify(userData))
-                                            navigate('/recommendations', { state: { user_data: userData, recommendations: recs, allCourses: courseData } });
+                                            navigate('/recommendations', { state: { user_data: userData, recommendations: recs, allCourses: courseData, showTutorial: false} });
                                         }
                                         ).catch((err) => {setErrorMessages(e_m => {return [...e_m,err]})})
                                     }}>Yes, use data from last time</Button>

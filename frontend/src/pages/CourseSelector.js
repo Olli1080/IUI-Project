@@ -9,7 +9,7 @@ import ErrorMessage from "./ErrorMessage";
 
 function CourseSelector() {
     const {state} = useLocation();
-    const {userData, allCourses}=state
+    const {userData, allCourses, showTutorial}=state
     const navigate = useNavigate();
     const [currentCourseIndex, setCurrentCourseIndex] = useState(-1)
     const [semesterOfCurrentCourse, setSemesterOfCurrentCourse] = useState(-1) //-1: not set, 0: >6th
@@ -63,7 +63,7 @@ function CourseSelector() {
             sendDataToBackend(userData).then((recs) => {
                 setIsLoading(false);
                 localStorage.setItem('courseRecUserData', JSON.stringify(userData))
-                navigate('/recommendations', { state: { user_data: userData, recommendations: recs, allCourses: allCourses } });
+                navigate('/recommendations', { state: { user_data: userData, recommendations: recs, allCourses: allCourses, showTutorial: showTutorial } });
             }
             ).catch((err) => { setErrorMessages(e_m => {return [...e_m,err]}) })
         }
@@ -78,7 +78,7 @@ function CourseSelector() {
                 sendDataToBackend(userData).then((recs) => {
                     setIsLoading(false);
                     localStorage.setItem('courseRecUserData', JSON.stringify(userData))
-                    navigate('/recommendations', { state: { user_data: userData, recommendations: recs, allCourses: allCourses } });
+                    navigate('/recommendations', { state: { user_data: userData, recommendations: recs, allCourses: allCourses, showTutorial: showTutorial} });
                 }
                 ).catch((err) => { setErrorMessages(e_m => {return [...e_m,err]}); })
             }

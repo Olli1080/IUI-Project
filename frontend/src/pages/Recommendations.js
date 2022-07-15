@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useRef } from 'react'
 import './Recommendations.css'
-import { Container, Row, Col, Card, Button, Dropdown, DropdownButton} from 'react-bootstrap'
+import { Container, Row, Col, Card, Button, Dropdown, DropdownButton, Overlay, Tooltip } from 'react-bootstrap'
 import { useLocation } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom'
 import DetailedView from './DetailedView'
@@ -10,7 +10,7 @@ function Recommendations() {
     const navigate = useNavigate();
     // Gets user data from previous page
     const { state } = useLocation();
-    const { user_data, recommendations, allCourses } = state;
+    const { user_data, recommendations, allCourses, showTutorial } = state;
     const [col, setCol] = useState(3)
     const [semesterFilter, setSemesterFilter] = useState('All')
     const [courseTypeFilter, setCourseTypeFilter] = useState('All')
@@ -18,12 +18,40 @@ function Recommendations() {
     const [showReasoning, setShowReasoning] = useState(false);
     const [selCourse, setSelCourse] = useState(allCourses[0]);
     const [forceUpdate, setForceUpdate] = useState(false);
-    
+    const [showTooltips, setShowTooltips] = useState([false, false, false])
+
+    const tt_target_1 = useRef(null);
+    const tt_target_2 = useRef(null);
+    const tt_target_3 = useRef(null);
+
 
     useEffect(() => {
         updateDimensions()
         window.addEventListener('resize', updateDimensions)
     })
+
+    useEffect(() => {
+        if (showTutorial) {
+            setTimeout(() => { trigger_next_tooltip(); setTimeout(() => { trigger_next_tooltip(); setTimeout(() => { trigger_next_tooltip(); setTimeout(() => { trigger_next_tooltip(); }, 3000); }, 3000); }, 3000); }, 1000);
+        }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [])
+
+    const trigger_next_tooltip = () => {
+        setShowTooltips(prev_tt => {
+            let ind = prev_tt.findIndex(element => element === true);
+            if (ind !== -1) {
+                let new_tts = [false, false, false];
+                if (ind + 1 === prev_tt.length) {
+                    return new_tts;
+                }
+                new_tts[ind + 1] = true;
+                return new_tts;
+            }
+            let new_tts = [true, false, false];
+            return new_tts;
+        })
+    }
 
     const updateDimensions = () => {
         if (window.innerWidth >= 1490)
@@ -81,7 +109,7 @@ function Recommendations() {
 
     return (
         <>
-            <DetailedView selCourse={selCourse} openModal={showDetail} forceUpdate={forceUpdate}/>
+            <DetailedView selCourse={selCourse} openModal={showDetail} forceUpdate={forceUpdate} />
             {
                 selCourse.key in recommendations.recommendations &&
                 <ReasoningView reasoning={recommendations.recommendations[selCourse.key].reasoning} selCourse={selCourse} openModal={showReasoning} forceUpdate={forceUpdate}></ReasoningView>
@@ -90,22 +118,37 @@ function Recommendations() {
                 <Row>
                     <Col>
                         <a href='/'>
-                            <Button className='home-button-recommendations button' title="Home">
+                            <Button ref={tt_target_1} className='home-button-recommendations button' title="Home">
                                 <i className="fa-solid fa-house"></i>
                             </Button>
+                            <Overlay target={tt_target_1.current} show={showTooltips[0]} placement="bottom">
+                                <Tooltip id="overlay-example">
+                                    Go to home screen
+                                </Tooltip>
+                            </Overlay>
                         </a>
                     </Col>
                     <Col style={{ textAlign: 'center' }}>
-                        <Button className='home-button-recommendations button' title="Modify courses"  onClick={() => {
+                        <Button ref={tt_target_2} className='home-button-recommendations button' title="Modify courses" onClick={() => {
                             navigate('/course-selector', { state: { userData: user_data, allCourses: allCourses } })
                         }}>
                             <i className="fa-solid fa-file-pen"></i>
                         </Button>
+                        <Overlay target={tt_target_2.current} show={showTooltips[1]} placement="bottom">
+                            <Tooltip id="overlay-example">
+                                Change grades and scores of courses
+                            </Tooltip>
+                        </Overlay>
                     </Col>
                     <Col>
-                        <Button className='home-button-recommendations button float-end' title="Export as json" onClick={exportData}>
+                        <Button ref={tt_target_3} className='home-button-recommendations button float-end' title="Export as json" onClick={exportData}>
                             <i className="fa-solid fa-file-export"></i>
                         </Button>
+                        <Overlay target={tt_target_3.current} show={showTooltips[2]} placement="bottom">
+                            <Tooltip id="overlay-example">
+                                Export input data to JSON
+                            </Tooltip>
+                        </Overlay>
                     </Col>
                 </Row>
             </Container>
@@ -155,7 +198,7 @@ function Recommendations() {
                                         <Card className='semester-card'>
                                             <p key={index} className='semester'>{item.semester}</p>
                                         </Card>
-                                        <Button className='explanation-card' onClick={(e) => {openReasoningView(course); e.stopPropagation()}}>Explanation</Button>
+                                        <Button className='explanation-card' onClick={(e) => { openReasoningView(course); e.stopPropagation() }}>Explanation</Button>
                                         {item.type === 'Practical' &&
                                             <p className='practical-course-info'>
                                                 <i className="fa-solid fa-circle-info" />
