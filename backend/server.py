@@ -94,13 +94,12 @@ def get_recommendations(user_data, knn, exists_all, filtered):
         for index, value in temp.loc[:, i].value_counts().iteritems():
             reasoning[i[0:2]]["ratings"][(int(index * 2))] = value
 
-
     results = (weighted / norm_factor).iloc[0].sort_values(ascending=False)
     return results, reasoning, similarity
 
 def get_classifier():
     temp = course_data_codes + ["FINISHED"]
-    data = pd.read_csv('./data/data_tutorial316936_2022-06-29_12-50.csv', encoding = "ISO-8859-1")
+    data = pd.read_csv('./data/data_tutorial316936_2022-07-15_20-21.csv', encoding = "ISO-8859-1")
 
     filtered = pd.DataFrame()
     for i in temp:
