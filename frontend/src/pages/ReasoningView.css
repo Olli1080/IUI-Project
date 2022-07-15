@@ -1,0 +1,27 @@
+.course-property {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.course-value {
+    font-size: 20px;
+    font-weight: lighter;
+}
+
+.badge {
+    background-color: #5e2b97 !important;
+    margin-right: 2px;
+    margin-left: 2px;
+}
+
+.detail-row {
+    margin-top: 10px;
+    margin-bottom: 10px; 
+}
+
+.detail-textarea {
+    height: 150px;
+}
+
+
+

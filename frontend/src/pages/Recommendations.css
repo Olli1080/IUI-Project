@@ -107,6 +107,23 @@
     margin-bottom: 0px;
 }
 
+.explanation-card{
+    border: 1px solid #5e2b97 !important;
+    background-color: #5e2b97 !important;
+    color: whitesmoke;
+    border-radius: 20px !important;
+    width: 150px;
+    position: absolute !important;
+    bottom: 20px;
+    right: 20px;
+    padding: 0 !important;
+}
+
+.explanation{
+    border-radius: 20px;
+    margin-bottom: 0px;
+}
+
 .fa-triangle-exclamation{
     color: #dac44d;
     margin-right: 5px;

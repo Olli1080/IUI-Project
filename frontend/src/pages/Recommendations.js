@@ -4,6 +4,7 @@ import { Container, Row, Col, Card, Button, Dropdown, DropdownButton} from 'reac
 import { useLocation } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom'
 import DetailedView from './DetailedView'
+import ReasoningView from './ReasoningView'
 
 function Recommendations() {
     const navigate = useNavigate();
@@ -14,6 +15,7 @@ function Recommendations() {
     const [semesterFilter, setSemesterFilter] = useState('All')
     const [courseTypeFilter, setCourseTypeFilter] = useState('All')
     const [showDetail, setShowDetail] = useState(false);
+    const [showReasoning, setShowReasoning] = useState(false);
     const [selCourse, setSelCourse] = useState(allCourses[0]);
     const [forceUpdate, setForceUpdate] = useState(false);
     
@@ -63,6 +65,12 @@ function Recommendations() {
         setShowDetail(true);
     }
 
+    const openReasoningView = (course) => {
+        setSelCourse(allCourses.find(c => c.key === course));
+        setForceUpdate(!forceUpdate);
+        setShowReasoning(true);
+    }
+
     let currentSemester = 1
     user_data.forEach(item => {
         if (item.semester >= currentSemester)
@@ -72,6 +80,10 @@ function Recommendations() {
     return (
         <>
             <DetailedView selCourse={selCourse} openModal={showDetail} forceUpdate={forceUpdate}></DetailedView>
+            {
+                selCourse.key in recommendations.recommendations &&
+                <ReasoningView reasoning={recommendations.recommendations[selCourse.key].reasoning} selCourse={selCourse} openModal={showReasoning} forceUpdate={forceUpdate}></ReasoningView>
+            }
             <Container fluid className='top-button-row'>
                 <Row>
                     <Col>
@@ -117,7 +129,7 @@ function Recommendations() {
             <h1 className='recommendations-h1'>Recommendations for you</h1>
             <Container fluid className='recommendations-container'>
                 <Row>
-                    {recommendations.map(({ course, score }, index) => {
+                    {Object.entries(recommendations.recommendations).map(([course, { score, reasoning }], index) => {
                         const item = allCourses.find(({ key }) => {
                             return key === course
                         })
@@ -141,6 +153,7 @@ function Recommendations() {
                                         <Card className='semester-card'>
                                             <p key={index} className='semester'>{item.semester}</p>
                                         </Card>
+                                        <Button className='explanation-card' onClick={(e) => {openReasoningView(course); e.stopPropagation()}}>Explanation</Button>
                                         {item.type === 'Practical' &&
                                             <p className='practical-course-info'>
                                                 <i className="fa-solid fa-circle-info" />
