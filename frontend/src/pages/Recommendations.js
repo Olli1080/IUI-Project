@@ -62,12 +62,14 @@ function Recommendations() {
     const openDetailedView = (course) => {
         setSelCourse(allCourses.find(c => c.key === course));
         setForceUpdate(!forceUpdate);
+        setShowReasoning(false)
         setShowDetail(true);
     }
 
     const openReasoningView = (course) => {
         setSelCourse(allCourses.find(c => c.key === course));
         setForceUpdate(!forceUpdate);
+        setShowDetail(false)
         setShowReasoning(true);
     }
 
@@ -79,7 +81,7 @@ function Recommendations() {
 
     return (
         <>
-            <DetailedView selCourse={selCourse} openModal={showDetail} forceUpdate={forceUpdate}></DetailedView>
+            <DetailedView selCourse={selCourse} openModal={showDetail} forceUpdate={forceUpdate}/>
             {
                 selCourse.key in recommendations.recommendations &&
                 <ReasoningView reasoning={recommendations.recommendations[selCourse.key].reasoning} selCourse={selCourse} openModal={showReasoning} forceUpdate={forceUpdate}></ReasoningView>
