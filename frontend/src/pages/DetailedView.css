@@ -24,4 +24,14 @@
 }
 
 
+.detail-textarea:focus {
+    border-color: rgb(94, 43, 151) !important;
+    box-shadow: 0 0 0 0.2rem rgba(94, 43, 151, 0.25) !important;
+}
+
+.btn-close:focus {
+    border-color: rgb(94, 43, 151) !important;
+    box-shadow: 0 0 0 0.2rem rgba(94, 43, 151, 0.25) !important;
+}
+
 
