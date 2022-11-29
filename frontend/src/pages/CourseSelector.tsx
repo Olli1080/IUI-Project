@@ -7,23 +7,27 @@ import Loading from './Loading'
 import { useLocation } from 'react-router-dom'
 import ErrorMessage from "./ErrorMessage";
 
+import type { Course, State } from '../Utils'
+
 function CourseSelector() {
-    const {state} = useLocation();
-    const {userData, allCourses, showTutorial}=state
+    const { state } = useLocation();
+    const {userData, allCourses, showTutorial} = state as State
     const navigate = useNavigate();
     const [currentCourseIndex, setCurrentCourseIndex] = useState(-1)
     const [semesterOfCurrentCourse, setSemesterOfCurrentCourse] = useState(-1) //-1: not set, 0: >6th
     const [likeCurrentCourse, setLikeCurrentCourse] = useState(-1) //-1: not set, 0: like, 1: neutral, 2: dislike
-    const [gradeOfCurrentCourse, setGradeOfCurrentCourse] = useState(-1)
+    const [gradeOfCurrentCourse, setGradeOfCurrentCourse] = useState<string | null>(null)
     const [errorMessage, setErrorMessage] = useState('')
     const [isLoading, setIsLoading] = useState(false);
-    const [errorMessages, setErrorMessages] = useState([]);
+    const [errorMessages, setErrorMessages] = useState<Array<any>>([]);
 
     const selectedCourses = useState(new Array(allCourses.length).fill(false))[0]
     const grades = ['1.0', '1.3', '1.7', '2.0', '2.3', '2.7', '3.0', '3.3', '3.7', '4.0', '5.0']
 
     userData.forEach(userDataItem => {
-        selectedCourses[getIndexByKey(userDataItem.course, allCourses)]=true
+        const index = getIndexByKey(userDataItem.course, allCourses)
+        if (index)
+            selectedCourses[index] = true
     })
 
     useEffect(() => {
@@ -33,21 +37,21 @@ function CourseSelector() {
         }
     }, [])
 
-    const alertUser=(e)=>{
+    const alertUser=(e: BeforeUnloadEvent)=>{
         e.preventDefault()
         e.returnValue=''
     }
 
     const showNextCourse = () => {
-        if (currentCourseIndex !== -1 && (semesterOfCurrentCourse === -1 || likeCurrentCourse === -1 || gradeOfCurrentCourse === -1)) {
+        if (currentCourseIndex !== -1 && (semesterOfCurrentCourse === -1 || likeCurrentCourse === -1 || gradeOfCurrentCourse === null)) {
             setErrorMessage('Please fill in all the fields.')
             return
         }
         if (currentCourseIndex === -1) {
-            let userDataToDelete = []
+            let userDataToDelete = new Array<number>()
             userData.forEach((item, index) => {
-                const courseIndex=getIndexByKey(item.course, allCourses)
-                if (!selectedCourses[courseIndex])
+                const courseIndex = getIndexByKey(item.course, allCourses)
+                if (courseIndex && !selectedCourses[courseIndex])
                     userDataToDelete.push(index)
             })
             let offset=0
@@ -63,7 +67,7 @@ function CourseSelector() {
             sendDataToBackend(userData).then((recs) => {
                 setIsLoading(false);
                 localStorage.setItem('courseRecUserData', JSON.stringify(userData))
-                navigate('/recommendations', { state: { user_data: userData, recommendations: recs, allCourses: allCourses, showTutorial: showTutorial } });
+                navigate('/recommendations', { state: { userData, recommendations: recs, allCourses: allCourses, showTutorial: showTutorial } });
             }
             ).catch((err) => { setErrorMessages(e_m => {return [...e_m,err]}) })
         }
@@ -78,7 +82,7 @@ function CourseSelector() {
                 sendDataToBackend(userData).then((recs) => {
                     setIsLoading(false);
                     localStorage.setItem('courseRecUserData', JSON.stringify(userData))
-                    navigate('/recommendations', { state: { user_data: userData, recommendations: recs, allCourses: allCourses, showTutorial: showTutorial} });
+                    navigate('/recommendations', { state: { userData, recommendations: recs, allCourses: allCourses, showTutorial: showTutorial} });
                 }
                 ).catch((err) => { setErrorMessages(e_m => {return [...e_m,err]}); })
             }
@@ -107,7 +111,7 @@ function CourseSelector() {
                     "course": allCourses[currentCourseIndex].key,
                     "semester": semesterOfCurrentCourse,
                     "like": likeCurrentCourse,
-                    "grade": gradeOfCurrentCourse
+                    "grade": gradeOfCurrentCourse!
                 }
                 found = true
             }
@@ -117,15 +121,15 @@ function CourseSelector() {
                 "course": allCourses[currentCourseIndex].key,
                 "semester": semesterOfCurrentCourse,
                 "like": likeCurrentCourse,
-                "grade": gradeOfCurrentCourse
+                "grade": gradeOfCurrentCourse!
             })
         }
         setSemesterOfCurrentCourse(-1)
         setLikeCurrentCourse(-1)
-        setGradeOfCurrentCourse(-1)
+        setGradeOfCurrentCourse(null)
         setErrorMessage('')
     }
-    const restoreCourseData = (courseIndex) => {
+    const restoreCourseData = (courseIndex: number) => {
         userData.forEach(item => {
             if (allCourses[courseIndex].key === item.course) {
                 setSemesterOfCurrentCourse(item.semester)
@@ -305,7 +309,7 @@ function CourseSelector() {
 
 export default CourseSelector
 
-function makeOrdinal(number) {
+function makeOrdinal(number: number) {
     switch (number) {
         case 0: return '> 6th'
         case 1: return '1st'
@@ -315,11 +319,11 @@ function makeOrdinal(number) {
     }
 }
 
-function getIndexByKey(key, allCourses){
-    let res
+function getIndexByKey(key: string, allCourses: Array<Course>){
+    let res: number | undefined
     allCourses.forEach((course, index)=>{
-        if(course.key===key)
-            res=index
+        if(course.key === key)
+            res = index
     })
     return res
 }

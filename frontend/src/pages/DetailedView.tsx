@@ -2,7 +2,9 @@ import React, { useState, useEffect } from 'react'
 import { Modal, Container, Row, Col, Badge, Form} from 'react-bootstrap'
 import "./DetailedView.css"
 
-function DetailedView(props) {
+import type { Course } from '../Utils'
+
+function DetailedView(props: { selCourse: Course, openModal: boolean, forceUpdate: boolean }) {
     const { selCourse, openModal, forceUpdate } = props;
     const [show, setShow] = useState(false);
     const [course, setCourse] = useState(selCourse);
@@ -19,6 +21,13 @@ function DetailedView(props) {
         "content": "Content",
         "duration": "Duration (in Semesters)",
         "regular_semester": "Semesters students usually take the course:"
+    }
+
+    const mapPropertyNames = (name: string) => {
+        if (name in property_int_name_to_name)
+            return (property_int_name_to_name as Record<string, string>)[name]
+
+        return 'error'
     }
 
     useEffect(() => {
@@ -41,7 +50,7 @@ function DetailedView(props) {
                                     <Row className='detail-row' key={index}>
                                         <Col>
                                             <div className="course-property">
-                                                {property_int_name_to_name[property[0]]}
+                                                {mapPropertyNames(property[0])}
                                             </div>
                                         </Col>
                                         <Col>
@@ -54,16 +63,17 @@ function DetailedView(props) {
                             }
 
                             if (["languages", "regular_semester"].includes(property[0])) {
+                                const prop1 = property[1] as Course['languages'] | Course['regular_semester']
                                 return (
                                     <Row className='detail-row' key={index}>
                                         <Col>
                                             <div className="course-property">
-                                                {property_int_name_to_name[property[0]]}
+                                                {mapPropertyNames(property[0])}
                                             </div>
                                         </Col>
                                         <Col>
                                             <div className="course-value">
-                                                {property[1].map(((elem, i) => { return (<Badge bg="detail-badge" key={i}>{elem}</Badge>) }))}
+                                                {prop1.map(((elem, i) => { return (<Badge bg="detail-badge" key={i}>{elem}</Badge>) }))}
                                             </div>
                                         </Col>
                                     </Row>
@@ -71,16 +81,17 @@ function DetailedView(props) {
                             }
 
                             if (["content", "learning-goals"].includes(property[0])) {
+                                const prop1 = property[1] as Course['content'] | Course['learning-goals']
                                 return (
                                     <Row className='detail-row' key={index}>
                                         <Col>
                                             <div className="course-property">
-                                                {property_int_name_to_name[property[0]]}
+                                                {mapPropertyNames(property[0])}
                                             </div>
                                         </Col>
                                         <Col>
                                             <div className="course-value">
-                                                <Form.Control className="detail-textarea" as="textarea" id="inputGroup-sizing-lg" defaultValue={property[1]} readOnly></Form.Control>
+                                                <Form.Control className="detail-textarea" as="textarea" id="inputGroup-sizing-lg" defaultValue={prop1} readOnly></Form.Control>
                                             </div>
                                         </Col>
                                     </Row>

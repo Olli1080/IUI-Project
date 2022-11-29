@@ -2,7 +2,9 @@ import React, { useState, useEffect } from 'react'
 import { Modal, Container, Row, Col} from 'react-bootstrap'
 import "./ReasoningView.css"
 
-function DetailedView(props) {
+import type { Course, Reason } from '../Utils'
+
+function DetailedView(props: { selCourse: Course, openModal: boolean, forceUpdate: boolean, reasoning: Reason }) {
     const { selCourse, openModal, forceUpdate, reasoning } = props;
     const [show, setShow] = useState(false);
     const [course, setCourse] = useState(selCourse);

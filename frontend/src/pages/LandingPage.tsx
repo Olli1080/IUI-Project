@@ -2,21 +2,23 @@ import React, { useState, useEffect } from "react";
 import { Card, Container, Row, Button, Col } from 'react-bootstrap'
 import './LandingPage.css'
 import { useNavigate } from 'react-router-dom'
-import { sendDataToBackend } from '../Utils'
-import { getCourseJson } from '../Utils'
+import { sendDataToBackend, getCourseJson } from '../Utils'
 import Loading from './Loading'
 import ErrorMessage from "./ErrorMessage";
 
-let userData
+import type { Course, UserData } from '../Utils'
+import type { ChangeEventHandler, MouseEventHandler } from 'react'
+
+let userData: UserData | undefined
 
 function LandingPage() {
     const navigate = useNavigate();
 
     // Get Course Data at beginning
     const [isLoading, setIsLoading] = useState(true);
-    const hiddenFileInput = React.useRef(null)
-    const [courseData, setCourseData] = useState();
-    const [errorMessages, setErrorMessages] = useState([]);
+    const hiddenFileInput = React.useRef<HTMLInputElement>(null)
+    const [courseData, setCourseData] = useState<Array<Course>>();
+    const [errorMessages, setErrorMessages] = useState<Array<any>>([]);
 
     useEffect(() => {
         getCourseJson().then((courses) => {
@@ -25,34 +27,38 @@ function LandingPage() {
         }
         ).catch((err) => {setErrorMessages(e_m => {return [...e_m,err]})}); //console.err(err);
 
-
-        const localStorageUserData = JSON.parse(localStorage.getItem('courseRecUserData'))
-        if (localStorageUserData) {
-            userData = localStorageUserData
-        }
+        const localItem = localStorage.getItem('courseRecUserData')
+        userData = (localItem) ? JSON.parse(localItem) : {}
     }, []);
 
 
-    const handleClick = () => {
-        hiddenFileInput.current.click()
+    const handleClick: MouseEventHandler<HTMLButtonElement> = () => {
+        hiddenFileInput.current?.click()
     };
 
 
-    const handleChange = e => {
+    const handleChange: ChangeEventHandler<HTMLInputElement> = e => {
         e.preventDefault();
         const reader = new FileReader()
         reader.onload = (e) => {
-            const text = e.target.result
-            userData = JSON.parse(text)
+            const text = e.target?.result
+            if (!text)
+                return
+
+            userData = ((text instanceof ArrayBuffer) 
+                ? Buffer.from(text).toJSON() 
+                : JSON.parse(text)) as UserData
+
             setIsLoading(true);
             sendDataToBackend(userData).then((recs) => {
                 setIsLoading(false);
                 localStorage.setItem('courseRecUserData', JSON.stringify(userData))
-                navigate('/recommendations', { state: { user_data: userData, recommendations: recs, allCourses: courseData, showTutorial: false} });
+                navigate('/recommendations', { state: { userData, recommendations: recs, allCourses: courseData, showTutorial: false} });
             }
             ).catch((err) => {setErrorMessages(e_m => {return [...e_m,err]})})
         };
-        reader.readAsText(e.target.files[0])
+        if (e.target.files)
+            reader.readAsText(e.target.files[0])
     };
     return (
         <>
@@ -75,10 +81,10 @@ function LandingPage() {
                                 <Col className='card-col'>
                                     <Button className='button' disabled={userData === undefined} onClick={() => {
                                         setIsLoading(true);
-                                        sendDataToBackend(userData).then((recs) => {
+                                        sendDataToBackend(userData!).then((recs) => {
                                             setIsLoading(false);
                                             localStorage.setItem('courseRecUserData', JSON.stringify(userData))
-                                            navigate('/recommendations', { state: { user_data: userData, recommendations: recs, allCourses: courseData, showTutorial: false} });
+                                            navigate('/recommendations', { state: { userData, recommendations: recs, allCourses: courseData, showTutorial: false} });
                                         }
                                         ).catch((err) => {setErrorMessages(e_m => {return [...e_m,err]})})
                                     }}>Yes, use data from last time</Button>

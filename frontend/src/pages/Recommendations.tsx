@@ -6,11 +6,13 @@ import { useNavigate } from 'react-router-dom'
 import DetailedView from './DetailedView'
 import ReasoningView from './ReasoningView'
 
+import type { State, Response } from '../Utils'
+
 function Recommendations() {
     const navigate = useNavigate();
     // Gets user data from previous page
     const { state } = useLocation();
-    const { user_data, recommendations, allCourses, showTutorial } = state;
+    const { userData, recommendations, allCourses, showTutorial } = state as State & { recommendations: Response };
     const [col, setCol] = useState(3)
     const [semesterFilter, setSemesterFilter] = useState('All')
     const [courseTypeFilter, setCourseTypeFilter] = useState('All')
@@ -66,7 +68,7 @@ function Recommendations() {
 
     const exportData = () => {
         const jsonString = `data:text/json;charset=utf-8,${encodeURIComponent(
-            JSON.stringify(user_data)
+            JSON.stringify(userData)
         )}`;
         const link = document.createElement("a");
         link.href = jsonString;
@@ -74,37 +76,40 @@ function Recommendations() {
         link.click();
     }
 
-    const getMinimumSemesterOfCourse = (courseKey) => {
+    const getMinimumSemesterOfCourse = (courseKey: string) => {
         const course = allCourses.find(({ key }) => {
             return key === courseKey
         })
         let minSemester = 100
-        course.regular_semester.forEach((regSem) => {
-            let regSemInt = parseInt(regSem)
-            if (regSemInt < minSemester)
-                minSemester = regSemInt
+        course?.regular_semester.forEach((regSem) => {
+            minSemester = Math.min(regSem, minSemester)
         })
         return minSemester
     }
 
-    const openDetailedView = (course) => {
-        setSelCourse(allCourses.find(c => c.key === course));
+    const openDetailedView = (course: string) => {
+        const searchRes = allCourses.find(c => c.key === course)
+        if (!searchRes)
+            return
+        setSelCourse(searchRes);
         setForceUpdate(!forceUpdate);
         setShowReasoning(false)
         setShowDetail(true);
     }
 
-    const openReasoningView = (course) => {
-        setSelCourse(allCourses.find(c => c.key === course));
+    const openReasoningView = (course: string) => {
+        const searchRes = allCourses.find(c => c.key === course)
+        if (!searchRes)
+            return
+        setSelCourse(searchRes);
         setForceUpdate(!forceUpdate);
         setShowDetail(false)
         setShowReasoning(true);
     }
 
     let currentSemester = 1
-    user_data.forEach(item => {
-        if (item.semester >= currentSemester)
-            currentSemester = item.semester + 1
+    userData.forEach(item => {
+        currentSemester = Math.max(currentSemester, item.semester)
     })
 
     return (
@@ -130,7 +135,7 @@ function Recommendations() {
                     </Col>
                     <Col style={{ textAlign: 'center' }}>
                         <Button ref={tt_target_2} className='home-button-recommendations button' title="Modify courses" onClick={() => {
-                            navigate('/course-selector', { state: { userData: user_data, allCourses: allCourses } })
+                            navigate('/course-selector', { state: { userData, allCourses: allCourses } })
                         }}>
                             <i className="fa-solid fa-file-pen"></i>
                         </Button>
@@ -178,7 +183,7 @@ function Recommendations() {
                         const item = allCourses.find(({ key }) => {
                             return key === course
                         })
-                        if ((semesterFilter === 'Winter' && item.semester === 'Summer Semester') || (semesterFilter === 'Summer' && item.semester === 'Winter Semester') || (courseTypeFilter !== 'All' && courseTypeFilter !== item.type))
+                        if (!item || (semesterFilter === 'Winter' && item.semester === 'Summer Semester') || (semesterFilter === 'Summer' && item.semester === 'Winter Semester') || (courseTypeFilter !== 'All' && courseTypeFilter !== item.type))
                             return null
                         return (
                             <>
@@ -297,7 +302,7 @@ function Recommendations() {
     )
 }
 
-function getScoreStyle(score) {
+function getScoreStyle(score: number) {
     if (score >= 0.5)
         return { color: 'green' }
     if (score >= 0.25)

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { Toast, ToastContainer } from 'react-bootstrap'
 import "./ErrorMessage.css"
 
-function ErrorMessage(props) {
+function ErrorMessage(props: { error_messages: Array<any> }) {
     // const { selCourse, openModal, forceUpdate } = props;
     // const [show, setShow] = useState(false);
 
